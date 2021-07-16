@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 import React from "react"
 import "./App.css"
 import { Switch, Route, Router, Link } from "react-router-dom"
@@ -9,7 +9,7 @@ import HistoryService from "./service/history/HistoryService"
 
 function App() {
 	return (
-		<div className="App">
+		<div className='App'>
 			<Router history={HistoryService}>
 				<nav>
 					<ul>
@@ -28,26 +28,26 @@ function App() {
 					</ul>
 				</nav>
 				<Switch>
-					<Route exact path={PathConstants.LOGIN}>
-						<Login />
-					</Route>
-					<Route exact path={PathConstants.MENU}>
-						<Menu />
-					</Route>
+					<Route exact path={PathConstants.LOGIN} component={Login} />
+					<Route exact path={PathConstants.MENU} component={Menu} />
 					<Route path={PathConstants.LEARN} component={() => <></>} />
-					<Route path={PathConstants.QUIZ} component={() => <></>} />
-					<Route path={"/"} component={() => <></>} />
+					<Route
+						path={`${PathConstants.LESSON}`}
+						component={() => <></>}
+					/>
+					<Route
+						path={`${PathConstants.LESSON}/:id`}
+						component={() => <></>}
+					/>
+					<Route
+						path={`${PathConstants.QUIZ}/:id`}
+						component={() => <></>}
+					/>
+					<Route path={'/'} component={() => <></>} />
 				</Switch>
 			</Router>
 		</div>
 	)
-=======
-import React from 'react'
-import './App.css'
-
-const App: React.FC = () => {
-	return <div className='App'></div>
->>>>>>> development
 }
 
 export default App
