@@ -56,7 +56,7 @@
     ]
   },
   "devDependencies": {
-    "prettier": "^2.3.2"
+    "prettier": "^2.3.2",
     "@types/history": "^4.7.9",
     "@types/react-router-dom": "^5.1.8"
   }
