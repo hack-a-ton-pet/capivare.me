@@ -1,1 +1,1 @@
-export default "oi"
+export default 'oi'
