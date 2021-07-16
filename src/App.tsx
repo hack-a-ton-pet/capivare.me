@@ -1,12 +1,14 @@
-import React from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import './App.css'
 
-const App: React.FC = () => {
-  return (
-    <div className="App">
+interface Face {
+	oi: string
+	tchau: number
+	sla: string
+}
 
-    </div>
-  );
+const App: React.FC<Face> = ({ oi, tchau, sla }) => {
+	return <div className='App'></div>
 }
 
 export default App
