@@ -1,11 +1,10 @@
-
-import React from "react"
-import "./App.css"
-import { Switch, Route, Router, Link } from "react-router-dom"
-import PathConstants from "./constant/PathConstants"
-import Menu from "./view/menu"
-import Login from "./view/login"
-import HistoryService from "./service/history/HistoryService"
+import React from 'react'
+import './App.css'
+import { Switch, Route, Router, Link } from 'react-router-dom'
+import PathConstants from './constant/PathConstants'
+import Menu from './view/menu'
+import Login from './view/login'
+import HistoryService from './service/history/HistoryService'
 
 function App() {
 	return (
