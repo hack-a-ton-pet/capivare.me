@@ -4,12 +4,12 @@ import { Switch, Route, Router, Link } from "react-router-dom"
 import PathConstants from "./constant/PathConstants"
 import Menu from "./view/menu"
 import Login from "./view/login"
-import { createBrowserHistory } from "history"
+import HistoryService from "./service/history/HistoryService"
 
 function App() {
 	return (
 		<div className="App">
-			<Router history={createBrowserHistory()}>
+			<Router history={HistoryService}>
 				<nav>
 					<ul>
 						<li>

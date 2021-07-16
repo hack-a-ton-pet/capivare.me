@@ -2,6 +2,8 @@ import React from "react"
 import "./styles.css"
 import { makeStyles } from "@material-ui/core/styles"
 import { Card, CardActionArea, CardMedia, CardContent, Typography } from "@material-ui/core"
+import PathConstants from "../../constant/PathConstants"
+import HistoryService from "../../service/history/HistoryService"
 
 const useStyles = makeStyles({
 	root: {
@@ -20,7 +22,12 @@ const Menu = () => {
 			<h4>Menu</h4>
 			{[1, 2, 3].map((e, index) => {
 				return (
-					<Card raised className={classes.root + " card"} key={index}>
+					<Card
+						onClick={() => HistoryService.replace(PathConstants.LEARN)}
+						raised
+						className={classes.root + " card"}
+						key={index}
+					>
 						<CardActionArea>
 							<CardMedia
 								className={classes.media + " card__media"}
