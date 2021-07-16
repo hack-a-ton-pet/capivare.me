@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from "react"
 import "./App.css"
 import { Switch, Route, Router, Link } from "react-router-dom"
@@ -40,6 +41,13 @@ function App() {
 			</Router>
 		</div>
 	)
+=======
+import React from 'react'
+import './App.css'
+
+const App: React.FC = () => {
+	return <div className='App'></div>
+>>>>>>> development
 }
 
 export default App
