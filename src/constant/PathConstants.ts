@@ -6,6 +6,7 @@ class PathConstants {
 	LEARN = `/learn`
 	LESSON = `/lesson`
 	QUIZ = `/quiz`
+	ACHIEVEMENTS = `/achievements`
 }
 
 export default new PathConstants()
