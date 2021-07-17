@@ -11,8 +11,10 @@ const ContentCard: React.FC<ContentCardProps> = ({ title, paragraphs }) => {
 	return (
 		<Card className='content_card'>
 			<h1 className='content_card__title default_font'>{title}</h1>
-			{paragraphs.map(paragraph => (
-				<p className='default_font'>{paragraph}</p>
+			{paragraphs.map((paragraph, index) => (
+				<p key={index} className='default_font'>
+					{paragraph}
+				</p>
 			))}
 		</Card>
 	)

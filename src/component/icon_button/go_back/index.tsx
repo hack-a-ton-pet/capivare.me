@@ -11,6 +11,7 @@ import CapiIconButtonProps from '../props'
 const GoBackIconButton: React.FC<CapiIconButtonProps> = props => {
 	return (
 		<CapiIconButton
+			className='go_back__icon_button'
 			aria-label='Voltar à página anterior'
 			onClick={props.onClick || HistoryService.goBack}
 			{...props}

@@ -1,0 +1,8 @@
+.capi_stepper {
+	display: flex;
+	flex-direction: row;
+}
+
+.capi_stepper .question_status_circle {
+	margin: 8px;
+}

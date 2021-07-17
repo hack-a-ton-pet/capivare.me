@@ -1,4 +1,27 @@
 .lesson_section {
 	height: inherit;
-	background-color: var(--lesson-1-color);
+	background-color: var(--primary-lighter-color);
+	height: 100%;
+	width: 100%;
+	overflow-y: scroll;
+	position: absolute;
+}
+.lesson_section .MuiCard-root.content_card {
+	margin: 24px 0 32px 16px;
+}
+
+.lesson_section .arrow_next__icon_button {
+	margin: 6px;
+	padding: 0;
+}
+
+.lesson_section .go_back__icon_button {
+	margin: 12px;
+	padding: 0;
+}
+
+.lesson_section .stepper_menu {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
 }
