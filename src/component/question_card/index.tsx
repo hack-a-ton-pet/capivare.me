@@ -1,10 +1,14 @@
 import React from 'react'
 import './styles.css'
 
-const CapiQuestionCard: React.FC = () => {
+export interface CapiQuestionCardProps {
+	question: string
+}
+
+const CapiQuestionCard: React.FC<CapiQuestionCardProps> = ({ question }) => {
 	return (
 		<div className='question_card'>
-			<h1>Pergunta?</h1>
+			<h1>{question}</h1>
 		</div>
 	)
 }

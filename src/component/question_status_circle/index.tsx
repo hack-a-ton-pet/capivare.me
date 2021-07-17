@@ -4,7 +4,7 @@ import ClearIcon from '@material-ui/icons/Clear'
 import CheckIcon from '@material-ui/icons/Check'
 
 export interface CapiQuestionStatusCircleProps {
-	status?: 'correct' | 'incorrect' | 'current' | 'not_answered'
+	status: 'correct' | 'incorrect' | 'current' | 'not_answered'
 }
 
 function StatusIcon(props: any) {

@@ -1,0 +1,48 @@
+.quiz {
+	background-color: var(--primary-lighter-color);
+	height: 100vh;
+	width: 100vw;
+	text-align: center;
+	justify-content: flex-start;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding-top: 65px;
+}
+
+.quiz_circles {
+	width: fit-content;
+	height: fit-content;
+	display: flex;
+	align-items: center;
+	text-align: center;
+	justify-content: space-evenly;
+}
+
+.quiz_circles .question_status_circle {
+	margin: 5px;
+}
+
+.quiz_question {
+	margin-top: 20px;
+}
+
+.quiz_question .question_card {
+	height: 80px;
+	font-size: 8px;
+}
+
+.quiz_answers {
+	margin-top: 20px;
+	justify-content: space-evenly;
+}
+
+.quiz_answers .answer_button Button {
+	margin: 10px;
+	padding: 3px;
+	font-size: 12px;
+}
+
+.quiz_answers .MuiButton-label {
+	padding: 5px;
+}

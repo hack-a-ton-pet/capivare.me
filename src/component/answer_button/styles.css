@@ -2,7 +2,7 @@
 	font-size: 16px;
 	justify-content: left;
 	width: 302px;
-	height: 54px;
+	height: max-content;
 	padding: 22px 15px;
 	border-radius: 10px;
 	background-color: #fafafa;
