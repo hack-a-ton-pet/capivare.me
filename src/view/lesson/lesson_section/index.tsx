@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import './styles.css'
 import { useParams } from 'react-router-dom'
 import learnCards from '../../../constant/data/learnCard'
 import ContentCard from '../../../component/content_card'
@@ -7,6 +6,7 @@ import SwipeableViews from 'react-swipeable-views'
 import ArrowNextIconButton from '../../../component/icon_button/arrow_next'
 import CapiStepper from '../../../component/stepper'
 import GoBackIconButton from '../../../component/icon_button/go_back'
+import './styles.css'
 
 const LessonSection: React.FC = () => {
 	const [index, setIndex] = useState(0)

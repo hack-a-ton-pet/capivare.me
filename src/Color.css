@@ -1,7 +1,7 @@
 :root {
 	--primary-color: #21b583;
 	--primary-darker-color: #115a42;
-	--primary-lighter-color: #90dac1;
+	--primary-lighter-color: #c8ece0;
 	--secondary-color: #ffbe5d;
 	--secondary-lighter-color: #ffc978;
 	--secondary-details-color: #f5da93;
@@ -10,12 +10,12 @@
 	--wrong-color: #ff5858;
 	--purple: #acb5e3;
 
-	--lesson-1-color: #909cda;
-	--lesson-2-color: #ee9191;
-	--lesson-3-color: #f5da93;
-	--lesson-4-color: #c1a2ea;
+	--section-1-color: #909cda;
+	--section-2-color: #ee9191;
+	--section-3-color: #f5da93;
+	--section-4-color: #c1a2ea;
 
-	--lesson-1-lighter-color: #acb5e3;
+	--section-1-lighter-color: #acb5e3;
 
 	--wrong-color: #ff5858;
 
