@@ -1,10 +1,12 @@
 import React from 'react'
-import './App.css'
 import Main from './view'
+import './App.css'
+import './Color.css'
+import './Var.css'
 
-function App() {
+const App: React.FC = () => {
 	return (
-		<div className='App'>
+		<div className='app'>
 			<Main />
 		</div>
 	)

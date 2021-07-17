@@ -1,7 +1,5 @@
 import React from 'react'
 import './styles.css'
-import GoBackIconButton from '../../component/icon_button/go_back'
-import NextIconButton from '../../component/icon_button/next'
 
 const Login = () => {
 	return (

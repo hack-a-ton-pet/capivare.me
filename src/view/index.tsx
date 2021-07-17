@@ -4,11 +4,12 @@ import PathConstants from '../constant/PathConstants'
 import HistoryService from '../service/history/HistoryService'
 import Login from './login'
 import Menu from './menu'
+import Learn from './learn'
 
 const Main: React.FC = () => {
 	return (
 		<Router history={HistoryService}>
-			<nav>
+			<nav style={{ display: 'block' }}>
 				<ul>
 					<li>
 						<Link to={PathConstants.LOGIN}>LOGIN</Link>
@@ -27,7 +28,7 @@ const Main: React.FC = () => {
 			<Switch>
 				<Route exact path={PathConstants.LOGIN} component={Login} />
 				<Route exact path={PathConstants.MENU} component={Menu} />
-				<Route path={PathConstants.LEARN} component={() => <></>} />
+				<Route path={PathConstants.LEARN} component={Learn} />
 				<Route path={`${PathConstants.LESSON}`} component={() => <></>} />
 				<Route
 					path={`${PathConstants.LESSON}/:id`}
