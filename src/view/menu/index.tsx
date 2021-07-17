@@ -1,6 +1,5 @@
 import React from 'react'
 import './styles.css'
-import { makeStyles } from '@material-ui/core/styles'
 import menuCards from '../../constant/data/menuCards'
 import CapiCard from '../../component/card'
 

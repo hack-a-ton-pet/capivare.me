@@ -12,8 +12,9 @@ const CapiLogo: React.FC<CapiLogoProps> = ({ width, className }) => {
 	return (
 		<img
 			src={CapiImg}
+			alt={'Logo Capivare.me: Ilustração de capivara sorrindo'}
 			style={{
-				width: width ?? DEFAULT_WIDTH,
+				width: width || DEFAULT_WIDTH,
 			}}
 			className={className}
 		/>
