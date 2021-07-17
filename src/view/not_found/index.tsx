@@ -4,6 +4,7 @@ import { useHistory } from 'react-router-dom'
 import CapiButton from '../../component/button'
 import CapiLogo from '../../component/capi_logo'
 import PathConstants from '../../constant/PathConstants'
+import { NOT_FOUND, RETURN_TO_MENU } from '../../constant/data/NotFound'
 import './styles.css'
 
 const NotFound: React.FC = () => {
@@ -15,8 +16,8 @@ const NotFound: React.FC = () => {
 
 	return (
 		<div className='not_found'>
-			<h1 className='default_font'>NOT FOUND</h1>
-			<CapiButton text='Voltar para o menu' onClick={handleBackButton} />
+			<h1 className='default_font'>{NOT_FOUND}</h1>
+			<CapiButton text={RETURN_TO_MENU} onClick={handleBackButton} />
 			<Box m={6} />
 			<CapiLogo className='not_found__logo' width={'280px'} />
 		</div>

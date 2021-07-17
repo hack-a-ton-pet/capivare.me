@@ -9,6 +9,10 @@
 	background-color: var(--primary-lighter-color);
 }
 
+.not_found h1 {
+	text-align: center;
+}
+
 .not_found .default_font {
 	font-weight: bold;
 	font-size: 55px;
