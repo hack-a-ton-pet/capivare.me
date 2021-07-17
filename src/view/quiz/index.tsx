@@ -1,37 +1,49 @@
 import React, { useState } from 'react'
 import CapiQuestionCard from '../../component/question_card'
-import CapiQuestionStatusCircle from '../../component/question_status_circle'
 import CapiAnswerButton from '../../component/answer_button'
 import './styles.css'
 import QuizItem, { Answer } from '../../type/quiz/QuizItem'
 import StatePowerLessons from '../../constant/data/LearnPath'
 import SwipeableViews from 'react-swipeable-views'
+import CapiStepperQuestions from '../../component/stepper_questions'
+import {
+	CapiQuestionStatusCircleProps,
+	StatusType,
+} from '../../component/question_status_circle'
 
 const Quiz: React.FC = () => {
-	const [index, setIndex] = useState(0)
+	const [itemIndex, setItemIndex] = useState(0)
 	const [clickedId, setClickedId] = useState<number>()
 	const [correct, setCorrect] = useState<boolean>()
 
 	const items = StatePowerLessons[0].lessons[0].quiz.items
 
-	const handleChangeIndex = (index: number) => {
-		if (index > -1 && index < items.length) setIndex(index)
-	}
+	const [questionStatus, setQuestionStatus] = useState<StatusType[]>(
+		new Array(items.length).fill('not_answered'),
+	)
 
-	const incrementIndex = (inc: number) => {
-		handleChangeIndex(index + inc)
+	const handleChangeIndex = (index: number) => {
+		if (index > -1 && index < items.length) setItemIndex(index)
 	}
 
 	const handleClickAnswer = (item: QuizItem, clickedId: number) => {
 		setClickedId(clickedId)
+		console.log(itemIndex)
 
 		if (item.correctAnswerId === clickedId) {
 			// ganha pontinhos
 			setCorrect(true)
-		} else setCorrect(false)
+			questionStatus[itemIndex] = 'correct'
+		} else {
+			setCorrect(false)
+			questionStatus[itemIndex] = 'incorrect'
+		}
+
+		setQuestionStatus([...questionStatus])
+		console.log(questionStatus)
 
 		setTimeout(() => {
-			incrementIndex(1)
+			handleChangeIndex(itemIndex + 1)
 			setClickedId(undefined)
 		}, 1000)
 	}
@@ -55,18 +67,15 @@ const Quiz: React.FC = () => {
 	return (
 		<div className='quiz'>
 			<div className='quiz_circles'>
-				<CapiQuestionStatusCircle status='correct' />
-				<CapiQuestionStatusCircle status='incorrect' />
-				<CapiQuestionStatusCircle status='current' />
-				<CapiQuestionStatusCircle status='not_answered' />
+				<CapiStepperQuestions questionStatus={questionStatus} />
 			</div>
 			<SwipeableViews
 				disabled={clickedId === undefined}
-				index={index}
+				index={itemIndex}
 				onChangeIndex={handleChangeIndex}
 			>
-				{items.map(e => (
-					<div className='quiz_block'>
+				{items.map((e, index) => (
+					<div className='quiz_block' key={index}>
 						<div className='quiz_question'>
 							<CapiQuestionCard question={e.question} />
 						</div>

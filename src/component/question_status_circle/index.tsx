@@ -7,6 +7,8 @@ export interface CapiQuestionStatusCircleProps {
 	status: 'correct' | 'incorrect' | 'current' | 'not_answered'
 }
 
+export type StatusType = 'correct' | 'incorrect' | 'current' | 'not_answered'
+
 function StatusIcon(props: any) {
 	const status = props.status
 	if (status === 'correct') {
