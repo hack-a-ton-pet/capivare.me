@@ -24,7 +24,7 @@
 }
 
 .lesson_card_wrapper#lesson-1 {
-	background-color: var(--lesson-1-lighter-color);
+	background-color: var(--section-1-lighter-color);
 }
 
 .lesson_card_wrapper#lesson-2 {
