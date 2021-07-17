@@ -9,8 +9,6 @@ import CapiStepper from '../../../component/stepper'
 import GoBackIconButton from '../../../component/icon_button/go_back'
 
 const LessonSection: React.FC = () => {
-	const { id } = useParams<{ id: string }>()
-
 	const [index, setIndex] = useState(0)
 
 	const handleChangeIndex = (index: number) => {
