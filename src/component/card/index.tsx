@@ -9,7 +9,7 @@ import {
 } from '@material-ui/core'
 import PathConstants from '../../constant/PathConstants'
 import HistoryService from '../../service/history/HistoryService'
-import { menuCardProps } from '../../constant/data/menuCards'
+import { menuCardProps } from '../../constant/data/menuCard'
 import './styles.css'
 
 const useStyles = makeStyles({
