@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { useParams } from 'react-router-dom'
 import learnCards from '../../../constant/data/learnCard'
 import ContentCard from '../../../component/content_card'
 import SwipeableViews from 'react-swipeable-views'

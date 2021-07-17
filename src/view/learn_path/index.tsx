@@ -10,6 +10,10 @@ import PathConstants from '../../constant/PathConstants'
 import HistoryService from '../../service/history/HistoryService'
 
 const LearnPath: React.FC = () => {
+	const handleClick = () => {
+		setTimeout(() => HistoryService.push(`${PathConstants.QUIZ}/1`), 200)
+	}
+
 	return (
 		<div className='learn'>
 			<div className='learn_header'>
@@ -32,7 +36,7 @@ const LearnPath: React.FC = () => {
 				<CapiButton
 					className='learn__practice_button'
 					text={PRACTICE_BUTTON}
-					onClick={() => {}}
+					onClick={handleClick}
 				/>
 			</div>
 			<div className='learn__learn_more_wrapper'>

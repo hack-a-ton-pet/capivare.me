@@ -18,7 +18,7 @@ const LearnPathCard: React.FC<SectionCardProps> = ({
 	id,
 }) => {
 	const handleClick = () => {
-		setTimeout(() => HistoryService.replace(PathConstants.LESSON), 200)
+		setTimeout(() => HistoryService.push(PathConstants.LESSON), 200)
 	}
 
 	return (
