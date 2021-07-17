@@ -17,3 +17,9 @@
 .MuiCircularProgress-determinate#lesson-4 {
 	color: var(--lesson-4-color);
 }
+
+.capi_circular_progress .MuiTypography-caption {
+	font-family: Poppins;
+	font-weight: bold;
+	color: var(--dark-color);
+}

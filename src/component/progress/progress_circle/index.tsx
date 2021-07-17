@@ -7,10 +7,17 @@ import Box from '@material-ui/core/Box'
 import './styles.css'
 
 const CapiCircularProgress = (
-	props: CircularProgressProps & { value: number },
+	props: CircularProgressProps & {
+		value: number
+		fontSize?: string
+	},
 ) => {
 	return (
-		<Box position='relative' display='inline-flex'>
+		<Box
+			position='relative'
+			display='inline-flex'
+			className='capi_circular_progress'
+		>
 			<CircularProgress variant='determinate' {...props} color='inherit' />
 			<Box
 				top={0}
@@ -26,6 +33,9 @@ const CapiCircularProgress = (
 					variant='caption'
 					component='div'
 					color='textSecondary'
+					style={{
+						fontSize: props.fontSize,
+					}}
 				>{`${Math.round(props.value)}%`}</Typography>
 			</Box>
 		</Box>
