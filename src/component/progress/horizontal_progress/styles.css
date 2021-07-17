@@ -1,0 +1,21 @@
+.capi_horizontal_progress_wrapper {
+	position: relative;
+	height: 32px;
+	width: 328px;
+	border-radius: 20px;
+	background: var(--secondary-details-color);
+	box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.capi_horizontal_progress_bar {
+	display: block;
+	height: 100%;
+	border-top-right-radius: 20px;
+	border-bottom-right-radius: 20px;
+	border-top-left-radius: 20px;
+	border-bottom-left-radius: 20px;
+	background-color: var(--secondary-color);
+	box-shadow: inset 2px 2px 2px #fafafa4d;
+	position: relative;
+	overflow: hidden;
+}
