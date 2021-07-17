@@ -5,10 +5,10 @@ import SwipeableViews from 'react-swipeable-views'
 import ArrowNextIconButton from '../../../component/icon_button/arrow_next'
 import CapiStepper from '../../../component/stepper'
 import GoBackIconButton from '../../../component/icon_button/go_back'
-import './styles.css'
 import LearnPathCard from '../../../component/learn_path_card'
 import HistoryService from '../../../service/history/HistoryService'
 import PathConstants from '../../../constant/PathConstants'
+import './styles.css'
 
 const LessonSection: React.FC = () => {
 	const [index, setIndex] = useState(0)

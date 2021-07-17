@@ -2,6 +2,7 @@
 	width: 100vw;
 	height: 100vh;
 	background-color: var(--primary-lighter-color);
+	overflow: auto;
 }
 
 .learn_header {
@@ -52,11 +53,11 @@
 	margin-top: 16px;
 }
 
-.learn__learn_more_wrapper .default_font {
+.learn__learn_more_wrapper > .default_font {
 	margin-bottom: 16px;
 }
 
-.learn__learn_more_wrapper .default_font {
+.learn__learn_more_wrapper > .default_font {
 	font-size: 24px;
 	font-weight: bold;
 }

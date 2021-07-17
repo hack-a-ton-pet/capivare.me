@@ -7,7 +7,6 @@ import {
 	Typography,
 	makeStyles,
 } from '@material-ui/core'
-import PathConstants from '../../constant/PathConstants'
 import HistoryService from '../../service/history/HistoryService'
 import { menuCardProps } from '../../constant/data/menuCard'
 import './styles.css'
@@ -24,8 +23,8 @@ const useStyles = makeStyles({
 const CapiCard: React.FC<{
 	item: menuCardProps
 }> = ({ item }) => {
-	const handleClick = () => {
-		setTimeout(() => HistoryService.push(PathConstants.LEARN), 200)
+	const handleClick = path => {
+		setTimeout(() => HistoryService.push(path), 200)
 	}
 
 	const classes = useStyles()
@@ -33,7 +32,7 @@ const CapiCard: React.FC<{
 	return (
 		<Card
 			raised
-			onClick={handleClick}
+			onClick={() => handleClick(item.path)}
 			className={classes.root + ' capi_card'}
 		>
 			<CardActionArea>

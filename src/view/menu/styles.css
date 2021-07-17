@@ -2,5 +2,6 @@
 	background-color: #c8ece0;
 	position: absolute;
 	height: fit-content;
-	width: 100%;
+	width: 100vw;
+	height: 100vh;
 }
