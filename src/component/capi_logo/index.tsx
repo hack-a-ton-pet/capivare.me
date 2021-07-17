@@ -1,5 +1,6 @@
 import React from 'react'
 import CapiImg from '../../asset/capi.png'
+import { LOGO_ALT } from '../../constant/data/CapiLogo'
 
 interface CapiLogoProps {
 	width?: string
@@ -12,6 +13,7 @@ const DEFAULT_HEIGHT = '70px'
 const CapiLogo: React.FC<CapiLogoProps> = ({ width, height }) => {
 	return (
 		<img
+			alt={LOGO_ALT}
 			src={CapiImg}
 			style={{
 				width: width ?? DEFAULT_WIDTH,
