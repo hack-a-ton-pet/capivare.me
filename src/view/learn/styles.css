@@ -1,0 +1,39 @@
+.learn {
+	width: 100vw;
+	height: 100vh;
+	background-color: var(--primary-lighter-color);
+}
+
+.learn_header {
+	display: flex;
+	flex-direction: row;
+}
+
+.learn_header__start {
+	display: flex;
+	justify-content: flex-start;
+	width: 50%;
+}
+
+.learn_header__end {
+	display: flex;
+	justify-content: flex-end;
+	width: 50%;
+}
+
+.learn__practice_button__wrapper {
+	margin-top: 16px;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+.learn__practice_button {
+	width: 90%;
+}
+
+.learn__practice_button .MuiButton-contained {
+	width: 100%;
+	padding: 16px 8px;
+	border-radius: var(--small-border-radius);
+}

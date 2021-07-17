@@ -5,11 +5,16 @@ import './styles.css'
 export interface CapiButtonProps {
 	text: string
 	onClick: () => void
+	className?: string
 }
 
-const CapiButton: React.FC<CapiButtonProps> = ({ text, onClick }) => {
+const CapiButton: React.FC<CapiButtonProps> = ({
+	text,
+	onClick,
+	className,
+}) => {
 	return (
-		<div className='text_button'>
+		<div className={`text_button ${className ?? ''}`}>
 			<Button onClick={onClick} variant='contained'>
 				{text}
 			</Button>
