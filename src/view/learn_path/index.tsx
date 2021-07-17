@@ -4,7 +4,7 @@ import GoBackIconButton from '../../component/icon_button/go_back'
 import ArrowNextIconButton from '../../component/icon_button/arrow_next'
 import CloseIconButton from '../../component/icon_button/close'
 
-const Learn: React.FC = () => {
+const LearnPath: React.FC = () => {
 	return (
 		<div>
 			<CapiButton text={'Ola'} onClick={() => {}} />
@@ -15,4 +15,4 @@ const Learn: React.FC = () => {
 	)
 }
 
-export default Learn
+export default LearnPath

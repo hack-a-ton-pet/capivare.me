@@ -4,11 +4,10 @@ import PathConstants from '../constant/PathConstants'
 import HistoryService from '../service/history/HistoryService'
 import Login from './login'
 import Menu from './menu'
-import Learn from './learn'
+import LearnPath from './learn_path'
 import NotFound from './not_found'
 import Lesson from './lesson'
 import LessonSection from './lesson/lesson_section'
-import GoBackIconButton from '../component/icon_button/go_back'
 
 const Main: React.FC = () => {
 	return (
@@ -38,7 +37,7 @@ const Main: React.FC = () => {
 			<Switch>
 				<Route exact path={PathConstants.LOGIN} component={Login} />
 				<Route exact path={PathConstants.MENU} component={Menu} />
-				<Route path={PathConstants.LEARN} component={Learn} />
+				<Route path={PathConstants.LEARN} component={LearnPath} />
 				<Route exact path={PathConstants.LESSON} component={Lesson} />
 				<Route
 					path={`${PathConstants.LESSON}/:id`}
