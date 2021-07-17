@@ -1,9 +1,9 @@
-import { Menu } from '@material-ui/core'
 import React from 'react'
 import { Router, Link, Switch, Route } from 'react-router-dom'
 import PathConstants from '../constant/PathConstants'
 import HistoryService from '../service/history/HistoryService'
 import Login from './login'
+import Menu from './menu'
 
 const Main: React.FC = () => {
 	return (
