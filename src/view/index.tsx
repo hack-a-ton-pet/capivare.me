@@ -12,7 +12,7 @@ import LessonSection from './lesson/lesson_section'
 const Main: React.FC = () => {
 	return (
 		<Router history={HistoryService}>
-			<nav style={{ display: 'block' }}>
+			{/* <nav>
 				<ul>
 					<li>
 						<Link to={PathConstants.LOGIN}>LOGIN</Link>
@@ -33,12 +33,12 @@ const Main: React.FC = () => {
 						<Link to={PathConstants.QUIZ}>QUIZ</Link>
 					</li>
 				</ul>
-			</nav>
+			</nav> */}
 			<Switch>
 				<Route exact path={PathConstants.LOGIN} component={Login} />
 				<Route exact path={PathConstants.MENU} component={Menu} />
 				<Route path={PathConstants.LEARN} component={Learn} />
-				<Route path={`${PathConstants.LESSON}`} component={Lesson} />
+				<Route exact path={PathConstants.LESSON} component={Lesson} />
 				<Route
 					path={`${PathConstants.LESSON}/:id`}
 					component={LessonSection}
