@@ -1,6 +1,6 @@
 .login {
-  background-color: #21B583;
-  position: absolute;
-	height: calc(100% - 3.75rem);
+	background-color: #21b583;
+	position: absolute;
+	height: 100%;
 	width: 100%;
 }

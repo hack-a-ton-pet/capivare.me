@@ -1,9 +1,15 @@
-import React from "react"
-import "./styles.css"
-import { makeStyles } from "@material-ui/core/styles"
-import { Card, CardActionArea, CardMedia, CardContent, Typography } from "@material-ui/core"
-import PathConstants from "../../constant/PathConstants"
-import HistoryService from "../../service/history/HistoryService"
+import React from 'react'
+import './styles.css'
+import { makeStyles } from '@material-ui/core/styles'
+import {
+	Card,
+	CardActionArea,
+	CardMedia,
+	CardContent,
+	Typography,
+} from '@material-ui/core'
+import PathConstants from '../../constant/PathConstants'
+import HistoryService from '../../service/history/HistoryService'
 
 const useStyles = makeStyles({
 	root: {
@@ -14,30 +20,35 @@ const useStyles = makeStyles({
 	},
 })
 
+const handleClick = () => {
+	setTimeout(() => HistoryService.replace(PathConstants.LEARN), 200)
+}
+
 const Menu = () => {
 	const classes = useStyles()
 
 	return (
-		<div className="menu">
+		<div className='menu'>
 			<h4>Menu</h4>
 			{[1, 2, 3].map((e, index) => {
 				return (
 					<Card
-						onClick={() => HistoryService.replace(PathConstants.LEARN)}
 						raised
-						className={classes.root + " card"}
+						onClick={handleClick}
+						className={classes.root + ' card'}
 						key={index}
 					>
 						<CardActionArea>
 							<CardMedia
-								className={classes.media + " card__media"}
-								image="julgue.png"
-								title="Contemplative Reptile"
+								className={classes.media + ' card__media'}
+								image='julgue.png'
+								title='Contemplative Reptile'
 							/>
 							<CardContent>
-								<Typography color="textPrimary" component="p">
-									Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across
-									all continents except Antarctica
+								<Typography color='textPrimary' component='p'>
+									Lizards are a widespread group of squamate reptiles,
+									with over 6,000 species, ranging across all
+									continents except Antarctica
 								</Typography>
 							</CardContent>
 						</CardActionArea>
