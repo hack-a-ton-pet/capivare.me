@@ -1,5 +1,5 @@
 import React from 'react'
-import CapiInput from './component/input'
+import Main from './view'
 import './App.css'
 import './Color.css'
 import './Var.css'
@@ -7,7 +7,7 @@ import './Var.css'
 const App: React.FC = () => {
 	return (
 		<div className='app'>
-			<CapiInput />
+			<Main />
 		</div>
 	)
 }

@@ -19,3 +19,7 @@
 	border-color: transparent;
 	padding-left: 16px;
 }
+
+.capi_input__field.default_font {
+	color: var(--dark-color);
+}
