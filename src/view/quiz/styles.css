@@ -10,6 +10,10 @@
 	padding-top: 65px;
 }
 
+.quiz .quiz_block {
+	display: inline-block;
+}
+
 .quiz_circles {
 	width: fit-content;
 	height: fit-content;
@@ -28,8 +32,9 @@
 }
 
 .quiz_question .question_card {
-	height: 80px;
+	height: fit-content;
 	font-size: 8px;
+	margin: auto;
 }
 
 .quiz_answers {
@@ -40,7 +45,7 @@
 .quiz_answers .answer_button Button {
 	margin: 10px;
 	padding: 3px;
-	font-size: 12px;
+	font-size: 13px;
 	text-transform: none;
 	text-align: justify;
 }

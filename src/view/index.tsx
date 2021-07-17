@@ -8,6 +8,7 @@ import LearnPath from './learn_path'
 import NotFound from './not_found'
 import Lesson from './lesson'
 import LessonSection from './lesson/lesson_section'
+import Quiz from './quiz'
 
 const Main: React.FC = () => {
 	return (
@@ -21,8 +22,7 @@ const Main: React.FC = () => {
 					path={`${PathConstants.LESSON}/:id`}
 					component={LessonSection}
 				/>
-				<Route exact path={PathConstants.QUIZ} component={() => <></>} />
-				<Route path={`${PathConstants.QUIZ}/:id`} component={() => <></>} />
+				<Route path={`${PathConstants.QUIZ}/:id`} component={Quiz} />
 				<Route path={'/'} component={NotFound} />
 			</Switch>
 		</Router>
