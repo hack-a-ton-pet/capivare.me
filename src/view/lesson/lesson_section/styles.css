@@ -1,6 +1,6 @@
 .lesson_section {
 	height: inherit;
-	background-color: var(--section-1-color);
+	background-color: var(--primary-lighter-color);
 	height: 100%;
 	width: 100%;
 	overflow-y: scroll;
@@ -8,6 +8,20 @@
 }
 .lesson_section .MuiCard-root.content_card {
 	margin: 12px 24px 24px;
+}
+.lesson_section .learn_path_card {
+	margin: 50% 32px;
+}
+.lesson_section .learn_path_card .button_wrapper {
+	justify-content: center;
+}
+
+.lesson_section .learn_path_card p {
+	margin: 1em 0;
+}
+
+.lesson_section .learn_path_card .text_button .MuiButton-contained {
+	background-color: var(--secondary-color);
 }
 
 .lesson_section .arrow_next__icon_button {

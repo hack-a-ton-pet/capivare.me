@@ -10,8 +10,8 @@ import PathConstants from '../../constant/PathConstants'
 import HistoryService from '../../service/history/HistoryService'
 
 const LearnPath: React.FC = () => {
-	const handleClick = () => {
-		setTimeout(() => HistoryService.push(`${PathConstants.QUIZ}/1`), 200)
+	const handleClick = (path: string) => {
+		setTimeout(() => HistoryService.push(path), 200)
 	}
 
 	return (
@@ -36,7 +36,7 @@ const LearnPath: React.FC = () => {
 				<CapiButton
 					className='learn__practice_button'
 					text={PRACTICE_BUTTON}
-					onClick={handleClick}
+					onClick={() => handleClick(`${PathConstants.QUIZ}/1`)}
 				/>
 			</div>
 			<div className='learn__learn_more_wrapper'>
@@ -46,6 +46,7 @@ const LearnPath: React.FC = () => {
 					buttonText='Continue'
 					title='Tripartição de poderes'
 					id='section1'
+					onClick={() => handleClick(PathConstants.LESSON)}
 				/>
 			</div>
 		</div>

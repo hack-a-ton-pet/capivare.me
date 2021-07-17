@@ -21,6 +21,7 @@ const Main: React.FC = () => {
 					path={`${PathConstants.LESSON}/:id`}
 					component={LessonSection}
 				/>
+				<Route exact path={PathConstants.QUIZ} component={() => <></>} />
 				<Route path={`${PathConstants.QUIZ}/:id`} component={() => <></>} />
 				<Route path={'/'} component={NotFound} />
 			</Switch>
