@@ -1,0 +1,25 @@
+.capi_input {
+	display: flex;
+	flex-direction: column;
+}
+
+.capi_input .default_font {
+	font-weight: bold;
+	font-size: 20px;
+	color: var(--light-color);
+	margin-bottom: 16px;
+}
+
+.capi_input__field {
+	background: var(--primary-lighter-color);
+	box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+	border-radius: var(--big-border-radius);
+	width: 263px;
+	height: 35px;
+	border-color: transparent;
+	padding-left: 16px;
+}
+
+.capi_input__field.default_font {
+	color: var(--dark-color);
+}
