@@ -1,3 +1,4 @@
+import { Button } from '@material-ui/core'
 import React from 'react'
 import CapiButton from '../button'
 import './styles.css'
@@ -18,13 +19,13 @@ const LearnPathCard: React.FC<SectionCardProps> = ({
 	onClick,
 }) => {
 	return (
-		<div id={id} className='section_card'>
+		<Button id={id} className='section_card'>
 			<h1>{title}</h1>
 			<p>{description}</p>
 			<div className='button_wrapper'>
 				<CapiButton text={buttonText} onClick={onClick} />
 			</div>
-		</div>
+		</Button>
 	)
 }
 
