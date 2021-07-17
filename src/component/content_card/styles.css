@@ -1,6 +1,5 @@
 .content_card.MuiPaper-root {
-	max-width: 285px;
-	/* height: 492px; */
+	max-width: 485px;
 	padding: 16px 24px 60px;
 	text-align: justify;
 	background-color: var(--purple);
