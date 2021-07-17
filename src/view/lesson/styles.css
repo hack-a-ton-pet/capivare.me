@@ -15,7 +15,12 @@
 	height: 50px;
 }
 
-.lesson_menu .lesson_card_wrapper {
-	height: 40px;
-	width: 280px;
+.learn_menu_cards {
+	height: 450px;
+	width: fit-content;
+	text-align: center;
+	justify-content: space-evenly;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }

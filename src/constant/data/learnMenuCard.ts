@@ -9,25 +9,25 @@ export interface learnMenuCardProps {
 
 const learnMenuCards: learnMenuCardProps[] = [
 	{
-		id: '1',
+		id: 'section-1',
 		status: 'blocked',
 		path: PathConstants.LESSON,
 		text: 'Lição 1',
 	},
 	{
-		id: '2',
+		id: 'section-1',
 		status: 'done',
 		path: PathConstants.LESSON,
 		text: 'Lição 2',
 	},
 	{
-		id: '3',
+		id: 'section-1',
 		status: 'open',
 		path: PathConstants.LESSON,
 		text: 'Lição 3',
 	},
 	{
-		id: '4',
+		id: 'section-1',
 		status: 'blocked',
 		path: PathConstants.LESSON,
 		text: 'Lição 4',

@@ -12,14 +12,16 @@ const Lesson: React.FC = () => {
 		<div className='lesson_menu'>
 			<ArrowDownIconButton color='primary' />
 			<CapiHorizontalProgress percentage={0} />
-			{learnMenuCards.map((e, index) => (
-				<CapiLessonCardButton
-					text={e.text}
-					status={e.status}
-					id={e.id}
-					onClick={() => HistoryService.replace(e.path)}
-				/>
-			))}
+			<div className='learn_menu_cards'>
+				{learnMenuCards.map((e, index) => (
+					<CapiLessonCardButton
+						text={e.text}
+						status={e.status}
+						id={e.id}
+						onClick={() => HistoryService.replace(e.path)}
+					/>
+				))}
+			</div>
 		</div>
 	)
 }
