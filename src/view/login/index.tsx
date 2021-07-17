@@ -77,6 +77,7 @@ const Login: React.FC = () => {
 				<Box m={2} />
 				<CapiButton onClick={handleLogin} text='Entrar' submit />
 			</form>
+			<Box m={1} />
 			<p className='login__without_account default_font'>
 				Não tem cadastro?
 				<RegisterHere onRegister={handleRegister} />

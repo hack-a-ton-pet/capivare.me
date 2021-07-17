@@ -1,4 +1,3 @@
-import { NOT_FOUND } from './NotFound'
 import PathConstants from '../PathConstants'
 
 export interface menuCardProps {
