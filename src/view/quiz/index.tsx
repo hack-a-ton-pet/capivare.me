@@ -3,8 +3,13 @@ import CapiQuestionCard from '../../component/question_card'
 import CapiQuestionStatusCircle from '../../component/question_status_circle'
 import CapiAnswerButton from '../../component/answer_button'
 import './styles.css'
+import QuizItem from '../../type/quiz/QuizItem'
 
-const Quiz: React.FC = () => {
+interface QuizProps {
+	quizItem: QuizItem
+}
+
+const Quiz: React.FC<QuizProps> = ({ quizItem }) => {
 	return (
 		<div className='quiz'>
 			<div className='quiz_circles'>
@@ -14,25 +19,18 @@ const Quiz: React.FC = () => {
 				<CapiQuestionStatusCircle status='not_answered' />
 			</div>
 			<div className='quiz_question'>
-				<CapiQuestionCard question='Qual destes é um dos objetivos da Separação dos Poderes?' />
+				<CapiQuestionCard question={quizItem.question} />
 			</div>
 			<div className='quiz_answers'>
-				<CapiAnswerButton
-					text='Evitar a centralização das responsabilidades em um única pessoa, ou grupo de pessoas'
-					onClick={() => {}}
-				/>
-				<CapiAnswerButton
-					text='Garantir que os poderes fiquem concentrados em um pequeno grupo de pessoas'
-					onClick={() => {}}
-				/>
-				<CapiAnswerButton
-					text='Facilitar a organização dos políticos em cada construção governamental'
-					onClick={() => {}}
-				/>
-				<CapiAnswerButton
-					text='Os poderes não são separados atualmente'
-					onClick={() => {}}
-				/>
+				{quizItem.anwers.map((e, index) => {
+					return (
+						<CapiAnswerButton
+							key={index}
+							text={e.text}
+							onClick={() => {}}
+						/>
+					)
+				})}
 			</div>
 		</div>
 	)
