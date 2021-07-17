@@ -13,7 +13,8 @@
 	text-transform: none;
 	letter-spacing: -0.017em;
 	width: 144px;
-	height: 46px;
+	padding-top: 4px;
+	padding-bottom: 4px;
 }
 
 .text_button .MuiButton-contained:hover {
