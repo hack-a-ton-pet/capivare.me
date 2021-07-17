@@ -1,12 +1,17 @@
 import React from 'react'
 import CapiIconButton from '..'
-import { ReactComponent as ProfileIcon } from '../../../asset/profile.svg'
+import PersonIcon from '@material-ui/icons/Person'
 import CapiIconButtonProps from '../props'
+import './styles.css'
 
 const ProfileIconButton: React.FC<CapiIconButtonProps> = props => {
 	return (
-		<CapiIconButton aria-label='Próximo' {...props}>
-			<ProfileIcon />
+		<CapiIconButton
+			className='profile__icon_button'
+			aria-label='Usuário'
+			{...props}
+		>
+			<PersonIcon />
 		</CapiIconButton>
 	)
 }

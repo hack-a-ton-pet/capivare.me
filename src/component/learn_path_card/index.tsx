@@ -1,5 +1,6 @@
-import { Button } from '@material-ui/core'
 import React from 'react'
+import PathConstants from '../../constant/PathConstants'
+import HistoryService from '../../service/history/HistoryService'
 import CapiButton from '../button'
 import './styles.css'
 
@@ -8,7 +9,6 @@ export interface SectionCardProps {
 	description: string
 	buttonText: string
 	id: string
-	onClick: () => void
 }
 
 const LearnPathCard: React.FC<SectionCardProps> = ({
@@ -16,16 +16,19 @@ const LearnPathCard: React.FC<SectionCardProps> = ({
 	description,
 	buttonText,
 	id,
-	onClick,
 }) => {
+	const handleClick = () => {
+		setTimeout(() => HistoryService.push(PathConstants.LESSON), 200)
+	}
+
 	return (
-		<Button id={id} className='section_card'>
+		<div id={id} className='section_card'>
 			<h1>{title}</h1>
 			<p>{description}</p>
 			<div className='button_wrapper'>
-				<CapiButton text={buttonText} onClick={onClick} />
+				<CapiButton text={buttonText} onClick={handleClick} />
 			</div>
-		</Button>
+		</div>
 	)
 }
 

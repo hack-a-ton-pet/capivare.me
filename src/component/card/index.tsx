@@ -23,7 +23,7 @@ const useStyles = makeStyles({
 
 const CapiCard: React.FC<menuCardProps> = ({ image, text, title, small }) => {
 	const handleClick = () => {
-		setTimeout(() => HistoryService.replace(PathConstants.LEARN), 200)
+		setTimeout(() => HistoryService.push(PathConstants.LEARN), 200)
 	}
 
 	const classes = useStyles()
