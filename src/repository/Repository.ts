@@ -1,5 +1,5 @@
-import Entity from '../type/Entity'
-import Table from '../type/Table'
+import Entity from '../type/entity/Entity'
+import Table from '../type/entity/Table'
 
 export default abstract class Repository<ENTITY extends Entity> {
 	protected table: Table<ENTITY>
