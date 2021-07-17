@@ -6,6 +6,8 @@ import Login from './login'
 import Menu from './menu'
 import Learn from './learn'
 import NotFound from './not_found'
+import Lesson from './lesson'
+import LessonSection from './lesson/lesson_section'
 
 const Main: React.FC = () => {
 	return (
@@ -22,6 +24,12 @@ const Main: React.FC = () => {
 						<Link to={PathConstants.LEARN}>LEARN</Link>
 					</li>
 					<li>
+						<Link to={PathConstants.LESSON}>LESSON</Link>
+					</li>
+					<li>
+						<Link to={`${PathConstants.LESSON}/1`}>LESSON 1</Link>
+					</li>
+					<li>
 						<Link to={PathConstants.QUIZ}>QUIZ</Link>
 					</li>
 				</ul>
@@ -30,10 +38,10 @@ const Main: React.FC = () => {
 				<Route exact path={PathConstants.LOGIN} component={Login} />
 				<Route exact path={PathConstants.MENU} component={Menu} />
 				<Route path={PathConstants.LEARN} component={Learn} />
-				<Route path={`${PathConstants.LESSON}`} component={() => <></>} />
+				<Route path={`${PathConstants.LESSON}`} component={Lesson} />
 				<Route
 					path={`${PathConstants.LESSON}/:id`}
-					component={() => <></>}
+					component={LessonSection}
 				/>
 				<Route path={`${PathConstants.QUIZ}/:id`} component={() => <></>} />
 				<Route path={'/'} component={NotFound} />
