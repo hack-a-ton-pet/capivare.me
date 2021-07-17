@@ -5,6 +5,7 @@ import HistoryService from '../service/history/HistoryService'
 import Login from './login'
 import Menu from './menu'
 import Learn from './learn'
+import NotFound from './not_found'
 
 const Main: React.FC = () => {
 	return (
@@ -35,7 +36,7 @@ const Main: React.FC = () => {
 					component={() => <></>}
 				/>
 				<Route path={`${PathConstants.QUIZ}/:id`} component={() => <></>} />
-				<Route path={'/'} component={() => <></>} />
+				<Route path={'/'} component={NotFound} />
 			</Switch>
 		</Router>
 	)
