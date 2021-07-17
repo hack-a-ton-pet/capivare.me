@@ -1,0 +1,63 @@
+.learn {
+	width: 100vw;
+	height: 100vh;
+	background-color: var(--primary-lighter-color);
+	overflow: auto;
+}
+
+.learn_header {
+	display: flex;
+	flex-direction: row;
+}
+
+.learn_header__start {
+	display: flex;
+	justify-content: flex-start;
+	width: 50%;
+}
+
+.learn_header__end {
+	display: flex;
+	justify-content: flex-end;
+	width: 50%;
+}
+
+.learn__practice_button__wrapper {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	margin-top: 32px;
+	margin-bottom: 32px;
+}
+
+.learn__practice_button {
+	width: 90%;
+}
+
+.learn__practice_button .MuiButton-contained {
+	width: 100%;
+	padding: 16px 8px;
+	border-radius: var(--small-border-radius);
+}
+
+.learn__progress_status_wrapper {
+	padding-left: 16px;
+	padding-right: 16px;
+	margin-top: 16px;
+	margin-bottom: 16px;
+}
+
+.learn__learn_more_wrapper {
+	padding-left: 16px;
+	padding-right: 16px;
+	margin-top: 16px;
+}
+
+.learn__learn_more_wrapper > .default_font {
+	margin-bottom: 16px;
+}
+
+.learn__learn_more_wrapper > .default_font {
+	font-size: 24px;
+	font-weight: bold;
+}

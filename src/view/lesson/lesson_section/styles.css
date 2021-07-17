@@ -7,7 +7,21 @@
 	position: absolute;
 }
 .lesson_section .MuiCard-root.content_card {
-	margin: 24px 0 32px 16px;
+	margin: 12px 24px 24px;
+}
+.lesson_section .learn_path_card {
+	margin: 50% 32px;
+}
+.lesson_section .learn_path_card .button_wrapper {
+	justify-content: center;
+}
+
+.lesson_section .learn_path_card p {
+	margin: 1em 0;
+}
+
+.lesson_section .learn_path_card .text_button .MuiButton-contained {
+	background-color: var(--secondary-color);
 }
 
 .lesson_section .arrow_next__icon_button {

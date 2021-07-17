@@ -6,9 +6,15 @@ export interface CapiButtonProps {
 	text: string
 	onClick: () => void
 	submit?: boolean
+	className?: string
 }
 
-const CapiButton: React.FC<CapiButtonProps> = ({ text, onClick, submit }) => {
+const CapiButton: React.FC<CapiButtonProps> = ({
+	text,
+	onClick,
+	submit,
+	className,
+}) => {
 	const handleClick = (
 		event: React.MouseEvent<HTMLButtonElement, MouseEvent>,
 	) => {

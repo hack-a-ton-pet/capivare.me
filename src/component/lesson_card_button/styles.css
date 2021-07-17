@@ -1,9 +1,10 @@
 .lesson_card_wrapper {
 	font-size: 22px;
 	font-weight: 600;
+	height: auto;
 	width: 328px;
 	border-radius: 10px;
-	padding: 24px 13px;
+	padding: 18px 13px;
 	align-items: center;
 	display: grid;
 	grid-template-columns: 28px 1fr 120px;
@@ -23,8 +24,8 @@
 	opacity: 0.7;
 }
 
-.lesson_card_wrapper#lesson-1 {
-	background-color: var(--lesson-1-lighter-color);
+.lesson_card_wrapper#section-1 {
+	background-color: var(--section-1-lighter-color);
 }
 
 .lesson_card_wrapper#lesson-2 {

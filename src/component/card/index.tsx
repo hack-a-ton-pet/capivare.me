@@ -7,7 +7,6 @@ import {
 	Typography,
 	makeStyles,
 } from '@material-ui/core'
-import PathConstants from '../../constant/PathConstants'
 import HistoryService from '../../service/history/HistoryService'
 import { menuCardProps } from '../../constant/data/menuCard'
 import './styles.css'
@@ -21,9 +20,11 @@ const useStyles = makeStyles({
 	},
 })
 
-const CapiCard: React.FC<menuCardProps> = ({ image, text, title, small }) => {
-	const handleClick = () => {
-		setTimeout(() => HistoryService.replace(PathConstants.LEARN), 200)
+const CapiCard: React.FC<{
+	item: menuCardProps
+}> = ({ item }) => {
+	const handleClick = path => {
+		setTimeout(() => HistoryService.push(path), 200)
 	}
 
 	const classes = useStyles()
@@ -31,20 +32,20 @@ const CapiCard: React.FC<menuCardProps> = ({ image, text, title, small }) => {
 	return (
 		<Card
 			raised
-			onClick={handleClick}
+			onClick={() => handleClick(item.path)}
 			className={classes.root + ' capi_card'}
 		>
 			<CardActionArea>
 				<CardMedia
 					className={classes.media + ' capi_card__media'}
-					image={image}
-					title={title}
+					image={item.image}
+					title={item.title}
 				>
-					<CardMediaTitle small={small}>{title}</CardMediaTitle>
+					<CardMediaTitle small={item.small}>{item.title}</CardMediaTitle>
 				</CardMedia>
 				<CardContent>
 					<Typography color='textPrimary' component='p'>
-						{text}
+						{item.text}
 					</Typography>
 				</CardContent>
 			</CardActionArea>
