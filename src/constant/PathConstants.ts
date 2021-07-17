@@ -1,6 +1,7 @@
 class PathConstants {
 	ROOT = 'localhost:3000'
 	LOGIN = `/`
+	REGISTER = `/register`
 	MENU = `/menu`
 	LEARN = `/learn`
 	LESSON = `/lesson`

@@ -1,11 +1,10 @@
 import React from 'react'
-import GoBackIconButton from '../../component/icon_button/go_back'
-import './styles.css'
 import ArrowDownIconButton from '../../component/icon_button/arrow_down'
 import CapiHorizontalProgress from '../../component/progress/horizontal_progress'
 import CapiLessonCardButton from '../../component/lesson_card_button'
 import learnMenuCards from '../../constant/data/learnMenuCard'
 import HistoryService from '../../service/history/HistoryService'
+import './styles.css'
 
 const Lesson: React.FC = () => {
 	return (
