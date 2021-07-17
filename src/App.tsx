@@ -4,11 +4,13 @@ import './App.css'
 import './Color.css'
 import './Var.css'
 import CapiQuestionCard from './component/question_card'
+import QuestionStatusCircle from './component/question_status_circle'
+import QuestionStatusConstants from './constant/QuestionStatusConstants'
 
 const App: React.FC = () => {
 	return (
 		<div className='app'>
-			<CapiQuestionCard />
+			<QuestionStatusCircle status={QuestionStatusConstants.CORRECT} />
 		</div>
 	)
 }

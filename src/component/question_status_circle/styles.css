@@ -1,0 +1,17 @@
+.question_status_circle {
+	width: 21px;
+	height: 21px;
+	border-radius: 50%;
+}
+
+.status_correct {
+}
+
+.status_incorrect {
+}
+
+.status_current {
+}
+
+.status_not_answered {
+}
