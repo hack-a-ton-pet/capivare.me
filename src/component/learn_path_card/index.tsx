@@ -21,7 +21,7 @@ const LearnPathCard: React.FC<SectionCardProps> = ({
 	return (
 		<Button id={id} className='section_card'>
 			<h1>{title}</h1>
-			<p>{description}</p>
+			<p className='default_font'>{description}</p>
 			<div className='button_wrapper'>
 				<CapiButton text={buttonText} onClick={onClick} />
 			</div>
