@@ -10,15 +10,7 @@ const Menu = () => {
 			<GoBackIconButton />
 			<h4>Menu</h4>
 			{menuCards.map((e, index) => {
-				return (
-					<CapiCard
-						key={index}
-						image={e.image}
-						text={e.text}
-						title={e.title}
-						small={e.small}
-					/>
-				)
+				return <CapiCard key={index} item={e} />
 			})}
 		</div>
 	)

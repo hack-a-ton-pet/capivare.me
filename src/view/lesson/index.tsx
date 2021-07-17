@@ -18,7 +18,7 @@ const Lesson: React.FC = () => {
 						text={e.text}
 						status={e.status}
 						id={e.id}
-						onClick={() => HistoryService.replace(e.path)}
+						onClick={() => HistoryService.push(e.path)}
 					/>
 				))}
 			</div>

@@ -21,7 +21,9 @@ const useStyles = makeStyles({
 	},
 })
 
-const CapiCard: React.FC<menuCardProps> = ({ image, text, title, small }) => {
+const CapiCard: React.FC<{
+	item: menuCardProps
+}> = ({ item }) => {
 	const handleClick = () => {
 		setTimeout(() => HistoryService.push(PathConstants.LEARN), 200)
 	}
@@ -37,14 +39,14 @@ const CapiCard: React.FC<menuCardProps> = ({ image, text, title, small }) => {
 			<CardActionArea>
 				<CardMedia
 					className={classes.media + ' capi_card__media'}
-					image={image}
-					title={title}
+					image={item.image}
+					title={item.title}
 				>
-					<CardMediaTitle small={small}>{title}</CardMediaTitle>
+					<CardMediaTitle small={item.small}>{item.title}</CardMediaTitle>
 				</CardMedia>
 				<CardContent>
 					<Typography color='textPrimary' component='p'>
-						{text}
+						{item.text}
 					</Typography>
 				</CardContent>
 			</CardActionArea>
