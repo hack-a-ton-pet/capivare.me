@@ -3,12 +3,12 @@ import Main from './view'
 import './App.css'
 import './Color.css'
 import './Var.css'
-import CapiQuestionCard from './component/question_card'
+import CapiLogo from './component/capi_logo'
 
 const App: React.FC = () => {
 	return (
 		<div className='app'>
-			<CapiQuestionCard />
+			<CapiLogo />
 		</div>
 	)
 }
