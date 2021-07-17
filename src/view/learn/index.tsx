@@ -1,7 +1,7 @@
 import React from 'react'
 import CapiButton from '../../component/button'
 import GoBackIconButton from '../../component/icon_button/go_back'
-import NextIconButton from '../../component/icon_button/next'
+import ArrowNextIconButton from '../../component/icon_button/arrow_next'
 import CloseIconButton from '../../component/icon_button/close'
 
 const Learn: React.FC = () => {
@@ -9,7 +9,7 @@ const Learn: React.FC = () => {
 		<div>
 			<CapiButton text={'Ola'} onClick={() => {}} />
 			<GoBackIconButton color='primary' />
-			<NextIconButton color='secondary' />
+			<ArrowNextIconButton color='secondary' />
 			<CloseIconButton />
 		</div>
 	)

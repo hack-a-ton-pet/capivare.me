@@ -8,6 +8,7 @@ import Learn from './learn'
 import NotFound from './not_found'
 import Lesson from './lesson'
 import LessonSection from './lesson/lesson_section'
+import GoBackIconButton from '../component/icon_button/go_back'
 
 const Main: React.FC = () => {
 	return (
