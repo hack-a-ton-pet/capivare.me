@@ -7,10 +7,10 @@
 	justify-content: center;
 }
 
-.MuiSvgIcon-root {
-	width: 15px !important;
-	height: 15px !important;
-	fill: #fafafa !important;
+.question_status_circle .MuiSvgIcon-root {
+	width: 15px;
+	height: 15px;
+	fill: #fafafa;
 }
 
 .status_correct {
@@ -25,10 +25,10 @@
 
 .status_current {
 	background-color: var(--secondary-color);
-	box-shadow: inset 0px 8px 7px rgba(255, 255, 255, 255);
+	box-shadow: inset 0px 8px 7px rgb(255 255 255 / 70%);
 }
 
 .status_not_answered {
 	background-color: var(--primary-lighter-color);
-	box-shadow: inset 0px 8px 7px rgba(0, 0, 0, 0.25);
+	box-shadow: inset 0px 4px 14px 0px rgb(30 29 29 / 45%);
 }

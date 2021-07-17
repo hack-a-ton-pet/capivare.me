@@ -3,11 +3,11 @@ import CapiButton from '../../component/button'
 import GoBackIconButton from '../../component/icon_button/go_back'
 import ProfileIconButton from '../../component/icon_button/profile'
 import ProgressStatus from '../../component/progress_status'
-import SectionCard from '../../component/section_card'
+import LearnPathCard from '../../component/learn_path_card'
 import { LEARN_MORE_TITLE, PRACTICE_BUTTON } from '../../constant/data/Learn'
 import './styles.css'
 
-const Learn: React.FC = () => {
+const LearnPath: React.FC = () => {
 	return (
 		<div className='learn'>
 			<div className='learn_header'>
@@ -35,7 +35,7 @@ const Learn: React.FC = () => {
 			</div>
 			<div className='learn__learn_more_wrapper'>
 				<h2 className='default_font'>{LEARN_MORE_TITLE}</h2>
-				<SectionCard
+				<LearnPathCard
 					description='Você sabia que a democracia é dividida em 3 poderes? Legislativo, Executivo e Judiciário'
 					buttonText='Continue'
 					title='Tripartição de poderes'
@@ -47,4 +47,4 @@ const Learn: React.FC = () => {
 	)
 }
 
-export default Learn
+export default LearnPath

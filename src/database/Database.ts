@@ -1,5 +1,5 @@
 import Dexie from 'dexie'
-import Table from '../type/Table'
+import Table from '../type/entity/Table'
 
 const NAME = 'CAPICRACIA'
 const VERSION = 1
