@@ -1,18 +1,17 @@
 import React from 'react'
 import './styles.css'
-import QuestionStatusConstants from '../../constant/QuestionStatusConstants'
 import ClearIcon from '@material-ui/icons/Clear'
 import CheckIcon from '@material-ui/icons/Check'
 
 export interface CapiQuestionStatusCircleProps {
-	status: string
+	status: 'correct' | 'incorrect' | 'current' | 'not_answered'
 }
 
 function StatusIcon(props: any) {
 	const status = props.status
-	if (status === QuestionStatusConstants.CORRECT) {
+	if (status === 'correct') {
 		return <CheckIcon />
-	} else if (status === QuestionStatusConstants.INCORRECT) {
+	} else if (status === 'incorrect') {
 		return <ClearIcon />
 	} else {
 		return <></>
