@@ -3,20 +3,19 @@ import CapiImg from '../../asset/capi.png'
 
 interface CapiLogoProps {
 	width?: string
-	height?: string
+	className?: string
 }
 
 const DEFAULT_WIDTH = '80px'
-const DEFAULT_HEIGHT = '70px'
 
-const CapiLogo: React.FC<CapiLogoProps> = ({ width, height }) => {
+const CapiLogo: React.FC<CapiLogoProps> = ({ width, className }) => {
 	return (
 		<img
 			src={CapiImg}
 			style={{
 				width: width ?? DEFAULT_WIDTH,
-				height: height ?? DEFAULT_HEIGHT,
 			}}
+			className={className}
 		/>
 	)
 }
