@@ -6,6 +6,8 @@ import ProgressStatus from '../../component/progress_status'
 import LearnPathCard from '../../component/learn_path_card'
 import { LEARN_MORE_TITLE, PRACTICE_BUTTON } from '../../constant/data/Learn'
 import './styles.css'
+import PathConstants from '../../constant/PathConstants'
+import HistoryService from '../../service/history/HistoryService'
 
 const LearnPath: React.FC = () => {
 	return (
@@ -40,7 +42,6 @@ const LearnPath: React.FC = () => {
 					buttonText='Continue'
 					title='Tripartição de poderes'
 					id='section1'
-					onClick={() => {}}
 				/>
 			</div>
 		</div>
