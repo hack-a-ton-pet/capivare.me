@@ -7,8 +7,14 @@ import LearnPathCard from '../../component/learn_path_card'
 import { LEARN_MORE_TITLE, PRACTICE_BUTTON } from '../../constant/data/Learn'
 import { Box } from '@material-ui/core'
 import './styles.css'
+import PathConstants from '../../constant/PathConstants'
+import HistoryService from '../../service/history/HistoryService'
 
 const LearnPath: React.FC = () => {
+	const handleClick = (path: string) => {
+		setTimeout(() => HistoryService.push(path), 200)
+	}
+
 	return (
 		<div className='learn'>
 			<div className='learn_header'>
@@ -31,7 +37,7 @@ const LearnPath: React.FC = () => {
 				<CapiButton
 					className='learn__practice_button'
 					text={PRACTICE_BUTTON}
-					onClick={() => {}}
+					onClick={() => handleClick(`${PathConstants.QUIZ}/1`)}
 				/>
 			</div>
 			<div className='learn__learn_more_wrapper'>
@@ -41,7 +47,7 @@ const LearnPath: React.FC = () => {
 					buttonText='Continue'
 					title='Tripartição de poderes'
 					id='section1'
-					onClick={() => {}}
+					onClick={() => handleClick(PathConstants.LESSON)}
 				/>
 				<Box m={3} />
 				<LearnPathCard

@@ -1,5 +1,5 @@
 .content_card.MuiPaper-root {
-	max-width: 285px;
+	max-width: 485px;
 	padding: 16px 24px 60px;
 	text-align: justify;
 	background-color: var(--purple);
@@ -12,4 +12,11 @@
 .content_card__title.default_font {
 	font-weight: normal;
 	font-size: 25px;
+}
+
+h2.content_card__title {
+	margin: 0.5em 0 0.8em;
+}
+.content_card p {
+	margin-bottom: 1em;
 }

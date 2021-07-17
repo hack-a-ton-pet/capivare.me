@@ -1,18 +1,16 @@
-.section_card.MuiButton-root {
-	display: block;
+.learn_path_card {
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 	border-radius: 15px;
 	padding: 16px;
-	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-.section_card h1 {
+.learn_path_card h1 {
 	margin: 0;
 	font-size: 20px;
-	text-align: start;
 }
 
-.section_card .default_font {
-	margin-bottom: 8px;
+.learn_path_card p {
+	margin: 0;
 	font-size: 14px;
 	text-align: justify;
 	text-transform: none;
@@ -24,28 +22,28 @@
 	justify-content: flex-end;
 }
 
-.section_card .text_button .MuiButton-contained {
+.learn_path_card .text_button .MuiButton-contained {
 	filter: none;
 	background-color: var(--light-color);
 }
 
-.section_card .text_button .MuiButton-contained:hover {
+.learn_path_card .text_button .MuiButton-contained:hover {
 	filter: none;
 	background-color: var(--light-color);
 }
 
-.section_card#section1 {
+.learn_path_card#section1 {
 	background-color: var(--section-1-color);
 }
 
-.section_card#section2 {
+.learn_path_card#section2 {
 	background-color: var(--section-2-color);
 }
 
-.section_card#section3 {
+.learn_path_card#section3 {
 	background-color: var(--section-3-color);
 }
 
-.section_card#section4 {
+.learn_path_card#section4 {
 	background-color: var(--section-4-color);
 }

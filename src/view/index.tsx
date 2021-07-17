@@ -12,28 +12,6 @@ import LessonSection from './lesson/lesson_section'
 const Main: React.FC = () => {
 	return (
 		<Router history={HistoryService}>
-			{/* <nav>
-				<ul>
-					<li>
-						<Link to={PathConstants.LOGIN}>LOGIN</Link>
-					</li>
-					<li>
-						<Link to={PathConstants.MENU}>MENU</Link>
-					</li>
-					<li>
-						<Link to={PathConstants.LEARN}>LEARN</Link>
-					</li>
-					<li>
-						<Link to={PathConstants.LESSON}>LESSON</Link>
-					</li>
-					<li>
-						<Link to={`${PathConstants.LESSON}/1`}>LESSON 1</Link>
-					</li>
-					<li>
-						<Link to={PathConstants.QUIZ}>QUIZ</Link>
-					</li>
-				</ul>
-			</nav> */}
 			<Switch>
 				<Route exact path={PathConstants.LOGIN} component={Login} />
 				<Route exact path={PathConstants.MENU} component={Menu} />
@@ -43,6 +21,7 @@ const Main: React.FC = () => {
 					path={`${PathConstants.LESSON}/:id`}
 					component={LessonSection}
 				/>
+				<Route exact path={PathConstants.QUIZ} component={() => <></>} />
 				<Route path={`${PathConstants.QUIZ}/:id`} component={() => <></>} />
 				<Route path={'/'} component={NotFound} />
 			</Switch>
