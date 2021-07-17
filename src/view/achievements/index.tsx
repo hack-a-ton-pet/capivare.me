@@ -18,20 +18,24 @@ const Achievements = () => {
 			<div className='achievement-category-wrapper'>
 				<h2>Aprenda</h2>
 				<div className='achievement-wrapper'>
-					<img src={Achievement1} />
-					<img src={Achievement2} />
-					<img src={Achievement3} />
+					<img src={Achievement1} alt="ilustração de medalha" />
+					<img className='not-obtained' src={Achievement2} alt="ilustração de medalha" />
+					<img className='not-obtained' src={Achievement3} alt="ilustração de medalha" />
 				</div>
-				<CapiButton text='Ver mais' onClick={() => {}} />
+				<div className="achievement-button-wrapper">
+					<CapiButton text='Ver mais' onClick={() => { }} />
+				</div>
 			</div>
 			<div className='achievement-category-wrapper'>
 				<h2>Avalie</h2>
 				<div className='achievement-wrapper'>
-					<img src={Achievement4} />
-					<img src={Achievement5} />
-					<img src={Achievement6} />
+					<img src={Achievement4} alt="ilustração de medalha" />
+					<img className='not-obtained' src={Achievement5} alt="ilustração de medalha" />
+					<img className='not-obtained' src={Achievement6} alt="ilustração de medalha" />
 				</div>
-				<CapiButton text='Ver mais' onClick={() => {}} />
+				<div className="achievement-button-wrapper">
+					<CapiButton text='Ver mais' onClick={() => { }} />
+				</div>
 			</div>
 		</div>
 	)
