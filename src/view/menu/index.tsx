@@ -1,10 +1,10 @@
 import React from 'react'
-import './styles.css'
 import menuCards from '../../constant/data/menuCard'
 import CapiCard from '../../component/card'
 import GoBackIconButton from '../../component/icon_button/go_back'
+import './styles.css'
 
-const Menu = () => {
+const Menu: React.FC = () => {
 	return (
 		<div className='menu'>
 			<GoBackIconButton />

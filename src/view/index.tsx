@@ -1,8 +1,10 @@
 import React from 'react'
-import { Router, Link, Switch, Route } from 'react-router-dom'
+import AuthenticatedRoute from '../component/authenticated_route'
+import { Router, Switch, Route } from 'react-router-dom'
 import PathConstants from '../constant/PathConstants'
 import HistoryService from '../service/history/HistoryService'
 import Login from './login'
+import Register from './register'
 import Menu from './menu'
 import LearnPath from './learn_path'
 import NotFound from './not_found'
@@ -12,38 +14,31 @@ import LessonSection from './lesson/lesson_section'
 const Main: React.FC = () => {
 	return (
 		<Router history={HistoryService}>
-			{/* <nav>
-				<ul>
-					<li>
-						<Link to={PathConstants.LOGIN}>LOGIN</Link>
-					</li>
-					<li>
-						<Link to={PathConstants.MENU}>MENU</Link>
-					</li>
-					<li>
-						<Link to={PathConstants.LEARN}>LEARN</Link>
-					</li>
-					<li>
-						<Link to={PathConstants.LESSON}>LESSON</Link>
-					</li>
-					<li>
-						<Link to={`${PathConstants.LESSON}/1`}>LESSON 1</Link>
-					</li>
-					<li>
-						<Link to={PathConstants.QUIZ}>QUIZ</Link>
-					</li>
-				</ul>
-			</nav> */}
 			<Switch>
 				<Route exact path={PathConstants.LOGIN} component={Login} />
-				<Route exact path={PathConstants.MENU} component={Menu} />
-				<Route path={PathConstants.LEARN} component={LearnPath} />
-				<Route exact path={PathConstants.LESSON} component={Lesson} />
-				<Route
+				<Route exact path={PathConstants.REGISTER} component={Register} />
+				<AuthenticatedRoute
+					exact
+					path={PathConstants.MENU}
+					component={Menu}
+				/>
+				<AuthenticatedRoute
+					path={PathConstants.LEARN}
+					component={LearnPath}
+				/>
+				<AuthenticatedRoute
+					exact
+					path={PathConstants.LESSON}
+					component={Lesson}
+				/>
+				<AuthenticatedRoute
 					path={`${PathConstants.LESSON}/:id`}
 					component={LessonSection}
 				/>
-				<Route path={`${PathConstants.QUIZ}/:id`} component={() => <></>} />
+				<AuthenticatedRoute
+					path={`${PathConstants.QUIZ}/:id`}
+					component={() => <></>}
+				/>
 				<Route path={'/'} component={NotFound} />
 			</Switch>
 		</Router>

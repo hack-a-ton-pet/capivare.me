@@ -1,0 +1,32 @@
+.register {
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background-color: #21b583;
+}
+
+.register .text_button .MuiButton-contained {
+	padding: 8px;
+}
+
+.register__error_text.default_font {
+	color: var(--wrong-color);
+	font-weight: bold;
+	font-size: 18px;
+}
+
+.register__form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.register__return_wrapper {
+	display: flex;
+	width: 100%;
+	align-items: flex-start;
+}

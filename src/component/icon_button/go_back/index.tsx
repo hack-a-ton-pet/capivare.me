@@ -3,6 +3,7 @@ import CapiIconButton from '..'
 import ArrowBackIcon from '@material-ui/icons/ArrowBack'
 import HistoryService from '../../../service/history/HistoryService'
 import CapiIconButtonProps from '../props'
+import './styles.css'
 
 /**
  * @param color: "default" | "primary" | "secondary"
