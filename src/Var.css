@@ -1,4 +1,16 @@
 :root {
 	--font-family: Poppins;
 	--border-radius: 10px;
+	--big-border-radius: 40px;
+}
+
+.default_font {
+	font-family: Poppins;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 15px;
+	line-height: 22px;
+	display: flex;
+	align-items: center;
+	letter-spacing: -0.017em;
 }
