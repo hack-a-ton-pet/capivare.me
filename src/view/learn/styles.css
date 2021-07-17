@@ -22,10 +22,11 @@
 }
 
 .learn__practice_button__wrapper {
-	margin-top: 16px;
 	width: 100%;
 	display: flex;
 	justify-content: center;
+	margin-top: 32px;
+	margin-bottom: 32px;
 }
 
 .learn__practice_button {
@@ -36,4 +37,30 @@
 	width: 100%;
 	padding: 16px 8px;
 	border-radius: var(--small-border-radius);
+}
+
+.learn__progress_status_wrapper {
+	padding-left: 16px;
+	padding-right: 16px;
+	margin-top: 16px;
+	margin-bottom: 16px;
+}
+
+.learn__learn_more_wrapper {
+	width: 100%;
+	padding-left: 16px;
+	padding-right: 16px;
+	margin-top: 16px;
+}
+
+.learn__learn_more_wrapper .default_font {
+	margin-bottom: 16px;
+}
+
+.learn__learn_more_wrapper .default_font {
+	font-size: 24px;
+	font-weight: bold;
+}
+
+.learn__learn_more_wrapper .section_card {
 }

@@ -2,6 +2,8 @@ import React from 'react'
 import CapiButton from '../../component/button'
 import GoBackIconButton from '../../component/icon_button/go_back'
 import ProfileIconButton from '../../component/icon_button/profile'
+import ProgressStatus from '../../component/progress_status'
+import SectionCard from '../../component/section_card'
 import { PRACTICE_BUTTON } from '../../constant/data/Learn'
 import './styles.css'
 
@@ -16,10 +18,28 @@ const Learn: React.FC = () => {
 					<ProfileIconButton />
 				</div>
 			</div>
+			<div className='learn__progress_status_wrapper'>
+				<ProgressStatus
+					constitutionProgress={100}
+					generalProgress={100}
+					lawProgress={100}
+					separationOfPowers={100}
+				/>
+			</div>
 			<div className='learn__practice_button__wrapper'>
 				<CapiButton
 					className='learn__practice_button'
 					text={PRACTICE_BUTTON}
+					onClick={() => {}}
+				/>
+			</div>
+			<div className='learn__learn_more_wrapper'>
+				<h2 className='default_font'>Aprenda mais</h2>
+				<SectionCard
+					description='Você sabia que a democracia é dividida em 3 poderes? Legislativo, Executivo e Judiciário'
+					buttonText='Continue'
+					title='Tripartição de poderes'
+					id='section1'
 					onClick={() => {}}
 				/>
 			</div>
