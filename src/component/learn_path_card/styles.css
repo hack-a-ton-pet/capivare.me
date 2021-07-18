@@ -10,8 +10,8 @@
 }
 
 .learn_path_card p {
-	margin: 0;
-	font-size: 14px;
+	margin: 0.5em;
+	font-size: 16px;
 	text-align: justify;
 	text-transform: none;
 }
@@ -32,18 +32,22 @@
 	background-color: var(--light-color);
 }
 
-.learn_path_card#section1 {
+.learn_path_card {
 	background-color: var(--section-1-color);
 }
 
-.learn_path_card#section2 {
+.learn_path_card#lp01 {
+	background-color: var(--section-1-color);
+}
+
+.learn_path_card#lp02 {
 	background-color: var(--section-2-color);
 }
 
-.learn_path_card#section3 {
+.learn_path_card#lp03 {
 	background-color: var(--section-3-color);
 }
 
-.learn_path_card#section4 {
+.learn_path_card#lp04 {
 	background-color: var(--section-4-color);
 }

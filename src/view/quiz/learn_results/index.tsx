@@ -1,20 +1,23 @@
-import CapiButton from '../../component/button'
-import PathConstants from '../../constant/PathConstants'
-import HistoryService from '../../service/history/HistoryService'
-import ProgressCircle from '../../component/progress/progress_circle'
-import Capybara from '../../asset/capi.png'
+import CapiButton from '../../../component/button'
+import PathConstants from '../../../constant/PathConstants'
+import HistoryService from '../../../service/history/HistoryService'
+import ProgressCircle from '../../../component/progress/progress_circle'
+import Capybara from '../../../asset/capi.png'
 import './styles.css'
 
-const LearnResults = () => {
-	const rating_score = 80
+interface LearnResultsProps {
+	ratingScore: number
+}
+
+const LearnResults: React.FC<LearnResultsProps> = ({ ratingScore }) => {
 	const getResultMessage = () => {
-		if (rating_score >= 70) {
+		if (ratingScore >= 70) {
 			return (
 				<>
 					<h1>Parabéns!</h1>
 					<p>Fez um ótimo trabalho! Vamos para a próxima lição?</p>
 					<ProgressCircle
-						value={rating_score}
+						value={ratingScore}
 						size={120}
 						fontSize={'30px'}
 						className='progress_status__progress__main__circle'
@@ -43,7 +46,11 @@ const LearnResults = () => {
 					onClick={() => goBackToMenu()}
 				/>
 			</div>
-			<img src={Capybara} className='capi-img' />
+			<img
+				alt='Capivara, simbolo do aplicativo'
+				src={Capybara}
+				className='capi-img'
+			/>
 		</div>
 	)
 }

@@ -3,18 +3,18 @@ import CapiButton from '../button'
 import './styles.css'
 
 export interface SectionCardProps {
+	id: string
 	title: string
 	description: string
 	buttonText: string
-	id: string
 	onClick: () => void
 }
 
 const LearnPathCard: React.FC<SectionCardProps> = ({
-	title,
-	description,
 	buttonText,
 	id,
+	title,
+	description,
 	onClick,
 }) => {
 	return (
