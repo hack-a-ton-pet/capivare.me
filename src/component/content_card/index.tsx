@@ -1,5 +1,6 @@
 import React from 'react'
 import { Card } from '@material-ui/core'
+import { splitStringByNewLine } from '../../util/StringUtils'
 import './styles.css'
 
 export interface ContentCardProps {
@@ -11,7 +12,7 @@ const ContentCard: React.FC<ContentCardProps> = ({ title, text }) => {
 	return (
 		<Card className='content_card'>
 			<h2 className='content_card__title default_font'>{title}</h2>
-			{text.split('\n').map((paragraph, index) => (
+			{splitStringByNewLine(text).map((paragraph, index) => (
 				<p key={index} className='default_font'>
 					{paragraph}
 				</p>

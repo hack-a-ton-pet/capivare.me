@@ -4,11 +4,18 @@ import CapiButton from '../../component/button'
 import CapiLogo from '../../component/capi_logo'
 import GoBackIconButton from '../../component/icon_button/go_back'
 import CapiInput from '../../component/input'
-import PathConstants from '../../constant/PathConstants'
-import { AuthActionType, authStore } from '../../context/AuthContext'
+import Path from '../../constant/Path'
+import { AuthActionType, authStore } from '../../context/Auth'
 import RegisterService from '../../service/auth/RegisterService'
 import HistoryService from '../../service/history/HistoryService'
 import CpfService from '../../service/user/CpfService'
+import {
+	CONFIRM_PASSWORD,
+	CONFIRM_PASSWORD_KEY,
+	CPF,
+	PASSWORD,
+	REGISTER,
+} from '../../constant/component/Register'
 import './styles.css'
 
 const Register: React.FC = () => {
@@ -32,7 +39,7 @@ const Register: React.FC = () => {
 				type: AuthActionType.LOGIN,
 				data: result.content!!,
 			})
-			HistoryService.push(PathConstants.MENU)
+			HistoryService.push(Path.MENU)
 		}
 	}
 
@@ -59,27 +66,27 @@ const Register: React.FC = () => {
 				<CapiInput
 					onChange={handleChangeCpf}
 					value={cpf}
-					label='cpf'
+					label={CPF}
 					number
 				/>
 				<Box m={1} />
 				<CapiInput
 					onChange={handleChangePassword}
 					value={password}
-					label='senha'
-					uniqueKey={'password'}
+					label={PASSWORD}
+					uniqueKey={PASSWORD}
 					password
 				/>
 				<Box m={1} />
 				<CapiInput
 					onChange={handleChangeConfirmPassword}
 					value={confirmPassword}
-					label='confirme a senha'
-					uniqueKey={'confirm_password'}
+					label={CONFIRM_PASSWORD}
+					uniqueKey={CONFIRM_PASSWORD_KEY}
 					password
 				/>
 				<Box m={2} />
-				<CapiButton onClick={handleRegister} text='Cadastrar' submit />
+				<CapiButton onClick={handleRegister} text={REGISTER} submit />
 			</form>
 			{error && <p className='register__error_text default_font'>{error}</p>}
 		</div>

@@ -1,0 +1,11 @@
+export const LEARN = 'Aprenda'
+export const PATH_1 = 'Caminho 1'
+export const PATH_1_DESC = 'Recebida ao completar o caminho de aprendizado 1'
+export const PATH_2 = 'Caminho 2'
+export const PATH_2_DESC = 'Recebida ao completar o caminho de aprendizado 2'
+export const PATH_3 = 'Caminho 3'
+export const PATH_3_DESC = 'Recebida ao completar o caminho de aprendizado 3'
+export const GOOD_STUDENT = 'Estudioso'
+export const GOOD_STUDENT_DESC =
+	'Recebida ao completar três caminhos de aprenzidado'
+export const MEDAL_ALT = 'Ilustração de medalha.'

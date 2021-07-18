@@ -1,4 +1,4 @@
-class PathConstants {
+class Path {
 	ROOT = 'localhost:3000'
 	LOGIN = `/`
 	REGISTER = `/register`
@@ -12,4 +12,4 @@ class PathConstants {
 	EVALUATE_ACHIEVEMENTS = `/achievements/evaluate_achievements`
 }
 
-export default new PathConstants()
+export default new Path()
