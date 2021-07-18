@@ -2,6 +2,9 @@
 # Capivere.me
 Project made for [Level Up Society](https://www.showcode.io/level-up-hack/) - July 2021
 
+## Devpost project page
+https://devpost.com/software/hack-a-ton-ok36tj
+
 ## Authors
 - [@AndrewLBorges](https://github.com/AndrewLBorges)
 - [@bbeneduzib](https://github.com/bbeneduzib)
