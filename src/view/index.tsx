@@ -11,6 +11,7 @@ import NotFound from './not_found'
 import Lesson from './lesson'
 import Achievements from './achievements'
 import LessonSection from './lesson/lesson_section'
+import Quiz from './quiz'
 
 const Main: React.FC = () => {
 	return (
@@ -37,9 +38,8 @@ const Main: React.FC = () => {
 					component={LessonSection}
 				/>
 				<AuthenticatedRoute
-					exact
 					path={PathConstants.QUIZ}
-					component={() => <></>}
+					component={Quiz}
 				/>
 				<AuthenticatedRoute
 					path={`${PathConstants.QUIZ}/:id`}
