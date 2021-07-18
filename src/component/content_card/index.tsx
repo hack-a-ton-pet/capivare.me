@@ -4,14 +4,14 @@ import './styles.css'
 
 export interface ContentCardProps {
 	title: string
-	paragraphs: string[]
+	text: string
 }
 
-const ContentCard: React.FC<ContentCardProps> = ({ title, paragraphs }) => {
+const ContentCard: React.FC<ContentCardProps> = ({ title, text }) => {
 	return (
 		<Card className='content_card'>
 			<h2 className='content_card__title default_font'>{title}</h2>
-			{paragraphs.map((paragraph, index) => (
+			{text.split('\n').map((paragraph, index) => (
 				<p key={index} className='default_font'>
 					{paragraph}
 				</p>
