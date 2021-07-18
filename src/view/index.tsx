@@ -1,7 +1,7 @@
 import React from 'react'
 import AuthenticatedRoute from '../component/authenticated_route'
 import { Router, Switch, Route } from 'react-router-dom'
-import PathConstants from '../constant/PathConstants'
+import Path from '../constant/Path'
 import HistoryService from '../service/history/HistoryService'
 import Login from './login'
 import Register from './register'
@@ -19,45 +19,32 @@ const Main: React.FC = () => {
 	return (
 		<Router history={HistoryService}>
 			<Switch>
-				<Route exact path={PathConstants.LOGIN} component={Login} />
-				<Route exact path={PathConstants.REGISTER} component={Register} />
+				<Route exact path={Path.LOGIN} component={Login} />
+				<Route exact path={Path.REGISTER} component={Register} />
+				<AuthenticatedRoute exact path={Path.MENU} component={Menu} />
+				<AuthenticatedRoute path={Path.LEARN} component={LearnPath} />
 				<AuthenticatedRoute
 					exact
-					path={PathConstants.MENU}
-					component={Menu}
-				/>
-				<AuthenticatedRoute
-					path={PathConstants.LEARN}
-					component={LearnPath}
-				/>
-				<AuthenticatedRoute
-					exact
-					path={`${PathConstants.LESSON_MENU}/:id`}
+					path={`${Path.LESSON_MENU}/:id`}
 					component={Lesson}
 				/>
 				<AuthenticatedRoute
-					path={`${PathConstants.LESSON}/:id`}
+					path={`${Path.LESSON}/:id`}
 					component={LessonSection}
 				/>
-				<AuthenticatedRoute
-					path={`${PathConstants.QUIZ}/:id`}
-					component={Quiz}
-				/>
-				<AuthenticatedRoute
-					path={`${PathConstants.QUIZ}/:id`}
-					component={() => <></>}
-				/>
+				<AuthenticatedRoute path={`${Path.QUIZ}/:id`} component={Quiz} />
+				<AuthenticatedRoute exact path={`${Path.QUIZ}`} component={Quiz} />
 				<AuthenticatedRoute
 					exact
-					path={PathConstants.ACHIEVEMENTS}
+					path={Path.ACHIEVEMENTS}
 					component={Achievements}
 				/>
 				<AuthenticatedRoute
-					path={PathConstants.LEARN_ACHIEVEMENTS}
+					path={Path.LEARN_ACHIEVEMENTS}
 					component={LearnAchievements}
 				/>
 				<AuthenticatedRoute
-					path={PathConstants.EVALUATE_ACHIEVEMENTS}
+					path={Path.EVALUATE_ACHIEVEMENTS}
 					component={EvaluateAchievements}
 				/>
 				<Route path={'/'} component={NotFound} />

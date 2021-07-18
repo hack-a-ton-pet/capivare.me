@@ -1,5 +1,5 @@
 import Repository from './Repository'
-import Database from '../database/Database'
+import Database from '../database'
 import User from '../type/entity/User'
 
 class UserRepository extends Repository<User> {

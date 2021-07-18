@@ -2,6 +2,12 @@
 # Capivere.me
 Project made for [Level Up Society](https://www.showcode.io/level-up-hack/) - July 2021
 
+## Try it!
+[Capivare.me](https://capivare.herokuapp.com/)
+
+## Devpost project page
+[Devpost - Capivare.me](https://devpost.com/software/hack-a-ton-ok36tj)
+
 ## Authors
 - [@AndrewLBorges](https://github.com/AndrewLBorges)
 - [@bbeneduzib](https://github.com/bbeneduzib)
@@ -12,24 +18,26 @@ Project made for [Level Up Society](https://www.showcode.io/level-up-hack/) - Ju
 ## Prototype
 [Figma - screens](https://www.figma.com/file/VkhKZCpyj7L6VEl2Ok5Vrs/Capivare.me-Level-Up-Society?node-id=1%3A850)
 
-[Figma - navigable prototype](https://www.figma.com/proto/VkhKZCpyj7L6VEl2Ok5Vrs/Capivare.me-[Level-Up-Society]?node-id=1%3A1005&scaling=min-zoom)
+[Figma - navigable prototype](https://www.figma.com/proto/VkhKZCpyj7L6VEl2Ok5Vrs/Capivare.me-%5BLevel-Up-Society%5D?node-id=1%3A1005&scaling=min-zoom)
 
 ## Trello
-https://trello.com/b/5q12AIAw/level-up-society-hackathon
+[Trello - Capivare.me](https://trello.com/b/5q12AIAw/level-up-society-hackathon)
   
 ## About this project
-We selected the theme `Better Learning` to improve the knowledge around politics in Brazil.
-Our app tries to make the politics subject, usually seen as something complicated and
+
+We selected the theme `Better Learning` to improve the knowledge around politics in Brazil. 
+Our app tries to make the politics subject, usually seen as something complicated and 
 boring, fun and easier to understand.
 
-Using card and quizzes, our user can explore differents topics about the political 
-organization, such as political roles or how laws are made. Completing this quizzes, the
-user can win achievements and see their progress inside the app.
+Using cards and quizzes, you are capable of exploring different topics about the political 
+organization of our country, such as political roles or how laws are made. By completing 
+these quizzes, you can win achievements and see your progress inside the app.
 
-Besides that, we want to create a more accessible plataform for the population to be 
-updated about our politician's acts. With the app, the user can rate their representants
-on how well they accomplished each of their goals and then win points that can be 
-converted into tax discounts.
+Besides that, we want to create a more accessible platform for the population to be updated
+about our politician's acts. With the app, the user can rate their representatives on how 
+well they accomplished each of their goals and then win points that can be converted into 
+tax discounts.
+
 
 ## Technologies
 ![HTML](https://img.shields.io/badge/-HTML-05122A?style=flat&logo=HTML5)&nbsp;
@@ -38,6 +46,7 @@ converted into tax discounts.
 ![React](https://img.shields.io/badge/-React-05122A?style=flat&logo=react)&nbsp;
   
 ## Running this app
-1) Clone this repository and checkout on 'development' branch
-2) Execute 'npm install'
-3) Execute 'npm start'
+1) Install Node.js (^v14)
+2) Clone this repository and checkout on 'development' branch
+3) Execute 'npm install'
+4) Execute 'npm start'

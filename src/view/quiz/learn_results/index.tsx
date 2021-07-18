@@ -1,14 +1,14 @@
 import CapiButton from '../../../component/button'
-import PathConstants from '../../../constant/PathConstants'
+import Path from '../../../constant/Path'
 import HistoryService from '../../../service/history/HistoryService'
 import ProgressCircle from '../../../component/progress/progress_circle'
 import {
-	BACK_TO_MENU,
 	CONGRATULATIONS,
-	ENCOURAGING_MESSAGE,
-	FAILURE_MESSAGE,
-	NEXT_LESSON,
-} from '../../../constant/data/Quiz'
+	FAIL_MESSAGE,
+	GO_BACK_TO_MENU,
+	GO_TO_NEXT_LESSON,
+	KEEP_STUDING,
+} from '../../../constant/component/LearnResults'
 import CapiLogo from '../../../component/capi_logo'
 import './styles.css'
 
@@ -22,7 +22,7 @@ const LearnResults: React.FC<LearnResultsProps> = ({ ratingScore }) => {
 			return (
 				<>
 					<h1>{CONGRATULATIONS}</h1>
-					<p>{NEXT_LESSON}</p>
+					<p>{GO_TO_NEXT_LESSON}</p>
 					<ProgressCircle
 						value={ratingScore}
 						size={120}
@@ -34,14 +34,14 @@ const LearnResults: React.FC<LearnResultsProps> = ({ ratingScore }) => {
 		}
 		return (
 			<>
-				<h1>{FAILURE_MESSAGE}</h1>
-				<p>{ENCOURAGING_MESSAGE}</p>
+				<h1>{FAIL_MESSAGE}</h1>
+				<p>{KEEP_STUDING}</p>
 			</>
 		)
 	}
 
 	const goBackToMenu = () => {
-		HistoryService.push(PathConstants.LEARN)
+		HistoryService.push(Path.LEARN)
 	}
 
 	return (
@@ -51,7 +51,10 @@ const LearnResults: React.FC<LearnResultsProps> = ({ ratingScore }) => {
 					{getResultMessage()}
 				</div>
 				<div className='learn-results-button-wrapper'>
-					<CapiButton text={BACK_TO_MENU} onClick={() => goBackToMenu()} />
+					<CapiButton
+						text={GO_BACK_TO_MENU}
+						onClick={() => goBackToMenu()}
+					/>
 				</div>
 			</div>
 			<div className='learn_result__capi_wrapper'>

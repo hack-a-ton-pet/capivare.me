@@ -1,7 +1,15 @@
 import CapiButton from '../../component/button'
-import PathConstants from '../../constant/PathConstants'
+import Path from '../../constant/Path'
 import HistoryService from '../../service/history/HistoryService'
 import Capybara from '../../asset/capi.png'
+import {
+	BACK_TO_MENU,
+	CONGRATULATIONS,
+	CONGRATULATIONS_MESSAGE,
+	FAIL,
+	FAIL_MESSAGE,
+} from '../../constant/component/ReviewResults'
+import LearnService from '../../service/user/LearnService'
 import './styles.css'
 
 interface ReviewResultsProps {
@@ -10,36 +18,31 @@ interface ReviewResultsProps {
 
 const ReviewResults: React.FC<ReviewResultsProps> = ({ ratingScore }) => {
 	const getResultMessage = () => {
-		if (ratingScore >= 70) {
+		if (LearnService.isScoreHigherThanMin(ratingScore)) {
 			return (
 				<>
-					<h1>Parabéns!</h1>
-					<p>
-						Você acertou {ratingScore} das questões. Pode ficar orgulhoso!
-					</p>
+					<h1>{CONGRATULATIONS}</h1>
+					<p>{CONGRATULATIONS_MESSAGE(ratingScore.toString())}</p>
 				</>
 			)
 		}
 		return (
 			<>
-				<h1>Ops!</h1>
-				<p>Parece que precisamos praticar mais um pouco</p>
+				<h1>{FAIL}</h1>
+				<p>{FAIL_MESSAGE}</p>
 			</>
 		)
 	}
 
 	const goBackToMenu = () => {
-		HistoryService.push(PathConstants.LEARN)
+		HistoryService.push(Path.LEARN)
 	}
 
 	return (
 		<div className='review-results'>
 			<div className='review-results-text-wrapper'>{getResultMessage()}</div>
 			<div className='review-results-button-wrapper'>
-				<CapiButton
-					text='Voltar para o menu'
-					onClick={() => goBackToMenu()}
-				/>
+				<CapiButton text={BACK_TO_MENU} onClick={() => goBackToMenu()} />
 			</div>
 			<img src={Capybara} className='capi-img' />
 		</div>

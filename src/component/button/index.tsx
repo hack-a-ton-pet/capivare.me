@@ -7,7 +7,6 @@ export interface CapiButtonProps {
 	onClick: () => void
 	submit?: boolean
 	className?: string
-	width?: string
 }
 
 const CapiButton: React.FC<CapiButtonProps> = ({
@@ -15,7 +14,6 @@ const CapiButton: React.FC<CapiButtonProps> = ({
 	onClick,
 	submit,
 	className,
-	width,
 }) => {
 	const handleClick = (
 		event: React.MouseEvent<HTMLButtonElement, MouseEvent>,

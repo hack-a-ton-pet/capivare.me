@@ -1,0 +1,6 @@
+export const CPF = 'cpf'
+export const PASSWORD = 'senha'
+export const LOGIN = 'Entrar'
+export const GUESS = 'Guest'
+export const REGISTER = 'Não tem cadastro?'
+export const GO_TO_REGISTER = 'Cadastre-se aqui.'

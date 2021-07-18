@@ -7,7 +7,8 @@ import Achievement4 from '../../asset/achievements/004.png'
 import Achievement5 from '../../asset/achievements/005.png'
 import Achievement6 from '../../asset/achievements/006.png'
 import HistoryService from '../../service/history/HistoryService'
-import PathConstants from '../../constant/PathConstants'
+import Path from '../../constant/Path'
+import { MEDAL_DESC, SEE_MORE } from '../../constant/component/Achievements'
 import { suspend } from '../../util/AsyncUtils'
 import './styles.css'
 
@@ -26,23 +27,23 @@ const Achievements = () => {
 			<div className='achievement-category-wrapper'>
 				<h2>Aprenda</h2>
 				<div className='achievement-wrapper'>
-					<img src={Achievement1} alt='ilustração de medalha' />
+					<img src={Achievement1} alt={MEDAL_DESC} />
 					<img
 						className='not-obtained'
 						src={Achievement2}
-						alt='ilustração de medalha'
+						alt={MEDAL_DESC}
 					/>
 					<img
 						className='not-obtained'
 						src={Achievement3}
-						alt='ilustração de medalha'
+						alt={MEDAL_DESC}
 					/>
 				</div>
 				<div className='achievement-button-wrapper'>
 					<CapiButton
-						text='Ver mais'
+						text={SEE_MORE}
 						onClick={() => {
-							handleClick(PathConstants.LEARN_ACHIEVEMENTS)
+							handleClick(Path.LEARN_ACHIEVEMENTS)
 						}}
 					/>
 				</div>
@@ -50,23 +51,23 @@ const Achievements = () => {
 			<div className='achievement-category-wrapper'>
 				<h2>Avalie</h2>
 				<div className='achievement-wrapper'>
-					<img src={Achievement4} alt='ilustração de medalha' />
+					<img src={Achievement4} alt={MEDAL_DESC} />
 					<img
 						className='not-obtained'
 						src={Achievement5}
-						alt='ilustração de medalha'
+						alt={MEDAL_DESC}
 					/>
 					<img
 						className='not-obtained'
 						src={Achievement6}
-						alt='ilustração de medalha'
+						alt={MEDAL_DESC}
 					/>
 				</div>
 				<div className='achievement-button-wrapper'>
 					<CapiButton
-						text='Ver mais'
+						text={SEE_MORE}
 						onClick={() => {
-							handleClick(PathConstants.EVALUATE_ACHIEVEMENTS)
+							handleClick(Path.EVALUATE_ACHIEVEMENTS)
 						}}
 					/>
 				</div>
