@@ -13,14 +13,17 @@ import Lesson from '../../type/quiz/Lesson'
 import LearnResults from './learn_results'
 import User from '../../type/entity/User'
 import { suspend } from '../../util/AsyncUtils'
+import { IN_DEVELOPMENT } from '../../constant/component/Quiz'
+import HistoryService from '../../service/history/HistoryService'
+import Path from '../../constant/Path'
 import './styles.css'
 
 interface QuizParam {
-	id: string
+	id?: string
 }
 const Quiz: React.FC = () => {
 	const { id } = useParams<QuizParam>()
-	const lesson = LessonService.getById(id)
+	const lesson = id ? LessonService.getById(id) : undefined
 	const { state } = useContext(authStore)
 	const user = state.user
 
@@ -125,18 +128,31 @@ const Quiz: React.FC = () => {
 						handleChangeIndex(index, lesson.quiz.items)
 					}
 				>
-					{lesson.quiz.items.map((e, index) => (
-						<div className='quiz_block' key={index}>
-							<div className='quiz_question'>
-								<CapiQuestionCard question={e.question} />
-							</div>
-							<div className='quiz_answers'>
-								{renderAnswers(e, lesson, user)}
-							</div>
-						</div>
-					))}
+					{lesson ? renderQuiz(lesson, user) : renderInDevelopment()}
 				</SwipeableViews>
 			</div>
+		)
+	}
+
+	const renderInDevelopment = () => {
+		setTimeout(() => HistoryService.push(Path.LEARN), 1000)
+		return <h1>{IN_DEVELOPMENT}</h1>
+	}
+
+	const renderQuiz = (lesson: Lesson, user: User) => {
+		return (
+			<>
+				{lesson.quiz.items.map((e, index) => (
+					<div className='quiz_block' key={index}>
+						<div className='quiz_question'>
+							<CapiQuestionCard question={e.question} />
+						</div>
+						<div className='quiz_answers'>
+							{renderAnswers(e, lesson, user)}
+						</div>
+					</div>
+				))}
+			</>
 		)
 	}
 
@@ -146,13 +162,15 @@ const Quiz: React.FC = () => {
 
 	return (
 		<div className='quiz'>
-			{lesson && user && (
-				<>
-					{isFinished
-						? renderLearnResult()
-						: renderLessonContent(lesson, user)}
-				</>
-			)}
+			{lesson
+				? user && (
+						<>
+							{isFinished
+								? renderLearnResult()
+								: renderLessonContent(lesson, user)}
+						</>
+				  )
+				: renderInDevelopment()}
 		</div>
 	)
 }

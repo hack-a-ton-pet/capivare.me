@@ -1,5 +1,1 @@
-export const CONGRATULATIONS = 'Parabéns!'
-export const NEXT_LESSON = 'Fez um ótimo trabalho! Vamos para a próxima lição?'
-export const FAILURE_MESSAGE = 'Poxa! Não foi dessa vez!'
-export const ENCOURAGING_MESSAGE = 'Mas não desanime! Continue estudando!'
-export const BACK_TO_MENU = 'Voltar ao menu'
+export const IN_DEVELOPMENT = 'Seção em desenvolvimento, redirecionando...'

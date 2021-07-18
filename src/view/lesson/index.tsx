@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import ArrowDownIconButton from '../../component/icon_button/arrow_down'
 import CapiHorizontalProgress from '../../component/progress/horizontal_progress'
 import CapiLessonCardButton from '../../component/lesson_card_button'
-import { LESSON_PREFIX } from '../../constant/component/Lesson'
+import { IN_DEVELOPMENT, LESSON_PREFIX } from '../../constant/component/Lesson'
 import { authStore } from '../../context/Auth'
 import LearnPathProgressService from '../../service/progress/LearnPathProgressService'
 import LearnPathService from '../../service/learn_path/LearnPathService'
@@ -33,6 +33,10 @@ const renderLessons = (learnPath: LearnPath, user: User) => {
 	})
 }
 
+const renderInDevelopmentMessage = () => {
+	return <h1>{IN_DEVELOPMENT}</h1>
+}
+
 interface LessonParam {
 	id: string
 }
@@ -59,7 +63,9 @@ const Lesson: React.FC = () => {
 						percentage={LearnPathProgressService.calc(user, id)}
 					/>
 					<div className='learn_menu_cards'>
-						{renderLessons(learnPath, user)}
+						{learnPath.lessons.length > 0
+							? renderLessons(learnPath, user)
+							: renderInDevelopmentMessage()}
 					</div>
 				</>
 			)}

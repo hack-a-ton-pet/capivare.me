@@ -32,11 +32,8 @@ const Main: React.FC = () => {
 					path={`${Path.LESSON}/:id`}
 					component={LessonSection}
 				/>
+				<AuthenticatedRoute path={`${Path.QUIZ}`} component={Quiz} />
 				<AuthenticatedRoute path={`${Path.QUIZ}/:id`} component={Quiz} />
-				<AuthenticatedRoute
-					path={`${Path.QUIZ}/:id`}
-					component={() => <></>}
-				/>
 				<AuthenticatedRoute
 					exact
 					path={Path.ACHIEVEMENTS}

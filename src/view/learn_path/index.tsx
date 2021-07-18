@@ -59,7 +59,7 @@ const LearnPath: React.FC = () => {
 				<CapiButton
 					className='learn__practice_button'
 					text={PRACTICE_BUTTON}
-					onClick={() => handleClick(`${Path.QUIZ}/1`)}
+					onClick={() => handleClick(`${Path.QUIZ}`)}
 				/>
 			</div>
 			<div className='learn__learn_more_wrapper'>
