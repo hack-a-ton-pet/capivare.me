@@ -1,5 +1,4 @@
 import { Box } from '@material-ui/core'
-import { useHistory } from 'react-router-dom'
 import React, { useContext, useState } from 'react'
 import CapiButton from '../../component/button'
 import CapiLogo from '../../component/capi_logo'
@@ -8,8 +7,8 @@ import LoginService from '../../service/auth/LoginService'
 import PathConstants from '../../constant/PathConstants'
 import { AuthActionType, authStore } from '../../context/AuthContext'
 import CpfService from '../../service/user/CpfService'
-import './styles.css'
 import HistoryService from '../../service/history/HistoryService'
+import './styles.css'
 
 const RegisterHere: React.FC<{
 	onRegister: () => void
@@ -88,7 +87,7 @@ const Login: React.FC = () => {
 				<Box m={2} />
 				<CapiButton onClick={handleLogin} text='Entrar' submit />
 				<Box m={2} />
-				<CapiButton onClick={handleGuest} text='Guest' submit />
+				<CapiButton onClick={handleGuest} text='Guest' />
 			</form>
 			<Box m={1} />
 			<p className='login__without_account default_font'>

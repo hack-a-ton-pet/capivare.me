@@ -22,7 +22,7 @@ class LoginService {
 	guest = async (): Promise<AsyncResult<User>> => {
 		const user = await UserService.getByCpf(GUEST_CPF)
 
-		if (user === undefined) {
+		if (user !== undefined) {
 			return this.loginResult(user!!)
 		}
 
