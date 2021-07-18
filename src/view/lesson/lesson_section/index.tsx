@@ -54,11 +54,9 @@ const LessonSection: React.FC = () => {
 		))
 		array.push(
 			<LearnPathCard
-				item={{
-					title: 'Você terminou!',
-					description: 'Agora vamos praticar o que aprendemos!',
-					id: 'section1',
-				}}
+				title='Você terminou!'
+				description='Agora vamos praticar o que aprendemos!'
+				id='section1'
 				buttonText='Pratique'
 				onClick={handleClick}
 				key={lesson.sections.length}
