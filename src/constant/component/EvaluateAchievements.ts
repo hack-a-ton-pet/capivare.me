@@ -1,0 +1,11 @@
+export const EVALUATE = 'Avalie'
+export const BEGINNER = 'Iniciante'
+export const BEGGINER_DESC = 'Recebida ao avaliar dez vezes'
+export const EXPERIENTE = 'Intermediário'
+export const EXPERIENTE_DESC = 'Recebida ao avaliar 25 vezes'
+export const ADVANCED = 'Avançado'
+export const ADVANCED_DESC = 'Recebida ao avaliar 50 vezes'
+export const MEDAL_ALT = 'Ilustração de medalha.'
+export const FAST_TRIGGER = 'Gatilho Rápido'
+export const FAST_TRIGGER_DESC =
+	'Recebida ao avaliar dez metas no mesmo dia em que foram postadas'

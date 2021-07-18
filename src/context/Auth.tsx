@@ -14,7 +14,7 @@ interface AuthState {
 
 interface AuthContext {
 	state: AuthState
-	dispatch: React.Dispatch<ContextAction<User, AuthActionType>>
+	dispatch: React.Dispatch<ContextAction<User | undefined, AuthActionType>>
 }
 
 const initialState: AuthState = {
@@ -32,7 +32,10 @@ const { Provider } = authStore
 
 const AuthProvider: React.FC = ({ children }) => {
 	const [state, dispatch] = useReducer(
-		(context: AuthState, action: ContextAction<User, AuthActionType>) => {
+		(
+			context: AuthState,
+			action: ContextAction<User | undefined, AuthActionType>,
+		) => {
 			switch (action.type) {
 				case AuthActionType.LOGIN:
 					return {

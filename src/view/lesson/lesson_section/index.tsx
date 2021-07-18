@@ -7,9 +7,14 @@ import GoBackIconButton from '../../../component/icon_button/go_back'
 import LearnPathCard from '../../../component/learn_path_card'
 import HistoryService from '../../../service/history/HistoryService'
 import LessonService from '../../../service/lesson/LessonService'
-import PathConstants from '../../../constant/PathConstants'
+import Path from '../../../constant/Path'
 import { useParams } from 'react-router-dom'
 import Lesson from '../../../type/quiz/Lesson'
+import {
+	END_MESSAGE,
+	PRACTICE,
+	PRACTICE_MESSAGE,
+} from '../../../constant/component/LessonSection'
 import './styles.css'
 import { suspend } from '../../../util/AsyncUtils'
 
@@ -47,7 +52,7 @@ const LessonSection: React.FC = () => {
 
 	const handleClick = async () => {
 		await suspend(200)
-		HistoryService.push(`${PathConstants.QUIZ}/${id}`)
+		HistoryService.push(`${Path.QUIZ}/${id}`)
 	}
 
 	const renderDialogs = (lesson: Lesson) => {
@@ -56,10 +61,10 @@ const LessonSection: React.FC = () => {
 		))
 		array.push(
 			<LearnPathCard
-				title='Você terminou!'
-				description='Agora vamos praticar o que aprendemos!'
+				title={END_MESSAGE}
+				description={PRACTICE_MESSAGE}
 				id='section1'
-				buttonText='Pratique'
+				buttonText={PRACTICE}
 				onClick={handleClick}
 				key={lesson.sections.length}
 			/>,

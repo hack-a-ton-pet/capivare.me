@@ -4,10 +4,18 @@ import CapiButton from '../../component/button'
 import CapiLogo from '../../component/capi_logo'
 import CapiInput from '../../component/input'
 import LoginService from '../../service/auth/LoginService'
-import PathConstants from '../../constant/PathConstants'
-import { AuthActionType, authStore } from '../../context/AuthContext'
+import Path from '../../constant/Path'
+import { AuthActionType, authStore } from '../../context/Auth'
 import CpfService from '../../service/user/CpfService'
 import HistoryService from '../../service/history/HistoryService'
+import {
+	CPF,
+	GO_TO_REGISTER,
+	GUESS,
+	LOGIN,
+	PASSWORD,
+	REGISTER,
+} from '../../constant/component/Login'
 import './styles.css'
 
 const RegisterHere: React.FC<{
@@ -18,7 +26,7 @@ const RegisterHere: React.FC<{
 			className='login__register_here default_font'
 			onClick={onRegister}
 		>
-			&nbsp;Cadastre-se aqui.
+			&nbsp;{GO_TO_REGISTER}
 		</button>
 	)
 }
@@ -37,7 +45,7 @@ const Login: React.FC = () => {
 				type: AuthActionType.LOGIN,
 				data: result.content!!,
 			})
-			HistoryService.push(PathConstants.MENU)
+			HistoryService.push(Path.MENU)
 		}
 	}
 
@@ -50,12 +58,12 @@ const Login: React.FC = () => {
 				type: AuthActionType.LOGIN,
 				data: result.content!!,
 			})
-			HistoryService.push(PathConstants.MENU)
+			HistoryService.push(Path.MENU)
 		}
 	}
 
 	const handleRegister = async () => {
-		HistoryService.push(PathConstants.REGISTER)
+		HistoryService.push(Path.REGISTER)
 	}
 
 	const handleChangePassword = (value: string) => {
@@ -74,26 +82,26 @@ const Login: React.FC = () => {
 				<CapiInput
 					onChange={handleChangeCpf}
 					value={cpf}
-					uniqueKey={'cpf'}
-					label='cpf'
+					uniqueKey={CPF}
+					label={CPF}
 					number
 				/>
 				<Box m={1} />
 				<CapiInput
 					onChange={handleChangePassword}
 					value={password}
-					uniqueKey={'password'}
-					label='senha'
+					uniqueKey={PASSWORD}
+					label={PASSWORD}
 					password
 				/>
 				<Box m={2} />
-				<CapiButton onClick={handleLogin} text='Entrar' submit />
+				<CapiButton onClick={handleLogin} text={LOGIN} submit />
 				<Box m={2} />
-				<CapiButton onClick={handleGuest} text='Guest' />
+				<CapiButton onClick={handleGuest} text={GUESS} />
 			</form>
 			<Box m={1} />
 			<p className='login__without_account default_font'>
-				Não tem cadastro?
+				{REGISTER}
 				<RegisterHere onRegister={handleRegister} />
 			</p>
 			{error && <p className='login__error_text default_font'>{error}</p>}

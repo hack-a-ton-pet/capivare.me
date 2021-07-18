@@ -1,27 +1,30 @@
-import { learnPathList, statePowersPath } from '../../constant/mock/LearnPath'
-import LearnPathModel from '../../type/quiz/LearnPathModel'
+import {
+	LEARN_PATH_LIST,
+	PATH_STATE_POWERS,
+} from '../../constant/mock/LearnPath'
+import LearnPath from '../../type/quiz/LearnPath'
 
 class LearnPathService {
-	getById = (learnPathId: string): LearnPathModel | undefined => {
+	getById = (learnPathId: string): LearnPath | undefined => {
 		const queryResult = this.getAll().filter(
 			learnPath => learnPath.id === learnPathId,
 		)
 		return queryResult.length > 0 ? queryResult[0] : undefined
 	}
 
-	getByLessonId = (lessonId: string): LearnPathModel | undefined => {
+	getByLessonId = (lessonId: string): LearnPath | undefined => {
 		const queryResult = this.getAll().filter(learnPath =>
 			learnPath.lessons.some(lesson => lesson.id === lessonId),
 		)
 		return queryResult.length > 0 ? queryResult[0] : undefined
 	}
 
-	getAll = (): LearnPathModel[] => {
-		return learnPathList
+	getAll = (): LearnPath[] => {
+		return LEARN_PATH_LIST
 	}
 
 	getStatePowersLearnPathId = () => {
-		return statePowersPath.id
+		return PATH_STATE_POWERS.id
 	}
 }
 

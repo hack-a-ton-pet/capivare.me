@@ -4,11 +4,15 @@ import GoBackIconButton from '../../component/icon_button/go_back'
 import ProfileIconButton from '../../component/icon_button/profile'
 import ProgressStatus from '../../component/progress_status'
 import LearnPathCard from '../../component/learn_path_card'
-import { LEARN_MORE_TITLE, PRACTICE_BUTTON } from '../../constant/data/Learn'
+import {
+	LEARN_MORE_TITLE,
+	OPEN_LESSONS,
+	PRACTICE_BUTTON,
+} from '../../constant/component/Learn'
 import { Box } from '@material-ui/core'
-import PathConstants from '../../constant/PathConstants'
+import Path from '../../constant/Path'
 import HistoryService from '../../service/history/HistoryService'
-import { authStore } from '../../context/AuthContext'
+import { authStore } from '../../context/Auth'
 import GeneralProgressService from '../../service/progress/GeneralProgressService'
 import LearnPathProgressService from '../../service/progress/LearnPathProgressService'
 import LearnPathService from '../../service/learn_path/LearnPathService'
@@ -29,11 +33,11 @@ const LearnPath: React.FC = () => {
 		<div className='learn'>
 			<div className='learn_header'>
 				<div className='learn_header__start'>
-					<GoBackIconButton color='primary' path={PathConstants.MENU} />
+					<GoBackIconButton color='primary' path={Path.MENU} />
 				</div>
 				<div className='learn_header__end'>
 					<ProfileIconButton
-						onClick={() => handleClick(PathConstants.ACHIEVEMENTS)}
+						onClick={() => handleClick(Path.ACHIEVEMENTS)}
 					/>
 				</div>
 			</div>
@@ -55,7 +59,7 @@ const LearnPath: React.FC = () => {
 				<CapiButton
 					className='learn__practice_button'
 					text={PRACTICE_BUTTON}
-					onClick={() => handleClick(`${PathConstants.QUIZ}/1`)}
+					onClick={() => handleClick(`${Path.QUIZ}`)}
 				/>
 			</div>
 			<div className='learn__learn_more_wrapper'>
@@ -64,13 +68,11 @@ const LearnPath: React.FC = () => {
 					<Fragment key={index}>
 						<LearnPathCard
 							description={learnPath.desc}
-							buttonText='Abrir lições'
+							buttonText={OPEN_LESSONS}
 							title={learnPath.title}
 							id={learnPath.id}
 							onClick={() =>
-								handleClick(
-									`${PathConstants.LESSON_MENU}/${learnPath.id}`,
-								)
+								handleClick(`${Path.LESSON_MENU}/${learnPath.id}`)
 							}
 						/>
 						<Box m={3} />
