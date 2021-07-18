@@ -38,6 +38,7 @@ converted into tax discounts.
 ![React](https://img.shields.io/badge/-React-05122A?style=flat&logo=react)&nbsp;
   
 ## Running this app
-1) Clone this repository and checkout on 'development' branch
-2) Execute 'npm install'
-3) Execute 'npm start'
+1) Install Node.js (^v14)
+2) Clone this repository and checkout on 'development' branch
+3) Execute 'npm install'
+4) Execute 'npm start'
