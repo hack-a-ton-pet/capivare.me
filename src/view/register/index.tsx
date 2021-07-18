@@ -8,6 +8,7 @@ import CapiInput from '../../component/input'
 import PathConstants from '../../constant/PathConstants'
 import { AuthActionType, authStore } from '../../context/AuthContext'
 import RegisterService from '../../service/auth/RegisterService'
+import CpfService from '../../service/user/CpfService'
 import './styles.css'
 
 const Register: React.FC = () => {
@@ -37,7 +38,7 @@ const Register: React.FC = () => {
 	}
 
 	const handleChangeCpf = (value: string) => {
-		setCpf(value)
+		if (CpfService.isValidLength(value)) setCpf(value)
 	}
 
 	const handleChangePassword = (value: string) => {

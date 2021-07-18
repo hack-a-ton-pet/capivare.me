@@ -4,16 +4,18 @@ import HistoryService from '../../service/history/HistoryService'
 import Capybara from '../../asset/capi.png'
 import './styles.css'
 
-const ReviewResults = () => {
-	const rating_score = 90
+interface ReviewResultsProps {
+	ratingScore: number
+}
+
+const ReviewResults: React.FC<ReviewResultsProps> = ({ ratingScore }) => {
 	const getResultMessage = () => {
-		if (rating_score >= 70) {
+		if (ratingScore >= 70) {
 			return (
 				<>
 					<h1>Parabéns!</h1>
 					<p>
-						Você acertou {rating_score} das questões. Pode ficar
-						orgulhoso!
+						Você acertou {ratingScore} das questões. Pode ficar orgulhoso!
 					</p>
 				</>
 			)

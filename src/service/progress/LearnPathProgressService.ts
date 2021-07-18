@@ -10,7 +10,7 @@ class LearnPathProgressService {
 			this.getUserNumberOfCompletedLessonsByLearnPath(user, learnPathId)
 		if (userLearnPathNumberOfCompletedLessons === 0) return 0
 		return (
-			(learnPathNumberOfLessons / userLearnPathNumberOfCompletedLessons) *
+			(userLearnPathNumberOfCompletedLessons / learnPathNumberOfLessons) *
 			100
 		)
 	}

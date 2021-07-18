@@ -8,6 +8,13 @@ class LearnPathService {
 		)
 		return queryResult.length > 0 ? queryResult[0] : undefined
 	}
+
+	getByLessonId = (lessonId: string): LearnPathModel | undefined => {
+		const queryResult = LearnPathList.filter(learnPath =>
+			learnPath.lessons.some(lesson => lesson.id === lessonId),
+		)
+		return queryResult.length > 0 ? queryResult[0] : undefined
+	}
 }
 
 export default new LearnPathService()

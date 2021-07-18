@@ -7,7 +7,7 @@ class GeneralProgressService {
 		const total = this.getTotalNumberOfLessons()
 		const userTotal = this.getUserTotalNumberOfCompletedLessons(user)
 		if (userTotal === 0) return 0
-		return (total / userTotal) * 100
+		return (userTotal / total) * 100
 	}
 
 	private getUserTotalNumberOfCompletedLessons = (user: User): number => {
