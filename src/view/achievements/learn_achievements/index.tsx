@@ -14,7 +14,7 @@ import {
 	PATH_2_DESC,
 	PATH_3,
 	PATH_3_DESC,
-} from '../../../constant/data/LearnAchievements'
+} from '../../../constant/component/LearnAchievements'
 import './styles.css'
 
 const LearnAchievements = () => {

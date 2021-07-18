@@ -8,7 +8,7 @@ import {
 	LEARN_MORE_TITLE,
 	OPEN_LESSONS,
 	PRACTICE_BUTTON,
-} from '../../constant/data/Learn'
+} from '../../constant/component/Learn'
 import { Box } from '@material-ui/core'
 import Path from '../../constant/Path'
 import HistoryService from '../../service/history/HistoryService'

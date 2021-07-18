@@ -15,7 +15,7 @@ import {
 	LOGIN,
 	PASSWORD,
 	REGISTER,
-} from '../../constant/data/Login'
+} from '../../constant/component/Login'
 import './styles.css'
 
 const RegisterHere: React.FC<{
@@ -26,7 +26,7 @@ const RegisterHere: React.FC<{
 			className='login__register_here default_font'
 			onClick={onRegister}
 		>
-			{GO_TO_REGISTER}
+			&nbsp;{GO_TO_REGISTER}
 		</button>
 	)
 }

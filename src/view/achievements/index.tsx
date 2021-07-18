@@ -8,7 +8,7 @@ import Achievement5 from '../../asset/achievements/005.png'
 import Achievement6 from '../../asset/achievements/006.png'
 import HistoryService from '../../service/history/HistoryService'
 import Path from '../../constant/Path'
-import { MEDAL_DESC, SEE_MORE } from '../../constant/data/Achievements'
+import { MEDAL_DESC, SEE_MORE } from '../../constant/component/Achievements'
 import { suspend } from '../../util/AsyncUtils'
 import './styles.css'
 

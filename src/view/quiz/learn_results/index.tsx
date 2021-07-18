@@ -8,7 +8,7 @@ import {
 	GO_BACK_TO_MENU,
 	GO_TO_NEXT_LESSON,
 	KEEP_STUDING,
-} from '../../../constant/data/LearnResults'
+} from '../../../constant/component/LearnResults'
 import CapiLogo from '../../../component/capi_logo'
 import './styles.css'
 

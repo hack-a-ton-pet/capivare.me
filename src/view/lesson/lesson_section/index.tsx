@@ -14,7 +14,7 @@ import {
 	END_MESSAGE,
 	PRACTICE,
 	PRACTICE_MESSAGE,
-} from '../../../constant/data/LessonSection'
+} from '../../../constant/component/LessonSection'
 import './styles.css'
 import { suspend } from '../../../util/AsyncUtils'
 

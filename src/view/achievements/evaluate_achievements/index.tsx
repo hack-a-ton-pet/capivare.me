@@ -14,7 +14,7 @@ import {
 	FAST_TRIGGER,
 	FAST_TRIGGER_DESC,
 	MEDAL_ALT,
-} from '../../../constant/data/EvaluateAchievements'
+} from '../../../constant/component/EvaluateAchievements'
 import './styles.css'
 
 const EvaluateAchievements = () => {

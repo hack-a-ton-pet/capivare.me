@@ -1,6 +1,6 @@
 import React from 'react'
 import CapiImg from '../../asset/capi.png'
-import { LOGO_ALT } from '../../constant/data/CapiLogo'
+import { LOGO_ALT } from '../../constant/component/CapiLogo'
 
 interface CapiLogoProps {
 	width?: string

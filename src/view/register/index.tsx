@@ -15,7 +15,7 @@ import {
 	CPF,
 	PASSWORD,
 	REGISTER,
-} from '../../constant/data/Register'
+} from '../../constant/component/Register'
 import './styles.css'
 
 const Register: React.FC = () => {

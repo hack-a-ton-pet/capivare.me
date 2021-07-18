@@ -8,7 +8,7 @@ import {
 	CONGRATULATIONS_MESSAGE,
 	FAIL,
 	FAIL_MESSAGE,
-} from '../../constant/data/ReviewResults'
+} from '../../constant/component/ReviewResults'
 import LearnService from '../../service/user/LearnService'
 import './styles.css'
 

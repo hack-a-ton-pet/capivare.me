@@ -3,7 +3,7 @@ import React from 'react'
 import CapiButton from '../../component/button'
 import CapiLogo from '../../component/capi_logo'
 import Path from '../../constant/Path'
-import { NOT_FOUND, RETURN_TO_MENU } from '../../constant/data/NotFound'
+import { NOT_FOUND, RETURN_TO_MENU } from '../../constant/component/NotFound'
 import HistoryService from '../../service/history/HistoryService'
 import './styles.css'
 
