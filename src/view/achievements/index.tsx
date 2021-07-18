@@ -8,11 +8,13 @@ import Achievement5 from '../../asset/achievements/005.png'
 import Achievement6 from '../../asset/achievements/006.png'
 import HistoryService from '../../service/history/HistoryService'
 import PathConstants from '../../constant/PathConstants'
+import { suspend } from '../../util/AsyncUtils'
 import './styles.css'
 
 const Achievements = () => {
-	const handleClick = path => {
-		setTimeout(() => HistoryService.push(path), 200)
+	const handleClick = async (path: string) => {
+		await suspend(200)
+		HistoryService.push(path)
 	}
 
 	return (
@@ -24,23 +26,49 @@ const Achievements = () => {
 			<div className='achievement-category-wrapper'>
 				<h2>Aprenda</h2>
 				<div className='achievement-wrapper'>
-					<img src={Achievement1} alt="ilustração de medalha" />
-					<img className='not-obtained' src={Achievement2} alt="ilustração de medalha" />
-					<img className='not-obtained' src={Achievement3} alt="ilustração de medalha" />
+					<img src={Achievement1} alt='ilustração de medalha' />
+					<img
+						className='not-obtained'
+						src={Achievement2}
+						alt='ilustração de medalha'
+					/>
+					<img
+						className='not-obtained'
+						src={Achievement3}
+						alt='ilustração de medalha'
+					/>
 				</div>
-				<div className="achievement-button-wrapper">
-					<CapiButton text='Ver mais' onClick={() => { handleClick(PathConstants.LEARN_ACHIEVEMENTS) }} />
+				<div className='achievement-button-wrapper'>
+					<CapiButton
+						text='Ver mais'
+						onClick={() => {
+							handleClick(PathConstants.LEARN_ACHIEVEMENTS)
+						}}
+					/>
 				</div>
 			</div>
 			<div className='achievement-category-wrapper'>
 				<h2>Avalie</h2>
 				<div className='achievement-wrapper'>
-					<img src={Achievement4} alt="ilustração de medalha" />
-					<img className='not-obtained' src={Achievement5} alt="ilustração de medalha" />
-					<img className='not-obtained' src={Achievement6} alt="ilustração de medalha" />
+					<img src={Achievement4} alt='ilustração de medalha' />
+					<img
+						className='not-obtained'
+						src={Achievement5}
+						alt='ilustração de medalha'
+					/>
+					<img
+						className='not-obtained'
+						src={Achievement6}
+						alt='ilustração de medalha'
+					/>
 				</div>
-				<div className="achievement-button-wrapper">
-					<CapiButton text='Ver mais' onClick={() => { handleClick(PathConstants.EVALUATE_ACHIEVEMENTS) }} />
+				<div className='achievement-button-wrapper'>
+					<CapiButton
+						text='Ver mais'
+						onClick={() => {
+							handleClick(PathConstants.EVALUATE_ACHIEVEMENTS)
+						}}
+					/>
 				</div>
 			</div>
 		</div>

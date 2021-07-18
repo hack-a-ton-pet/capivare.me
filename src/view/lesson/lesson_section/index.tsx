@@ -11,6 +11,7 @@ import PathConstants from '../../../constant/PathConstants'
 import { useParams } from 'react-router-dom'
 import Lesson from '../../../type/quiz/Lesson'
 import './styles.css'
+import { suspend } from '../../../util/AsyncUtils'
 
 interface LessonSectionParam {
 	id: string
@@ -44,8 +45,9 @@ const LessonSection: React.FC = () => {
 		if (isValidSectionIndex(newIndex, lesson)) setIndex(newIndex)
 	}
 
-	const handleClick = () => {
-		setTimeout(() => HistoryService.push(`${PathConstants.QUIZ}/${id}`), 200)
+	const handleClick = async () => {
+		await suspend(200)
+		HistoryService.push(`${PathConstants.QUIZ}/${id}`)
 	}
 
 	const renderDialogs = (lesson: Lesson) => {
