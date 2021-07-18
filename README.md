@@ -2,6 +2,8 @@
 # Capivere.me
 Project made for [Level Up Society](https://www.showcode.io/level-up-hack/) - July 2021
 
+## Trello
+https://trello.com/b/5q12AIAw/level-up-society-hackathon
 
 ## Authors
 - [@AndrewLBorges](https://github.com/AndrewLBorges)
@@ -9,7 +11,6 @@ Project made for [Level Up Society](https://www.showcode.io/level-up-hack/) - Ju
 - [@JPedroSilveira](https://github.com/JPedroSilveira)
 - [@prphawk](https://github.com/prphawk)
 - [@vickyad](https://github.com/vickyad)
-
   
 ## Prototype
 [Figma - screens](https://www.figma.com/file/VkhKZCpyj7L6VEl2Ok5Vrs/Capivare.me-Level-Up-Society?node-id=1%3A850)
@@ -36,4 +37,7 @@ converted into tax discounts.
 ![TypeScript](https://img.shields.io/badge/-TypeScript-05122A?style=flat&logo=typescript)&nbsp;
 ![React](https://img.shields.io/badge/-React-05122A?style=flat&logo=react)&nbsp;
   
-## Installation
+## Running this app
+1) Clone this repository and checkout on 'development' branch
+2) execute 'npm install'
+3) execute 'npm start'
