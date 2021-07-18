@@ -11,6 +11,7 @@ import NotFound from './not_found'
 import Lesson from './lesson'
 import Achievements from './achievements'
 import LessonSection from './lesson/lesson_section'
+import Quiz from './quiz'
 import LearnAchievements from './achievements/learn_achievements'
 import EvaluateAchievements from './achievements/evaluate_achievements'
 
@@ -39,9 +40,8 @@ const Main: React.FC = () => {
 					component={LessonSection}
 				/>
 				<AuthenticatedRoute
-					exact
 					path={PathConstants.QUIZ}
-					component={() => <></>}
+					component={Quiz}
 				/>
 				<AuthenticatedRoute
 					path={`${PathConstants.QUIZ}/:id`}

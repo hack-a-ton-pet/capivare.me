@@ -4,7 +4,7 @@ import './styles.css'
 
 export interface CapiButtonProps {
 	text: string
-	status?: string
+	status?: 'correct' | 'incorrect'
 	onClick: () => void
 }
 
@@ -13,11 +13,8 @@ const CapiAnswerButton: React.FC<CapiButtonProps> = ({
 	status,
 	onClick,
 }) => {
-	if (!status) {
-		status = 'default'
-	}
 	return (
-		<div className={`answer_button ${status}`}>
+		<div className={`answer_button` + (status ? ' ' + status : '')}>
 			<Button onClick={onClick} variant='contained'>
 				{text}
 			</Button>
