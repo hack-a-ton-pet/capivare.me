@@ -2,7 +2,6 @@ import CapiButton from '../../../component/button'
 import Path from '../../../constant/Path'
 import HistoryService from '../../../service/history/HistoryService'
 import ProgressCircle from '../../../component/progress/progress_circle'
-import Capybara from '../../../asset/capi.png'
 import {
 	CONGRATULATIONS,
 	FAIL_MESSAGE,
@@ -10,6 +9,7 @@ import {
 	GO_TO_NEXT_LESSON,
 	KEEP_STUDING,
 } from '../../../constant/data/LearnResults'
+import CapiLogo from '../../../component/capi_logo'
 import './styles.css'
 
 interface LearnResultsProps {
@@ -46,15 +46,20 @@ const LearnResults: React.FC<LearnResultsProps> = ({ ratingScore }) => {
 
 	return (
 		<div className='learn-results'>
-			<div className='learn-results-text-wrapper'>{getResultMessage()}</div>
-			<div className='learn-results-button-wrapper'>
-				<CapiButton text={GO_BACK_TO_MENU} onClick={() => goBackToMenu()} />
+			<div className='learn_results__content_wrapper'>
+				<div className='learn-results-text-wrapper'>
+					{getResultMessage()}
+				</div>
+				<div className='learn-results-button-wrapper'>
+					<CapiButton
+						text={GO_BACK_TO_MENU}
+						onClick={() => goBackToMenu()}
+					/>
+				</div>
 			</div>
-			<img
-				alt='Capivara, simbolo do aplicativo'
-				src={Capybara}
-				className='capi-img'
-			/>
+			<div className='learn_result__capi_wrapper'>
+				<CapiLogo className='learn_result__capi' width='200px' />
+			</div>
 		</div>
 	)
 }

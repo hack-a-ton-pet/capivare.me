@@ -16,6 +16,7 @@ import {
 	PRACTICE_MESSAGE,
 } from '../../../constant/data/LessonSection'
 import './styles.css'
+import { suspend } from '../../../util/AsyncUtils'
 
 interface LessonSectionParam {
 	id: string
@@ -49,8 +50,9 @@ const LessonSection: React.FC = () => {
 		if (isValidSectionIndex(newIndex, lesson)) setIndex(newIndex)
 	}
 
-	const handleClick = () => {
-		setTimeout(() => HistoryService.push(`${Path.QUIZ}/${id}`), 200)
+	const handleClick = async () => {
+		await suspend(200)
+		HistoryService.push(`${Path.QUIZ}/${id}`)
 	}
 
 	const renderDialogs = (lesson: Lesson) => {

@@ -10,6 +10,7 @@ import {
 import HistoryService from '../../service/history/HistoryService'
 import { menuCardProps } from '../../constant/mock/MenuCard'
 import './styles.css'
+import { suspend } from '../../util/AsyncUtils'
 
 const useStyles = makeStyles({
 	root: {
@@ -23,8 +24,9 @@ const useStyles = makeStyles({
 const CapiCard: React.FC<{
 	item: menuCardProps
 }> = ({ item }) => {
-	const handleClick = path => {
-		setTimeout(() => HistoryService.push(path), 200)
+	const handleClick = async (path: string) => {
+		await suspend(200)
+		HistoryService.push(path)
 	}
 
 	const classes = useStyles()

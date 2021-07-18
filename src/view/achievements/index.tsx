@@ -9,11 +9,13 @@ import Achievement6 from '../../asset/achievements/006.png'
 import HistoryService from '../../service/history/HistoryService'
 import Path from '../../constant/Path'
 import { MEDAL_DESC, SEE_MORE } from '../../constant/data/Achievements'
+import { suspend } from '../../util/AsyncUtils'
 import './styles.css'
 
 const Achievements = () => {
-	const handleClick = path => {
-		setTimeout(() => HistoryService.push(path), 200)
+	const handleClick = async (path: string) => {
+		await suspend(200)
+		HistoryService.push(path)
 	}
 
 	return (
