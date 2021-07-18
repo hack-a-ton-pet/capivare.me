@@ -2,6 +2,12 @@
 # Capivere.me
 Project made for [Level Up Society](https://www.showcode.io/level-up-hack/) - July 2021
 
+## Try it!
+[Capivare.me](https://capivare.herokuapp.com/)
+
+## Devpost project page
+[Devpost - Capivare.me](https://devpost.com/software/hack-a-ton-ok36tj)
+
 ## Authors
 - [@AndrewLBorges](https://github.com/AndrewLBorges)
 - [@bbeneduzib](https://github.com/bbeneduzib)
@@ -15,7 +21,7 @@ Project made for [Level Up Society](https://www.showcode.io/level-up-hack/) - Ju
 [Figma - navigable prototype](https://www.figma.com/proto/VkhKZCpyj7L6VEl2Ok5Vrs/Capivare.me-%5BLevel-Up-Society%5D?node-id=1%3A1005&scaling=min-zoom)
 
 ## Trello
-https://trello.com/b/5q12AIAw/level-up-society-hackathon
+[Trello - Capivare.me](https://trello.com/b/5q12AIAw/level-up-society-hackathon)
   
 ## About this project
 
