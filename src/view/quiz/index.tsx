@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import CapiQuestionCard from '../../component/question_card'
 import CapiAnswerButton from '../../component/answer_button'
 import './styles.css'
@@ -6,10 +6,7 @@ import QuizItem, { Answer } from '../../type/quiz/QuizItem'
 import StatePowerLessons from '../../constant/data/LearnPath'
 import SwipeableViews from 'react-swipeable-views'
 import CapiStepperQuestions from '../../component/stepper_questions'
-import {
-	CapiQuestionStatusCircleProps,
-	StatusType,
-} from '../../component/question_status_circle'
+import { StatusType } from '../../component/question_status_circle'
 
 const Quiz: React.FC = () => {
 	const [itemIndex, setItemIndex] = useState(0)
@@ -18,17 +15,21 @@ const Quiz: React.FC = () => {
 
 	const items = StatePowerLessons[0].lessons[0].quiz.items
 
-	const [questionStatus, setQuestionStatus] = useState<StatusType[]>(
-		new Array(items.length).fill('not_answered'),
-	)
+	const [questionStatus, setQuestionStatus] = useState<StatusType[]>([
+		'current',
+		...new Array(items.length - 1).fill('not_answered'),
+	])
 
 	const handleChangeIndex = (index: number) => {
-		if (index > -1 && index < items.length) setItemIndex(index)
+		if (index > -1 && index < items.length) {
+			setItemIndex(index)
+			questionStatus[index] = 'current'
+			setQuestionStatus([...questionStatus])
+		}
 	}
 
 	const handleClickAnswer = (item: QuizItem, clickedId: number) => {
 		setClickedId(clickedId)
-		console.log(itemIndex)
 
 		if (item.correctAnswerId === clickedId) {
 			// ganha pontinhos
@@ -40,7 +41,6 @@ const Quiz: React.FC = () => {
 		}
 
 		setQuestionStatus([...questionStatus])
-		console.log(questionStatus)
 
 		setTimeout(() => {
 			handleChangeIndex(itemIndex + 1)
