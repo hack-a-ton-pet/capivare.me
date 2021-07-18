@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import CapiQuestionCard from '../../component/question_card'
 import CapiAnswerButton from '../../component/answer_button'
-import './styles.css'
 import QuizItem, { Answer } from '../../type/quiz/QuizItem'
 import StatePowerLessons from '../../constant/data/LearnPath'
 import SwipeableViews from 'react-swipeable-views'
 import CapiStepperQuestions from '../../component/stepper_questions'
 import { StatusType } from '../../component/question_status_circle'
+import './styles.css'
 
 const Quiz: React.FC = () => {
 	const [itemIndex, setItemIndex] = useState(0)

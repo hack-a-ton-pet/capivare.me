@@ -6,9 +6,9 @@ import ProgressStatus from '../../component/progress_status'
 import LearnPathCard from '../../component/learn_path_card'
 import { LEARN_MORE_TITLE, PRACTICE_BUTTON } from '../../constant/data/Learn'
 import { Box } from '@material-ui/core'
-import './styles.css'
 import PathConstants from '../../constant/PathConstants'
 import HistoryService from '../../service/history/HistoryService'
+import './styles.css'
 
 const LearnPath: React.FC = () => {
 	const handleClick = (path: string) => {
