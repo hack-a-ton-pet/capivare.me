@@ -1,5 +1,5 @@
-import LearnPathList from '../../constant/data/LearnPath'
 import Lesson from '../../type/quiz/Lesson'
+import LearnPathService from '../learn_path/LearnPathService'
 
 class LessonService {
 	getById = (lessonId: string): Lesson | undefined => {
@@ -9,7 +9,7 @@ class LessonService {
 	}
 
 	private getAllLessons = (): Lesson[] => {
-		return LearnPathList.reduce(
+		return LearnPathService.getAll().reduce(
 			(acc, learnPath) => acc.concat(learnPath.lessons),
 			[] as Lesson[],
 		)

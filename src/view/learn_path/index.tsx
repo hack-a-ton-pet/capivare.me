@@ -11,11 +11,12 @@ import HistoryService from '../../service/history/HistoryService'
 import { authStore } from '../../context/AuthContext'
 import GeneralProgressService from '../../service/progress/GeneralProgressService'
 import LearnPathProgressService from '../../service/progress/LearnPathProgressService'
-import LearnPathList, { PATH_STATE_POWERS } from '../../constant/data/LearnPath'
+import LearnPathService from '../../service/learn_path/LearnPathService'
 import './styles.css'
 
 const LearnPath: React.FC = () => {
 	const { state } = useContext(authStore)
+	const learnPathList = LearnPathService.getAll()
 	const user = state.user
 
 	const handleClick = (path: string) => {
@@ -44,7 +45,7 @@ const LearnPath: React.FC = () => {
 					lawProgress={LearnPathProgressService.calc(user, 'undefined')}
 					separationOfPowers={LearnPathProgressService.calc(
 						user,
-						PATH_STATE_POWERS.id,
+						LearnPathService.getStatePowersLearnPathId(),
 					)}
 				/>
 			</div>
@@ -57,7 +58,7 @@ const LearnPath: React.FC = () => {
 			</div>
 			<div className='learn__learn_more_wrapper'>
 				<h2 className='default_font'>{LEARN_MORE_TITLE}</h2>
-				{LearnPathList.map((learnPath, index) => (
+				{learnPathList.map((learnPath, index) => (
 					<Fragment key={index}>
 						<LearnPathCard
 							description={learnPath.desc}
