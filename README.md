@@ -2,9 +2,6 @@
 # Capivere.me
 Project made for [Level Up Society](https://www.showcode.io/level-up-hack/) - July 2021
 
-## Trello
-https://trello.com/b/5q12AIAw/level-up-society-hackathon
-
 ## Authors
 - [@AndrewLBorges](https://github.com/AndrewLBorges)
 - [@bbeneduzib](https://github.com/bbeneduzib)
@@ -16,6 +13,9 @@ https://trello.com/b/5q12AIAw/level-up-society-hackathon
 [Figma - screens](https://www.figma.com/file/VkhKZCpyj7L6VEl2Ok5Vrs/Capivare.me-Level-Up-Society?node-id=1%3A850)
 
 [Figma - navigable prototype](https://www.figma.com/proto/VkhKZCpyj7L6VEl2Ok5Vrs/Capivare.me-[Level-Up-Society]?node-id=1%3A1005&scaling=min-zoom)
+
+## Trello
+https://trello.com/b/5q12AIAw/level-up-society-hackathon
   
 ## About this project
 We selected the theme `Better Learning` to improve the knowledge around politics in Brazil.
@@ -39,5 +39,5 @@ converted into tax discounts.
   
 ## Running this app
 1) Clone this repository and checkout on 'development' branch
-2) execute 'npm install'
-3) execute 'npm start'
+2) Execute 'npm install'
+3) Execute 'npm start'
