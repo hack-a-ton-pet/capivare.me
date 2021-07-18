@@ -1,5 +1,11 @@
+.menu {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
 .MuiCard-root.capi_card {
-	margin: 32px 16px;
+	margin: 32px 16px 16px 16px;
 	border-radius: 10px;
 }
 
@@ -18,4 +24,8 @@
 
 .capi_card .capi_card__media__title.small h2 {
 	font-size: 60px;
+}
+
+.capi_card.makeStyles-root-1 {
+	max-width: 400px;
 }
