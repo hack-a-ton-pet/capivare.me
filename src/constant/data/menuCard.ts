@@ -12,13 +12,13 @@ const menuCards: menuCardProps[] = [
 	{
 		title: 'Aprenda',
 		image: 'learn_card.png',
-		text: 'Texto do Aprenda Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica',
+		text: 'Nessa sessão, aprenda mais sobre a organização política do Brasil.',
 		path: PathConstants.LEARN,
 	},
 	{
 		title: 'Avalie',
 		image: 'evaluate_card.png',
-		text: 'Texto do Avalie Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica',
+		text: 'Essa sessão é destinada a acompanhar as metas dos atuais representantes do nosso país',
 		path: '/nothing',
 	},
 ]

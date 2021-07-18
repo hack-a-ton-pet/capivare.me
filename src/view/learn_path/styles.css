@@ -65,3 +65,8 @@
 	font-size: 24px;
 	font-weight: bold;
 }
+
+.learn .learn__practice_button__wrapper .text_button .MuiButton-contained {
+	width: 328px;
+	height: 60px;
+}
