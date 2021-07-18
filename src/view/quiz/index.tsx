@@ -144,20 +144,14 @@ const Quiz: React.FC = () => {
 	}
 
 	const renderQuiz = (lesson: Lesson, user: User) => {
-		return (
-			<>
-				{lesson.quiz.items.map((e, index) => (
-					<div className='quiz_block' key={index}>
-						<div className='quiz_question'>
-							<CapiQuestionCard question={e.question} />
-						</div>
-						<div className='quiz_answers'>
-							{renderAnswers(e, lesson, user)}
-						</div>
-					</div>
-				))}
-			</>
-		)
+		return lesson.quiz.items.map((e, index) => (
+			<div className='quiz_block' key={index}>
+				<div className='quiz_question'>
+					<CapiQuestionCard question={e.question} />
+				</div>
+				<div className='quiz_answers'>{renderAnswers(e, lesson, user)}</div>
+			</div>
+		))
 	}
 
 	const renderLearnResult = () => {
