@@ -1,0 +1,25 @@
+.MuiCircularProgress-determinate {
+	color: var(--primary-color);
+}
+
+.MuiCircularProgress-determinate#lesson-1 {
+	color: var(--section-1-color);
+}
+
+.MuiCircularProgress-determinate#lesson-2 {
+	color: var(--section-2-color);
+}
+
+.MuiCircularProgress-determinate#lesson-3 {
+	color: var(--section-3-color);
+}
+
+.MuiCircularProgress-determinate#lesson-4 {
+	color: var(--section-4-color);
+}
+
+.capi_circular_progress .MuiTypography-caption {
+	font-family: Poppins;
+	font-weight: bold;
+	color: var(--dark-color);
+}

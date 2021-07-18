@@ -1,0 +1,44 @@
+.lesson_section {
+	height: inherit;
+	background-color: var(--primary-lighter-color);
+	height: 100%;
+	width: 100%;
+	overflow-y: scroll;
+	position: absolute;
+}
+.lesson_section .react-swipeable-view-container {
+	align-items: center;
+}
+.lesson_section .MuiCard-root.content_card {
+	margin: 12px 24px 24px;
+}
+.lesson_section .learn_path_card {
+	margin: 50% 32px;
+}
+.lesson_section .learn_path_card .button_wrapper {
+	justify-content: center;
+}
+
+.lesson_section .learn_path_card p {
+	margin: 1em 0;
+}
+
+.lesson_section .learn_path_card .text_button .MuiButton-contained {
+	background-color: var(--secondary-color);
+}
+
+.lesson_section .arrow_next__icon_button {
+	margin: 6px;
+	padding: 0;
+}
+
+.lesson_section .go_back__icon_button {
+	margin: 12px;
+	padding: 0;
+}
+
+.lesson_section .stepper_menu {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}

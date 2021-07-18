@@ -1,0 +1,6 @@
+.capi_icon_button.MuiIconButton-colorPrimary {
+	color: var(--primary-darker-color);
+}
+.capi_icon_button.MuiIconButton-colorSecondary {
+	color: var(--dark-color);
+}

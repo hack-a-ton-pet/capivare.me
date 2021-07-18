@@ -1,0 +1,34 @@
+.question_status_circle {
+	width: 21px;
+	height: 21px;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.question_status_circle .MuiSvgIcon-root {
+	width: 15px;
+	height: 15px;
+	fill: #fafafa;
+}
+
+.status_correct {
+	background-color: var(--primary-color);
+	box-shadow: inset 0px 3px 5px rgba(255, 255, 255, 255);
+}
+
+.status_incorrect {
+	background-color: var(--wrong-color);
+	box-shadow: inset 0px 3px 5px rgba(255, 255, 255, 255);
+}
+
+.status_current {
+	background-color: var(--secondary-color);
+	box-shadow: inset 0px 8px 7px rgb(255 255 255 / 70%);
+}
+
+.status_not_answered {
+	background-color: var(--primary-lighter-color);
+	box-shadow: inset 0px 4px 14px 0px rgb(30 29 29 / 45%);
+}

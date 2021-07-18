@@ -1,0 +1,31 @@
+.menu {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.MuiCard-root.capi_card {
+	margin: 32px 16px 16px 16px;
+	border-radius: 10px;
+}
+
+.capi_card .MuiCardMedia-root.capi_card__media {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.capi_card .capi_card__media__title h2 {
+	font-size: 75px;
+	letter-spacing: -0.017em;
+	color: #eeeeee;
+	text-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+}
+
+.capi_card .capi_card__media__title.small h2 {
+	font-size: 60px;
+}
+
+.capi_card.makeStyles-root-1 {
+	max-width: 400px;
+}

@@ -1,0 +1,53 @@
+.learn_path_card {
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	border-radius: 15px;
+	padding: 16px;
+}
+
+.learn_path_card h1 {
+	margin: 0;
+	font-size: 20px;
+}
+
+.learn_path_card p {
+	margin: 0.5em;
+	font-size: 16px;
+	text-align: justify;
+	text-transform: none;
+}
+
+.button_wrapper {
+	width: 100%;
+	display: flex;
+	justify-content: flex-end;
+}
+
+.learn_path_card .text_button .MuiButton-contained {
+	filter: none;
+	background-color: var(--light-color);
+}
+
+.learn_path_card .text_button .MuiButton-contained:hover {
+	filter: none;
+	background-color: var(--light-color);
+}
+
+.learn_path_card {
+	background-color: var(--section-1-color);
+}
+
+.learn_path_card#lp01 {
+	background-color: var(--section-1-color);
+}
+
+.learn_path_card#lp02 {
+	background-color: var(--section-2-color);
+}
+
+.learn_path_card#lp03 {
+	background-color: var(--section-3-color);
+}
+
+.learn_path_card#lp04 {
+	background-color: var(--section-4-color);
+}
