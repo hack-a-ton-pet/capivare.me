@@ -1,8 +1,15 @@
 import CapiButton from '../../../component/button'
-import PathConstants from '../../../constant/PathConstants'
+import Path from '../../../constant/Path'
 import HistoryService from '../../../service/history/HistoryService'
 import ProgressCircle from '../../../component/progress/progress_circle'
 import Capybara from '../../../asset/capi.png'
+import {
+	CONGRATULATIONS,
+	FAIL_MESSAGE,
+	GO_BACK_TO_MENU,
+	GO_TO_NEXT_LESSON,
+	KEEP_STUDING,
+} from '../../../constant/data/LearnResults'
 import './styles.css'
 
 interface LearnResultsProps {
@@ -14,8 +21,8 @@ const LearnResults: React.FC<LearnResultsProps> = ({ ratingScore }) => {
 		if (ratingScore >= 70) {
 			return (
 				<>
-					<h1>Parabéns!</h1>
-					<p>Fez um ótimo trabalho! Vamos para a próxima lição?</p>
+					<h1>{CONGRATULATIONS}</h1>
+					<p>{GO_TO_NEXT_LESSON}</p>
 					<ProgressCircle
 						value={ratingScore}
 						size={120}
@@ -27,24 +34,21 @@ const LearnResults: React.FC<LearnResultsProps> = ({ ratingScore }) => {
 		}
 		return (
 			<>
-				<h1>Poxa! Não foi dessa vez!</h1>
-				<p>Mas não desanime! Continue estudando!</p>
+				<h1>{FAIL_MESSAGE}</h1>
+				<p>{KEEP_STUDING}</p>
 			</>
 		)
 	}
 
 	const goBackToMenu = () => {
-		HistoryService.push(PathConstants.LEARN)
+		HistoryService.push(Path.LEARN)
 	}
 
 	return (
 		<div className='learn-results'>
 			<div className='learn-results-text-wrapper'>{getResultMessage()}</div>
 			<div className='learn-results-button-wrapper'>
-				<CapiButton
-					text='Voltar para o menu'
-					onClick={() => goBackToMenu()}
-				/>
+				<CapiButton text={GO_BACK_TO_MENU} onClick={() => goBackToMenu()} />
 			</div>
 			<img
 				alt='Capivara, simbolo do aplicativo'

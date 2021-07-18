@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { AuthActionType, authStore } from '../../context/AuthContext'
+import { AuthActionType, authStore } from '../../context/Auth'
 import LogoutIconButton from '../../component/icon_button/logout'
 import { MENU_CARDS } from '../../constant/mock/MenuCard'
 import CapiCard from '../../component/card'

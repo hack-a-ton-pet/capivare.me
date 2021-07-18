@@ -1,6 +1,6 @@
 import React from 'react'
 import Main from './view'
-import { AuthProvider } from './context/AuthContext'
+import { AuthProvider } from './context/Auth'
 import './App.css'
 import './Color.css'
 import './Var.css'

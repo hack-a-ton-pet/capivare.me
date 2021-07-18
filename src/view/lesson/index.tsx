@@ -3,18 +3,18 @@ import ArrowDownIconButton from '../../component/icon_button/arrow_down'
 import CapiHorizontalProgress from '../../component/progress/horizontal_progress'
 import CapiLessonCardButton from '../../component/lesson_card_button'
 import { LESSON_PREFIX } from '../../constant/data/Lesson'
-import { authStore } from '../../context/AuthContext'
+import { authStore } from '../../context/Auth'
 import LearnPathProgressService from '../../service/progress/LearnPathProgressService'
 import LearnPathService from '../../service/learn_path/LearnPathService'
 import { useParams } from 'react-router-dom'
-import PathConstants from '../../constant/PathConstants'
+import Path from '../../constant/Path'
 import LessonStatusService from '../../service/lesson/LessonStatusService'
-import LearnPathModel from '../../type/quiz/LearnPathModel'
+import LearnPath from '../../type/quiz/LearnPath'
 import User from '../../type/entity/User'
 import HistoryService from '../../service/history/HistoryService'
 import './styles.css'
 
-const renderLessons = (learnPath: LearnPathModel, user: User) => {
+const renderLessons = (learnPath: LearnPath, user: User) => {
 	let lastIsDone = true
 	return learnPath.lessons.map((e, index) => {
 		const isDone = LessonStatusService.isDone(user, learnPath.lessons, index)
@@ -24,9 +24,7 @@ const renderLessons = (learnPath: LearnPathModel, user: User) => {
 				status={isDone ? 'done' : lastIsDone ? 'open' : 'blocked'}
 				id={e.id}
 				key={index}
-				onClick={() =>
-					HistoryService.push(`${PathConstants.LESSON}/${e.id}`)
-				}
+				onClick={() => HistoryService.push(`${Path.LESSON}/${e.id}`)}
 			/>
 		)
 		lastIsDone = isDone
@@ -46,7 +44,7 @@ const Lesson: React.FC = () => {
 	const learnPath = LearnPathService.getById(id)
 
 	const handleBackToMenu = () => {
-		HistoryService.push(PathConstants.LEARN)
+		HistoryService.push(Path.LEARN)
 	}
 
 	return (

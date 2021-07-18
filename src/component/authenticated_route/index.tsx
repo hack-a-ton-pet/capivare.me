@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from 'react'
 import { Route } from 'react-router'
-import { authStore } from '../../context/AuthContext'
-import PathConstants from '../../constant/PathConstants'
+import { authStore } from '../../context/Auth'
+import Path from '../../constant/Path'
 import HistoryService from '../../service/history/HistoryService'
 
 interface PrivateRouteProps {
@@ -15,7 +15,7 @@ const AuthenticatedRoute: React.FC<PrivateRouteProps> = props => {
 
 	useEffect(() => {
 		if (!auth.state.isAuthenticated) {
-			HistoryService.push(PathConstants.LOGIN)
+			HistoryService.push(Path.LOGIN)
 		}
 	})
 

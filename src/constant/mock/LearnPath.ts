@@ -1,4 +1,4 @@
-import LearnPathModel from '../../type/quiz/LearnPathModel'
+import LearnPath from '../../type/quiz/LearnPath'
 import Lesson from '../../type/quiz/Lesson'
 
 const LESSONS_STATE_POWERS: Lesson[] = [
@@ -228,35 +228,35 @@ const LESSONS_STATE_POWERS: Lesson[] = [
 	},
 ]
 
-export const PATH_STATE_POWERS: LearnPathModel = {
+export const PATH_STATE_POWERS: LearnPath = {
 	id: 'lp01',
 	title: 'Tripartição dos Poderes',
 	desc: 'Você sabia que a democracia é dividida em 3 poderes? Legislativo, Executivo e Judiciário',
 	lessons: LESSONS_STATE_POWERS,
 }
 
-export const PATH_FEDERAL_CONSTITUTION: LearnPathModel = {
+export const PATH_FEDERAL_CONSTITUTION: LearnPath = {
 	id: 'lp02',
 	title: 'Constituição Federal',
 	desc: 'Você conhece a principal lei do nosso país? Sabe quais são nossos direitos e deveres?',
 	lessons: [],
 }
 
-export const PATH_LAWS: LearnPathModel = {
+export const PATH_LAWS: LearnPath = {
 	id: 'lp03',
 	title: 'Leis',
 	desc: 'Você sabe como uma lei é criada? Onde podemos ver todas as leis?',
 	lessons: [],
 }
 
-export const PATH_POLITICIAN_POSITIONS: LearnPathModel = {
+export const PATH_POLITICIAN_POSITIONS: LearnPath = {
 	id: 'lp04',
 	title: 'Cargos políticos',
 	desc: 'Você sabe quais as reponsabilidades de cada cargo político que elegemos?',
 	lessons: [],
 }
 
-export const LEARN_PATH_LIST: LearnPathModel[] = [
+export const LEARN_PATH_LIST: LearnPath[] = [
 	PATH_STATE_POWERS,
 	PATH_FEDERAL_CONSTITUTION,
 	PATH_LAWS,
