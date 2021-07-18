@@ -1,14 +1,21 @@
 import Dexie from 'dexie'
 import Table from '../type/entity/Table'
+import User from '../type/entity/User'
 
 const NAME = 'CAPICRACIA'
 const VERSION = 1
 
 class Database extends Dexie {
+	user: Table<User>
+
 	constructor() {
 		super(NAME)
 
-		this.version(VERSION).stores({})
+		this.version(VERSION).stores({
+			user: generateIndexes('cpf'),
+		})
+
+		this.user = this.table('user')
 	}
 }
 

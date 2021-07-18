@@ -5,6 +5,7 @@ import ProfileIconButton from '../../component/icon_button/profile'
 import ProgressStatus from '../../component/progress_status'
 import LearnPathCard from '../../component/learn_path_card'
 import { LEARN_MORE_TITLE, PRACTICE_BUTTON } from '../../constant/data/Learn'
+import { Box } from '@material-ui/core'
 import './styles.css'
 import PathConstants from '../../constant/PathConstants'
 import HistoryService from '../../service/history/HistoryService'
@@ -21,7 +22,9 @@ const LearnPath: React.FC = () => {
 					<GoBackIconButton color='primary' />
 				</div>
 				<div className='learn_header__end'>
-					<ProfileIconButton />
+					<ProfileIconButton
+						onClick={() => handleClick(PathConstants.ACHIEVEMENTS)}
+					/>
 				</div>
 			</div>
 			<div className='learn__progress_status_wrapper'>
@@ -48,6 +51,15 @@ const LearnPath: React.FC = () => {
 					id='section1'
 					onClick={() => handleClick(PathConstants.LESSON)}
 				/>
+				<Box m={3} />
+				<LearnPathCard
+					description='Você sabia que a democracia é dividida em 3 poderes? Legislativo, Executivo e Judiciário'
+					buttonText='Continue'
+					title='Tripartição de poderes'
+					id='section1'
+					onClick={() => {}}
+				/>
+				<Box m={3} />
 			</div>
 		</div>
 	)
