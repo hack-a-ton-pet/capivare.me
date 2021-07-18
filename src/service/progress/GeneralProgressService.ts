@@ -1,5 +1,5 @@
-import LearnPathList from '../../constant/data/LearnPath'
 import User from '../../type/entity/User'
+import LearnPathService from '../learn_path/LearnPathService'
 
 class GeneralProgressService {
 	calc = (user: User | undefined) => {
@@ -17,7 +17,7 @@ class GeneralProgressService {
 	}
 
 	private getTotalNumberOfLessons = (): number => {
-		return LearnPathList.reduce((acc, learnPath) => {
+		return LearnPathService.getAll().reduce((acc, learnPath) => {
 			return acc + learnPath.lessons.length
 		}, 0)
 	}

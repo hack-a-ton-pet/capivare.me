@@ -74,6 +74,7 @@ const Login: React.FC = () => {
 				<CapiInput
 					onChange={handleChangeCpf}
 					value={cpf}
+					uniqueKey={'cpf'}
 					label='cpf'
 					number
 				/>
@@ -81,6 +82,7 @@ const Login: React.FC = () => {
 				<CapiInput
 					onChange={handleChangePassword}
 					value={password}
+					uniqueKey={'password'}
 					label='senha'
 					password
 				/>

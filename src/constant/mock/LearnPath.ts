@@ -228,7 +228,7 @@ const StatePowerLessons: Lesson[] = [
 	},
 ]
 
-export const StatePowersPath: LearnPathModel = {
+export const statePowersPath: LearnPathModel = {
 	id: 'lp01',
 	title: 'Tripartição dos Poderes',
 	desc: 'Você sabia que a democracia é dividida em 3 poderes? Legislativo, Executivo e Judiciário',
@@ -256,11 +256,9 @@ export const StatePath4: LearnPathModel = {
 	lessons: [],
 }
 
-const LearnPathList: LearnPathModel[] = [
-	StatePowersPath,
+export const learnPathList: LearnPathModel[] = [
+	statePowersPath,
 	StatePath2,
 	StatePath3,
 	StatePath4,
 ]
-
-export default LearnPathList
