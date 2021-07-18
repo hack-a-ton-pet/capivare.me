@@ -1,7 +1,7 @@
 import React from 'react'
-import './styles.css'
 import ClearIcon from '@material-ui/icons/Clear'
 import CheckIcon from '@material-ui/icons/Check'
+import './styles.css'
 
 export interface CapiQuestionStatusCircleProps {
 	status: 'correct' | 'incorrect' | 'current' | 'not_answered'
