@@ -28,7 +28,7 @@ const Main: React.FC = () => {
 				/>
 				<AuthenticatedRoute
 					exact
-					path={PathConstants.LESSON}
+					path={`${PathConstants.LESSON_MENU}/:id`}
 					component={Lesson}
 				/>
 				<AuthenticatedRoute
