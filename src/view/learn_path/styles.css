@@ -61,3 +61,8 @@
 	font-size: 24px;
 	font-weight: bold;
 }
+
+.learn .text_button .MuiButton-contained {
+	width: 328px;
+	height: 60px;
+}
