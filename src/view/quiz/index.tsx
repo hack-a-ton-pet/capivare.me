@@ -121,15 +121,19 @@ const Quiz: React.FC = () => {
 				<div className='quiz_circles'>
 					<CapiStepperQuestions questionStatus={questionStatus} />
 				</div>
-				<SwipeableViews
-					disabled={clickedId === undefined}
-					index={itemIndex}
-					onChangeIndex={index =>
-						handleChangeIndex(index, lesson.quiz.items)
-					}
-				>
-					{lesson ? renderQuiz(lesson, user) : renderInDevelopment()}
-				</SwipeableViews>
+				{lesson ? (
+					<SwipeableViews
+						disabled={clickedId === undefined}
+						index={itemIndex}
+						onChangeIndex={index =>
+							handleChangeIndex(index, lesson.quiz.items)
+						}
+					>
+						{renderQuiz(lesson, user)}
+					</SwipeableViews>
+				) : (
+					renderInDevelopment()
+				)}
 			</div>
 		)
 	}
