@@ -6,8 +6,8 @@ import CapiIconButtonProps from '../props'
 import './styles.css'
 
 /**
- * @param color: "default" | "primary" | "secondary"
- * @param onClick: se não tiver volta no history
+ * @param onClick default uses history goBack function
+ * @param path define a path to go on click
  */
 const GoBackIconButton: React.FC<CapiIconButtonProps> = props => {
 	const goToPath = () => {

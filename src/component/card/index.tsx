@@ -8,7 +8,7 @@ import {
 	makeStyles,
 } from '@material-ui/core'
 import HistoryService from '../../service/history/HistoryService'
-import { menuCardProps } from '../../constant/data/menuCard'
+import { menuCardProps } from '../../constant/mock/MenuCard'
 import './styles.css'
 
 const useStyles = makeStyles({

@@ -4,9 +4,6 @@ import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos'
 import ArrowBackIos from '@material-ui/icons/ArrowBackIos'
 import CapiIconButtonProps from '../props'
 
-/**
- * @param color: "default" | "primary" | "secondary"
- */
 const ArrowNextIconButton: React.FC<CapiIconButtonProps> = props => {
 	return (
 		<CapiIconButton

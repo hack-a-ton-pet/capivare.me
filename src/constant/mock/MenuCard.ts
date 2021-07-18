@@ -8,7 +8,7 @@ export interface menuCardProps {
 	path: string
 }
 
-const menuCards: menuCardProps[] = [
+export const MENU_CARDS: menuCardProps[] = [
 	{
 		title: 'Aprenda',
 		image: 'learn_card.png',
@@ -22,5 +22,3 @@ const menuCards: menuCardProps[] = [
 		path: '/nothing',
 	},
 ]
-
-export default menuCards

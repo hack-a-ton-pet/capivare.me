@@ -11,7 +11,7 @@ import HistoryService from '../../service/history/HistoryService'
 import { authStore } from '../../context/AuthContext'
 import GeneralProgressService from '../../service/progress/GeneralProgressService'
 import LearnPathProgressService from '../../service/progress/LearnPathProgressService'
-import LearnPathList, { StatePowersPath } from '../../constant/data/LearnPath'
+import LearnPathList, { PATH_STATE_POWERS } from '../../constant/data/LearnPath'
 import './styles.css'
 
 const LearnPath: React.FC = () => {
@@ -44,7 +44,7 @@ const LearnPath: React.FC = () => {
 					lawProgress={LearnPathProgressService.calc(user, 'undefined')}
 					separationOfPowers={LearnPathProgressService.calc(
 						user,
-						StatePowersPath.id,
+						PATH_STATE_POWERS.id,
 					)}
 				/>
 			</div>
