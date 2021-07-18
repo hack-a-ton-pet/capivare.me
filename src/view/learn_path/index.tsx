@@ -13,14 +13,16 @@ import GeneralProgressService from '../../service/progress/GeneralProgressServic
 import LearnPathProgressService from '../../service/progress/LearnPathProgressService'
 import LearnPathService from '../../service/learn_path/LearnPathService'
 import './styles.css'
+import { suspend } from '../../util/AsyncUtils'
 
 const LearnPath: React.FC = () => {
 	const { state } = useContext(authStore)
 	const learnPathList = LearnPathService.getAll()
 	const user = state.user
 
-	const handleClick = (path: string) => {
-		setTimeout(() => HistoryService.push(path), 200)
+	const handleClick = async (path: string) => {
+		await suspend(200)
+		HistoryService.push(path)
 	}
 
 	return (

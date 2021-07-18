@@ -11,8 +11,9 @@ import LessonService from '../../service/lesson/LessonService'
 import LearnService from '../../service/user/LearnService'
 import Lesson from '../../type/quiz/Lesson'
 import LearnResults from './learn_results'
-import './styles.css'
 import User from '../../type/entity/User'
+import { suspend } from '../../util/AsyncUtils'
+import './styles.css'
 
 interface QuizParam {
 	id: string
@@ -28,6 +29,7 @@ const Quiz: React.FC = () => {
 	const [correct, setCorrect] = useState<boolean>()
 	const [isFinished, setIsFinished] = useState<boolean>(false)
 	const [ratingScore, setRatingScore] = useState(0)
+	const [isBlocked, setIsBlocked] = useState(false)
 
 	const [questionStatus, setQuestionStatus] = useState<StatusType[]>([])
 
@@ -41,6 +43,7 @@ const Quiz: React.FC = () => {
 	}, [lesson])
 
 	const handleChangeIndex = (index: number, items: QuizItem[]) => {
+		if (isBlocked) return
 		if (index > -1 && index < items.length) {
 			setItemIndex(index)
 			questionStatus[index] = 'current'
@@ -54,6 +57,8 @@ const Quiz: React.FC = () => {
 		lesson: Lesson,
 		user: User,
 	) => {
+		if (isBlocked) return
+
 		setClickedId(clickedId)
 
 		if (item.correctAnswerId === clickedId) {
@@ -66,22 +71,29 @@ const Quiz: React.FC = () => {
 
 		setQuestionStatus([...questionStatus])
 
-		setTimeout(() => {
-			const isFinished = itemIndex === lesson.quiz.items.length - 1
-			if (isFinished) {
-				const score = Math.floor(
-					(questionStatus.filter(status => status === 'correct').length /
-						questionStatus.length) *
-						100,
-				)
-				LearnService.saveLesson(user, lesson, score)
-				setRatingScore(score)
-				setIsFinished(true)
-			}
+		checkResults(user, lesson)
+	}
 
-			handleChangeIndex(itemIndex + 1, lesson.quiz.items)
-			setClickedId(undefined)
-		}, 1000)
+	const checkResults = async (user: User, lesson: Lesson) => {
+		setIsBlocked(true)
+
+		await suspend(1000)
+
+		const isFinished = itemIndex === lesson.quiz.items.length - 1
+		if (isFinished) {
+			const score = Math.floor(
+				(questionStatus.filter(status => status === 'correct').length /
+					questionStatus.length) *
+					100,
+			)
+			LearnService.saveLesson(user, lesson, score)
+			setRatingScore(score)
+			setIsFinished(true)
+		}
+
+		handleChangeIndex(itemIndex + 1, lesson.quiz.items)
+		setClickedId(undefined)
+		setIsBlocked(false)
 	}
 
 	const renderAnswers = (item: QuizItem, lesson: Lesson, user: User) =>
@@ -100,28 +112,35 @@ const Quiz: React.FC = () => {
 			/>
 		))
 
-	const renderSwippableView = (lesson: Lesson, user: User) => {
+	const renderLessonContent = (lesson: Lesson, user: User) => {
 		return (
-			<SwipeableViews
-				disabled={clickedId === undefined}
-				index={itemIndex}
-				onChangeIndex={index => handleChangeIndex(index, lesson.quiz.items)}
-			>
-				{lesson.quiz.items.map((e, index) => (
-					<div className='quiz_block' key={index}>
-						<div className='quiz_question'>
-							<CapiQuestionCard question={e.question} />
+			<div className='quiz_content'>
+				<div className='quiz_circles'>
+					<CapiStepperQuestions questionStatus={questionStatus} />
+				</div>
+				<SwipeableViews
+					disabled={clickedId === undefined}
+					index={itemIndex}
+					onChangeIndex={index =>
+						handleChangeIndex(index, lesson.quiz.items)
+					}
+				>
+					{lesson.quiz.items.map((e, index) => (
+						<div className='quiz_block' key={index}>
+							<div className='quiz_question'>
+								<CapiQuestionCard question={e.question} />
+							</div>
+							<div className='quiz_answers'>
+								{renderAnswers(e, lesson, user)}
+							</div>
 						</div>
-						<div className='quiz_answers'>
-							{renderAnswers(e, lesson, user)}
-						</div>
-					</div>
-				))}
-			</SwipeableViews>
+					))}
+				</SwipeableViews>
+			</div>
 		)
 	}
 
-	const renderLearnResult = (lesson: Lesson) => {
+	const renderLearnResult = () => {
 		return <LearnResults ratingScore={ratingScore} />
 	}
 
@@ -129,12 +148,9 @@ const Quiz: React.FC = () => {
 		<div className='quiz'>
 			{lesson && user && (
 				<>
-					<div className='quiz_circles'>
-						<CapiStepperQuestions questionStatus={questionStatus} />
-					</div>
 					{isFinished
-						? renderLearnResult(lesson)
-						: renderSwippableView(lesson, user)}
+						? renderLearnResult()
+						: renderLessonContent(lesson, user)}
 				</>
 			)}
 		</div>

@@ -36,3 +36,24 @@
 	bottom: -20px;
 	right: -40px;
 }
+
+.learn_results__content_wrapper {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: calc(100% - 200px);
+	padding-top: 30px;
+}
+
+.learn_result__capi_wrapper {
+	height: 200px;
+	width: 100%;
+	display: flex;
+	justify-content: flex-end;
+	align-items: flex-end;
+}
+
+.learn_result__capi {
+	transform: rotate(20deg) translateX(65px) translateY(35px);
+}
