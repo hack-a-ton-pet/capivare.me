@@ -6,7 +6,7 @@ import LearnPathService from '../learn_path/LearnPathService'
 
 class LearnService {
 	saveLesson = (user: User, lesson: Lesson, score: number) => {
-		if (score < 70) return
+		if (this.isScoreLessThanMin(score)) return
 
 		const learnPath = LearnPathService.getByLessonId(lesson.id)
 
@@ -38,6 +38,14 @@ class LearnService {
 		}
 
 		UserRepository.save(user)
+	}
+
+	isScoreHigherThanMin = (score: number) => {
+		return score >= 70
+	}
+
+	isScoreLessThanMin = (score: number) => {
+		return !this.isScoreHigherThanMin(score)
 	}
 }
 

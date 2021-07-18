@@ -1,5 +1,5 @@
 import User from '../../type/entity/User'
-import LearnPathList from '../../constant/data/LearnPath'
+import LearnPathService from '../learn_path/LearnPathService'
 
 class LearnPathProgressService {
 	calc = (user: User | undefined, learnPathId: string) => {
@@ -37,11 +37,11 @@ class LearnPathProgressService {
 	}
 
 	private getLearnPathNumberOfLessons = (learnPathId: string): number => {
-		return LearnPathList.filter(
-			learnPath => learnPath.id === learnPathId,
-		).reduce((acc, learnPath) => {
-			return acc + learnPath.lessons.length
-		}, 0)
+		return LearnPathService.getAll()
+			.filter(learnPath => learnPath.id === learnPathId)
+			.reduce((acc, learnPath) => {
+				return acc + learnPath.lessons.length
+			}, 0)
 	}
 }
 

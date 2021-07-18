@@ -1,0 +1,5 @@
+export const PASSWORD = 'senha'
+export const CPF = 'cpf'
+export const CONFIRM_PASSWORD = 'confirme a senha'
+export const CONFIRM_PASSWORD_KEY = 'confirme_a_senha'
+export const REGISTER = 'Cadastrar'

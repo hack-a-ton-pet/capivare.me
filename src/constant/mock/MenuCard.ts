@@ -1,4 +1,4 @@
-import PathConstants from '../PathConstants'
+import Path from '../Path'
 
 export interface menuCardProps {
 	title: string
@@ -8,12 +8,12 @@ export interface menuCardProps {
 	path: string
 }
 
-const menuCards: menuCardProps[] = [
+export const MENU_CARDS: menuCardProps[] = [
 	{
 		title: 'Aprenda',
 		image: 'learn_card.png',
 		text: 'Nessa sessão, aprenda mais sobre a organização política do Brasil.',
-		path: PathConstants.LEARN,
+		path: Path.LEARN,
 	},
 	{
 		title: 'Avalie',
@@ -22,5 +22,3 @@ const menuCards: menuCardProps[] = [
 		path: '/nothing',
 	},
 ]
-
-export default menuCards

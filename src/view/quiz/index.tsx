@@ -6,20 +6,24 @@ import SwipeableViews from 'react-swipeable-views'
 import CapiStepperQuestions from '../../component/stepper_questions'
 import { StatusType } from '../../component/question_status_circle'
 import { useParams } from 'react-router-dom'
-import { authStore } from '../../context/AuthContext'
+import { authStore } from '../../context/Auth'
 import LessonService from '../../service/lesson/LessonService'
 import LearnService from '../../service/user/LearnService'
 import Lesson from '../../type/quiz/Lesson'
 import LearnResults from './learn_results'
-import './styles.css'
 import User from '../../type/entity/User'
+import { suspend } from '../../util/AsyncUtils'
+import { IN_DEVELOPMENT } from '../../constant/component/Quiz'
+import HistoryService from '../../service/history/HistoryService'
+import Path from '../../constant/Path'
+import './styles.css'
 
 interface QuizParam {
-	id: string
+	id?: string
 }
 const Quiz: React.FC = () => {
 	const { id } = useParams<QuizParam>()
-	const lesson = LessonService.getById(id)
+	const lesson = id ? LessonService.getById(id) : undefined
 	const { state } = useContext(authStore)
 	const user = state.user
 
@@ -28,6 +32,7 @@ const Quiz: React.FC = () => {
 	const [correct, setCorrect] = useState<boolean>()
 	const [isFinished, setIsFinished] = useState<boolean>(false)
 	const [ratingScore, setRatingScore] = useState(0)
+	const [isBlocked, setIsBlocked] = useState(false)
 
 	const [questionStatus, setQuestionStatus] = useState<StatusType[]>([])
 
@@ -41,6 +46,7 @@ const Quiz: React.FC = () => {
 	}, [lesson])
 
 	const handleChangeIndex = (index: number, items: QuizItem[]) => {
+		if (isBlocked) return
 		if (index > -1 && index < items.length) {
 			setItemIndex(index)
 			questionStatus[index] = 'current'
@@ -54,6 +60,8 @@ const Quiz: React.FC = () => {
 		lesson: Lesson,
 		user: User,
 	) => {
+		if (isBlocked) return
+
 		setClickedId(clickedId)
 
 		if (item.correctAnswerId === clickedId) {
@@ -66,22 +74,29 @@ const Quiz: React.FC = () => {
 
 		setQuestionStatus([...questionStatus])
 
-		setTimeout(() => {
-			const isFinished = itemIndex === lesson.quiz.items.length - 1
-			if (isFinished) {
-				const score = Math.floor(
-					(questionStatus.filter(status => status === 'correct').length /
-						questionStatus.length) *
-						100,
-				)
-				LearnService.saveLesson(user, lesson, score)
-				setRatingScore(score)
-				setIsFinished(true)
-			}
+		checkResults(user, lesson)
+	}
 
-			handleChangeIndex(itemIndex + 1, lesson.quiz.items)
-			setClickedId(undefined)
-		}, 1000)
+	const checkResults = async (user: User, lesson: Lesson) => {
+		setIsBlocked(true)
+
+		await suspend(1000)
+
+		const isFinished = itemIndex === lesson.quiz.items.length - 1
+		if (isFinished) {
+			const score = Math.floor(
+				(questionStatus.filter(status => status === 'correct').length /
+					questionStatus.length) *
+					100,
+			)
+			LearnService.saveLesson(user, lesson, score)
+			setRatingScore(score)
+			setIsFinished(true)
+		}
+
+		handleChangeIndex(itemIndex + 1, lesson.quiz.items)
+		setClickedId(undefined)
+		setIsBlocked(false)
 	}
 
 	const renderAnswers = (item: QuizItem, lesson: Lesson, user: User) =>
@@ -100,13 +115,33 @@ const Quiz: React.FC = () => {
 			/>
 		))
 
-	const renderSwippableView = (lesson: Lesson, user: User) => {
+	const renderLessonContent = (lesson: Lesson, user: User) => {
 		return (
-			<SwipeableViews
-				disabled={clickedId === undefined}
-				index={itemIndex}
-				onChangeIndex={index => handleChangeIndex(index, lesson.quiz.items)}
-			>
+			<div className='quiz_content'>
+				<div className='quiz_circles'>
+					<CapiStepperQuestions questionStatus={questionStatus} />
+				</div>
+				<SwipeableViews
+					disabled={clickedId === undefined}
+					index={itemIndex}
+					onChangeIndex={index =>
+						handleChangeIndex(index, lesson.quiz.items)
+					}
+				>
+					{lesson ? renderQuiz(lesson, user) : renderInDevelopment()}
+				</SwipeableViews>
+			</div>
+		)
+	}
+
+	const renderInDevelopment = () => {
+		setTimeout(() => HistoryService.push(Path.LEARN), 1000)
+		return <h1>{IN_DEVELOPMENT}</h1>
+	}
+
+	const renderQuiz = (lesson: Lesson, user: User) => {
+		return (
+			<>
 				{lesson.quiz.items.map((e, index) => (
 					<div className='quiz_block' key={index}>
 						<div className='quiz_question'>
@@ -117,26 +152,25 @@ const Quiz: React.FC = () => {
 						</div>
 					</div>
 				))}
-			</SwipeableViews>
+			</>
 		)
 	}
 
-	const renderLearnResult = (lesson: Lesson) => {
+	const renderLearnResult = () => {
 		return <LearnResults ratingScore={ratingScore} />
 	}
 
 	return (
 		<div className='quiz'>
-			{lesson && user && (
-				<>
-					<div className='quiz_circles'>
-						<CapiStepperQuestions questionStatus={questionStatus} />
-					</div>
-					{isFinished
-						? renderLearnResult(lesson)
-						: renderSwippableView(lesson, user)}
-				</>
-			)}
+			{lesson
+				? user && (
+						<>
+							{isFinished
+								? renderLearnResult()
+								: renderLessonContent(lesson, user)}
+						</>
+				  )
+				: renderInDevelopment()}
 		</div>
 	)
 }
