@@ -6,9 +6,15 @@ import Achievement3 from '../../asset/achievements/003.png'
 import Achievement4 from '../../asset/achievements/004.png'
 import Achievement5 from '../../asset/achievements/005.png'
 import Achievement6 from '../../asset/achievements/006.png'
+import HistoryService from '../../service/history/HistoryService'
+import PathConstants from '../../constant/PathConstants'
 import './styles.css'
 
 const Achievements = () => {
+	const handleClick = path => {
+		setTimeout(() => HistoryService.push(path), 200)
+	}
+
 	return (
 		<div className='achievements'>
 			<div className='header'>
@@ -23,7 +29,7 @@ const Achievements = () => {
 					<img className='not-obtained' src={Achievement3} alt="ilustração de medalha" />
 				</div>
 				<div className="achievement-button-wrapper">
-					<CapiButton text='Ver mais' onClick={() => { }} />
+					<CapiButton text='Ver mais' onClick={() => { handleClick(PathConstants.LEARN_ACHIEVEMENTS) }} />
 				</div>
 			</div>
 			<div className='achievement-category-wrapper'>
@@ -34,7 +40,7 @@ const Achievements = () => {
 					<img className='not-obtained' src={Achievement6} alt="ilustração de medalha" />
 				</div>
 				<div className="achievement-button-wrapper">
-					<CapiButton text='Ver mais' onClick={() => { }} />
+					<CapiButton text='Ver mais' onClick={() => { handleClick(PathConstants.EVALUATE_ACHIEVEMENTS) }} />
 				</div>
 			</div>
 		</div>
