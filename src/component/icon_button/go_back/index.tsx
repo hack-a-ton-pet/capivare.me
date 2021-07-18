@@ -10,11 +10,15 @@ import './styles.css'
  * @param onClick: se não tiver volta no history
  */
 const GoBackIconButton: React.FC<CapiIconButtonProps> = props => {
+	const goToPath = () => {
+		props.path ? HistoryService.push(props.path!) : HistoryService.goBack()
+	}
+
 	return (
 		<CapiIconButton
 			aria-label='Voltar à página anterior'
 			{...props}
-			onClick={props.onClick || HistoryService.goBack}
+			onClick={props.onClick || goToPath}
 			className={`icon_button__go_back ${props.className ?? ''}`}
 		>
 			<ArrowBackIcon />

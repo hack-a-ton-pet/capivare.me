@@ -38,14 +38,10 @@ const Main: React.FC = () => {
 					component={LessonSection}
 				/>
 				<AuthenticatedRoute
-					path={PathConstants.QUIZ}
+					path={`${PathConstants.QUIZ}/:id`}
 					component={Quiz}
 				/>
 				<AuthenticatedRoute
-					path={`${PathConstants.QUIZ}/:id`}
-					component={() => <></>}
-				/>
-                <AuthenticatedRoute
 					path={PathConstants.ACHIEVEMENTS}
 					component={Achievements}
 				/>

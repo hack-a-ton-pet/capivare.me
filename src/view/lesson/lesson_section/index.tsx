@@ -45,7 +45,7 @@ const LessonSection: React.FC = () => {
 	}
 
 	const handleClick = () => {
-		setTimeout(() => HistoryService.push(PathConstants.QUIZ), 200)
+		setTimeout(() => HistoryService.push(`${PathConstants.QUIZ}/${id}`), 200)
 	}
 
 	const renderDialogs = (lesson: Lesson) => {

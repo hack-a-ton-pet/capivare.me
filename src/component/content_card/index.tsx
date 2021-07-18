@@ -11,8 +11,10 @@ const ContentCard: React.FC<ContentCardProps> = ({ title, text }) => {
 	return (
 		<Card className='content_card'>
 			<h2 className='content_card__title default_font'>{title}</h2>
-			{text.split('\n').map(paragraph => (
-				<p className='default_font'>{paragraph}</p>
+			{text.split('\n').map((paragraph, index) => (
+				<p key={index} className='default_font'>
+					{paragraph}
+				</p>
 			))}
 		</Card>
 	)

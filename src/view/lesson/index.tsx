@@ -10,9 +10,9 @@ import { useParams } from 'react-router-dom'
 import PathConstants from '../../constant/PathConstants'
 import LessonStatusService from '../../service/lesson/LessonStatusService'
 import LearnPathModel from '../../type/quiz/LearnPathModel'
-import './styles.css'
 import User from '../../type/entity/User'
 import HistoryService from '../../service/history/HistoryService'
+import './styles.css'
 
 const renderLessons = (learnPath: LearnPathModel, user: User) => {
 	let lastIsDone = true

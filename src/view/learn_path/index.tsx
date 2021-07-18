@@ -26,7 +26,7 @@ const LearnPath: React.FC = () => {
 		<div className='learn'>
 			<div className='learn_header'>
 				<div className='learn_header__start'>
-					<GoBackIconButton color='primary' />
+					<GoBackIconButton color='primary' path={PathConstants.MENU} />
 				</div>
 				<div className='learn_header__end'>
 					<ProfileIconButton
