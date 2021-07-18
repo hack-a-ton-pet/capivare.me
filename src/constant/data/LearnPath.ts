@@ -235,5 +235,32 @@ export const StatePowersPath: LearnPathModel = {
 	lessons: StatePowerLessons,
 }
 
-const LearnPathList: LearnPathModel[] = [StatePowersPath]
+export const StatePath2: LearnPathModel = {
+	id: 'lp02',
+	title: 'Constituição Federal',
+	desc: 'Você conhece a principal lei do nosso país? Sabe quais são nossos direitos e deveres?',
+	lessons: [],
+}
+
+export const StatePath3: LearnPathModel = {
+	id: 'lp03',
+	title: 'Leis',
+	desc: 'Você sabe como uma lei é criada? Onde podemos ver todas as leis?',
+	lessons: [],
+}
+
+export const StatePath4: LearnPathModel = {
+	id: 'lp04',
+	title: 'Cargos políticos',
+	desc: 'Você sabe quais as reponsabilidades de cada cargo político que elegemos?',
+	lessons: [],
+}
+
+const LearnPathList: LearnPathModel[] = [
+	StatePowersPath,
+	StatePath2,
+	StatePath3,
+	StatePath4,
+]
+
 export default LearnPathList

@@ -6,6 +6,9 @@
 	overflow-y: scroll;
 	position: absolute;
 }
+.lesson_section .react-swipeable-view-container {
+	align-items: center;
+}
 .lesson_section .MuiCard-root.content_card {
 	margin: 12px 24px 24px;
 }

@@ -9,7 +9,9 @@
 
 .progress_status__title {
 	width: 100%;
-	text-align: start;
+	text-align: center;
+	margin-bottom: 0.5em;
+	font-size: 1.9em;
 }
 
 .progress_status__progress {

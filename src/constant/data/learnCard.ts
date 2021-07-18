@@ -1,10 +1,10 @@
-export interface learnCardProps {
+export interface lessonSectionProps {
 	id: number
 	title: string
 	text: string[]
 }
 
-const learnCards: learnCardProps[] = [
+const lessonSection: lessonSectionProps[] = [
 	{
 		id: 1,
 		title: 'Título 1',
@@ -31,4 +31,4 @@ const learnCards: learnCardProps[] = [
 	},
 ]
 
-export default learnCards
+export default lessonSection
