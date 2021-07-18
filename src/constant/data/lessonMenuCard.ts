@@ -1,13 +1,13 @@
 import PathConstants from '../PathConstants'
 
-export interface learnMenuCardProps {
+export interface lessonMenuCardProps {
 	id: string
 	status: 'blocked' | 'done' | 'open'
 	text: string
 	path: string
 }
 
-const learnMenuCards: learnMenuCardProps[] = [
+const lessonMenuCards: lessonMenuCardProps[] = [
 	{
 		id: 'section-1',
 		status: 'blocked',
@@ -34,4 +34,4 @@ const learnMenuCards: learnMenuCardProps[] = [
 	},
 ]
 
-export default learnMenuCards
+export default lessonMenuCards

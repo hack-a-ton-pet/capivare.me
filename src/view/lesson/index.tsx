@@ -2,7 +2,7 @@ import React from 'react'
 import ArrowDownIconButton from '../../component/icon_button/arrow_down'
 import CapiHorizontalProgress from '../../component/progress/horizontal_progress'
 import CapiLessonCardButton from '../../component/lesson_card_button'
-import learnMenuCards from '../../constant/data/learnMenuCard'
+import lessonMenuCards from '../../constant/data/lessonMenuCard'
 import HistoryService from '../../service/history/HistoryService'
 import './styles.css'
 
@@ -12,7 +12,7 @@ const Lesson: React.FC = () => {
 			<ArrowDownIconButton color='primary' />
 			<CapiHorizontalProgress percentage={0} />
 			<div className='learn_menu_cards'>
-				{learnMenuCards.map((e, index) => (
+				{lessonMenuCards.map((e, index) => (
 					<CapiLessonCardButton
 						text={e.text}
 						status={e.status}

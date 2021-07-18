@@ -8,6 +8,7 @@ import { LEARN_MORE_TITLE, PRACTICE_BUTTON } from '../../constant/data/Learn'
 import { Box } from '@material-ui/core'
 import PathConstants from '../../constant/PathConstants'
 import HistoryService from '../../service/history/HistoryService'
+import { cardsLearnPath } from '../../constant/data/cardsLearnPath'
 import './styles.css'
 
 const LearnPath: React.FC = () => {
@@ -44,22 +45,16 @@ const LearnPath: React.FC = () => {
 			</div>
 			<div className='learn__learn_more_wrapper'>
 				<h2 className='default_font'>{LEARN_MORE_TITLE}</h2>
-				<LearnPathCard
-					description='Você sabia que a democracia é dividida em 3 poderes? Legislativo, Executivo e Judiciário'
-					buttonText='Continue'
-					title='Tripartição de poderes'
-					id='section1'
-					onClick={() => handleClick(PathConstants.LESSON)}
-				/>
-				<Box m={3} />
-				<LearnPathCard
-					description='Você sabia que a democracia é dividida em 3 poderes? Legislativo, Executivo e Judiciário'
-					buttonText='Continue'
-					title='Tripartição de poderes'
-					id='section1'
-					onClick={() => {}}
-				/>
-				<Box m={3} />
+				{cardsLearnPath.map(e => (
+					<>
+						<LearnPathCard
+							item={e}
+							buttonText='Abrir Lições'
+							onClick={() => handleClick(PathConstants.LESSON)}
+						/>
+						<Box m={3} />
+					</>
+				))}
 			</div>
 		</div>
 	)

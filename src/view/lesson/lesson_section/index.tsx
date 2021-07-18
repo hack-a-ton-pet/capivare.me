@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import learnCards from '../../../constant/data/learnCard'
+import lessonSection from '../../../constant/data/learnCard'
 import ContentCard from '../../../component/content_card'
 import SwipeableViews from 'react-swipeable-views'
 import ArrowNextIconButton from '../../../component/icon_button/arrow_next'
@@ -14,7 +14,7 @@ const LessonSection: React.FC = () => {
 	const [index, setIndex] = useState(0)
 
 	const handleChangeIndex = (index: number) => {
-		if (index > -1 && index < learnCards.length + 1) setIndex(index)
+		if (index > -1 && index < lessonSection.length + 1) setIndex(index)
 	}
 
 	const incrementIndex = (inc: number) => {
@@ -26,15 +26,17 @@ const LessonSection: React.FC = () => {
 	}
 
 	const renderDialogs = () => {
-		const array = learnCards.map((e, index) => (
+		const array = lessonSection.map((e, index) => (
 			<ContentCard key={index} title={e.title} paragraphs={e.text} />
 		))
 		array.push(
 			<LearnPathCard
+				item={{
+					title: 'Você terminou!',
+					description: 'Agora vamos praticar o que aprendemos!',
+					id: 'section1',
+				}}
 				buttonText='Pratique'
-				title='Você terminou!'
-				description='Agora vamos praticar o que aprendemos!'
-				id='section1'
 				onClick={handleClick}
 			/>,
 		)
@@ -53,7 +55,7 @@ const LessonSection: React.FC = () => {
 					direction='back'
 					onClick={() => incrementIndex(-1)}
 				/>
-				<CapiStepper steps={learnCards.length + 1} current={index} />
+				<CapiStepper steps={lessonSection.length + 1} current={index} />
 				<ArrowNextIconButton
 					color='primary'
 					onClick={() => incrementIndex(1)}
