@@ -7,6 +7,7 @@ class PathConstants {
 	LESSON_MENU = `/lesson_menu`
 	LESSON = `/lesson`
 	QUIZ = `/quiz`
+	ACHIEVEMENTS = `/achievements`
 }
 
 export default new PathConstants()

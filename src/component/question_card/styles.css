@@ -13,6 +13,7 @@
 	display: flex;
 	align-items: center;
 	padding-left: 22px;
+	padding-right: 22px;
 	padding-top: 20px;
 	padding-bottom: 20px;
 	border-radius: var(--border-radius);

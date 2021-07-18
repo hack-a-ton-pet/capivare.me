@@ -29,7 +29,9 @@ const LearnPath: React.FC = () => {
 					<GoBackIconButton color='primary' />
 				</div>
 				<div className='learn_header__end'>
-					<ProfileIconButton />
+					<ProfileIconButton
+						onClick={() => handleClick(PathConstants.ACHIEVEMENTS)}
+					/>
 				</div>
 			</div>
 			<div className='learn__progress_status_wrapper'>
