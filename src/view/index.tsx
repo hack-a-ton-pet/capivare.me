@@ -11,6 +11,8 @@ import NotFound from './not_found'
 import Lesson from './lesson'
 import Achievements from './achievements'
 import LessonSection from './lesson/lesson_section'
+import LearnAchievements from './achievements/learn_achievements'
+import EvaluateAchievements from './achievements/evaluate_achievements'
 
 const Main: React.FC = () => {
 	return (
@@ -45,9 +47,18 @@ const Main: React.FC = () => {
 					path={`${PathConstants.QUIZ}/:id`}
 					component={() => <></>}
 				/>
-                <AuthenticatedRoute
+				<AuthenticatedRoute
+					exact
 					path={PathConstants.ACHIEVEMENTS}
 					component={Achievements}
+				/>
+				<AuthenticatedRoute
+					path={PathConstants.LEARN_ACHIEVEMENTS}
+					component={LearnAchievements}
+				/>
+				<AuthenticatedRoute
+					path={PathConstants.EVALUATE_ACHIEVEMENTS}
+					component={EvaluateAchievements}
 				/>
 				<Route path={'/'} component={NotFound} />
 			</Switch>
