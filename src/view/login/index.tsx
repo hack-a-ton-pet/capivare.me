@@ -1,5 +1,4 @@
 import { Box } from '@material-ui/core'
-import { useHistory } from 'react-router-dom'
 import React, { useContext, useState } from 'react'
 import CapiButton from '../../component/button'
 import CapiLogo from '../../component/capi_logo'
@@ -8,6 +7,7 @@ import LoginService from '../../service/auth/LoginService'
 import PathConstants from '../../constant/PathConstants'
 import { AuthActionType, authStore } from '../../context/AuthContext'
 import CpfService from '../../service/user/CpfService'
+import HistoryService from '../../service/history/HistoryService'
 import './styles.css'
 
 const RegisterHere: React.FC<{
@@ -24,12 +24,22 @@ const RegisterHere: React.FC<{
 }
 
 const Login: React.FC = () => {
-	const history = useHistory()
 	const { dispatch } = useContext(authStore)
 
 	const [password, setPassword] = useState('')
 	const [cpf, setCpf] = useState('')
 	const [error, setError] = useState<string | undefined>()
+
+	const handleGuest = async () => {
+		const result = await LoginService.guest()
+		if (!result.hasError) {
+			dispatch({
+				type: AuthActionType.LOGIN,
+				data: result.content!!,
+			})
+			HistoryService.push(PathConstants.MENU)
+		}
+	}
 
 	const handleLogin = async () => {
 		const result = await LoginService.login(cpf, password)
@@ -40,12 +50,12 @@ const Login: React.FC = () => {
 				type: AuthActionType.LOGIN,
 				data: result.content!!,
 			})
-			history.push(PathConstants.MENU)
+			HistoryService.push(PathConstants.MENU)
 		}
 	}
 
 	const handleRegister = async () => {
-		history.push(PathConstants.REGISTER)
+		HistoryService.push(PathConstants.REGISTER)
 	}
 
 	const handleChangePassword = (value: string) => {
@@ -76,6 +86,8 @@ const Login: React.FC = () => {
 				/>
 				<Box m={2} />
 				<CapiButton onClick={handleLogin} text='Entrar' submit />
+				<Box m={2} />
+				<CapiButton onClick={handleGuest} text='Guest' />
 			</form>
 			<Box m={1} />
 			<p className='login__without_account default_font'>

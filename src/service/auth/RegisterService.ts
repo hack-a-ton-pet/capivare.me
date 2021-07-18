@@ -75,7 +75,7 @@ class RegisterService {
 	}
 
 	private userAlreadyExists = async (cpf: string): Promise<boolean> => {
-		const user = await UserService.findUser(cpf)
+		const user = await UserService.getByCpf(cpf)
 		return user !== undefined
 	}
 }
