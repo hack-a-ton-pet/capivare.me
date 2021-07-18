@@ -1,6 +1,5 @@
 import { Box } from '@material-ui/core'
 import React, { useContext, useState } from 'react'
-import { useHistory } from 'react-router-dom'
 import CapiButton from '../../component/button'
 import CapiLogo from '../../component/capi_logo'
 import GoBackIconButton from '../../component/icon_button/go_back'
@@ -8,10 +7,10 @@ import CapiInput from '../../component/input'
 import PathConstants from '../../constant/PathConstants'
 import { AuthActionType, authStore } from '../../context/AuthContext'
 import RegisterService from '../../service/auth/RegisterService'
+import HistoryService from '../../service/history/HistoryService'
 import './styles.css'
 
 const Register: React.FC = () => {
-	const history = useHistory()
 	const { dispatch } = useContext(authStore)
 
 	const [cpf, setCpf] = useState('')
@@ -32,7 +31,7 @@ const Register: React.FC = () => {
 				type: AuthActionType.LOGIN,
 				data: result.content!!,
 			})
-			history.push(PathConstants.MENU)
+			HistoryService.push(PathConstants.MENU)
 		}
 	}
 

@@ -1,17 +1,15 @@
 import { Box } from '@material-ui/core'
 import React from 'react'
-import { useHistory } from 'react-router-dom'
 import CapiButton from '../../component/button'
 import CapiLogo from '../../component/capi_logo'
 import PathConstants from '../../constant/PathConstants'
 import { NOT_FOUND, RETURN_TO_MENU } from '../../constant/data/NotFound'
+import HistoryService from '../../service/history/HistoryService'
 import './styles.css'
 
 const NotFound: React.FC = () => {
-	const history = useHistory()
-
 	const handleBackButton = () => {
-		history.push(PathConstants.MENU)
+		HistoryService.push(PathConstants.MENU)
 	}
 
 	return (

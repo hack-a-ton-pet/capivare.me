@@ -9,6 +9,7 @@ import PathConstants from '../../constant/PathConstants'
 import { AuthActionType, authStore } from '../../context/AuthContext'
 import CpfService from '../../service/user/CpfService'
 import './styles.css'
+import HistoryService from '../../service/history/HistoryService'
 
 const RegisterHere: React.FC<{
 	onRegister: () => void
@@ -24,12 +25,22 @@ const RegisterHere: React.FC<{
 }
 
 const Login: React.FC = () => {
-	const history = useHistory()
 	const { dispatch } = useContext(authStore)
 
 	const [password, setPassword] = useState('')
 	const [cpf, setCpf] = useState('')
 	const [error, setError] = useState<string | undefined>()
+
+	const handleGuest = async () => {
+		const result = await LoginService.guest()
+		if (!result.hasError) {
+			dispatch({
+				type: AuthActionType.LOGIN,
+				data: result.content!!,
+			})
+			HistoryService.push(PathConstants.MENU)
+		}
+	}
 
 	const handleLogin = async () => {
 		const result = await LoginService.login(cpf, password)
@@ -40,12 +51,12 @@ const Login: React.FC = () => {
 				type: AuthActionType.LOGIN,
 				data: result.content!!,
 			})
-			history.push(PathConstants.MENU)
+			HistoryService.push(PathConstants.MENU)
 		}
 	}
 
 	const handleRegister = async () => {
-		history.push(PathConstants.REGISTER)
+		HistoryService.push(PathConstants.REGISTER)
 	}
 
 	const handleChangePassword = (value: string) => {
@@ -76,6 +87,8 @@ const Login: React.FC = () => {
 				/>
 				<Box m={2} />
 				<CapiButton onClick={handleLogin} text='Entrar' submit />
+				<Box m={2} />
+				<CapiButton onClick={handleGuest} text='Guest' submit />
 			</form>
 			<Box m={1} />
 			<p className='login__without_account default_font'>
