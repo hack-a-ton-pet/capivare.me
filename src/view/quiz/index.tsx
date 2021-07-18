@@ -121,19 +121,15 @@ const Quiz: React.FC = () => {
 				<div className='quiz_circles'>
 					<CapiStepperQuestions questionStatus={questionStatus} />
 				</div>
-				{lesson ? (
-					<SwipeableViews
-						disabled={clickedId === undefined}
-						index={itemIndex}
-						onChangeIndex={index =>
-							handleChangeIndex(index, lesson.quiz.items)
-						}
-					>
-						{renderQuiz(lesson, user)}
-					</SwipeableViews>
-				) : (
-					renderInDevelopment()
-				)}
+				<SwipeableViews
+					disabled={clickedId === undefined}
+					index={itemIndex}
+					onChangeIndex={index =>
+						handleChangeIndex(index, lesson.quiz.items)
+					}
+				>
+					{renderQuiz(lesson, user)}
+				</SwipeableViews>
 			</div>
 		)
 	}
@@ -143,21 +139,15 @@ const Quiz: React.FC = () => {
 		return <h1>{IN_DEVELOPMENT}</h1>
 	}
 
-	const renderQuiz = (lesson: Lesson, user: User) => {
-		return (
-			<>
-				{lesson.quiz.items.map((e, index) => (
-					<div className='quiz_block' key={index}>
-						<div className='quiz_question'>
-							<CapiQuestionCard question={e.question} />
-						</div>
-						<div className='quiz_answers'>
-							{renderAnswers(e, lesson, user)}
-						</div>
-					</div>
-				))}
-			</>
-		)
+	const renderQuiz = (lesson: Lesson, user: User): JSX.Element[] => {
+		return lesson.quiz.items.map((e, index) => (
+			<div className='quiz_block' key={index}>
+				<div className='quiz_question'>
+					<CapiQuestionCard question={e.question} />
+				</div>
+				<div className='quiz_answers'>{renderAnswers(e, lesson, user)}</div>
+			</div>
+		))
 	}
 
 	const renderLearnResult = () => {
