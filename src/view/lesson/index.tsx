@@ -18,13 +18,18 @@ const renderLessons = (learnPath: LearnPath, user: User) => {
 	let lastIsDone = true
 	return learnPath.lessons.map((e, index) => {
 		const isDone = LessonStatusService.isDone(user, learnPath.lessons, index)
+		const status = isDone ? 'done' : lastIsDone ? 'open' : 'blocked'
+		const onClick =
+			status === 'blocked'
+				? () => {}
+				: () => HistoryService.push(`${Path.LESSON}/${e.id}`)
 		const render = (
 			<CapiLessonCardButton
 				text={`${LESSON_PREFIX} ${index + 1}`}
-				status={isDone ? 'done' : lastIsDone ? 'open' : 'blocked'}
+				status={status}
 				id={e.id}
 				key={index}
-				onClick={() => HistoryService.push(`${Path.LESSON}/${e.id}`)}
+				onClick={onClick}
 			/>
 		)
 		lastIsDone = isDone
