@@ -12,7 +12,7 @@ Project made for [Level Up Society](https://www.showcode.io/level-up-hack/) - Ju
 ## Prototype
 [Figma - screens](https://www.figma.com/file/VkhKZCpyj7L6VEl2Ok5Vrs/Capivare.me-Level-Up-Society?node-id=1%3A850)
 
-[Figma - navigable prototype](https://www.figma.com/proto/VkhKZCpyj7L6VEl2Ok5Vrs/Capivare.me-[Level-Up-Society]?node-id=1%3A1005&scaling=min-zoom)
+[Figma - navigable prototype](https://www.figma.com/proto/VkhKZCpyj7L6VEl2Ok5Vrs/Capivare.me-%5BLevel-Up-Society%5D?node-id=1%3A1005&scaling=min-zoom)
 
 ## Trello
 https://trello.com/b/5q12AIAw/level-up-society-hackathon
