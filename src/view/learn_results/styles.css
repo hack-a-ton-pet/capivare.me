@@ -1,0 +1,38 @@
+.learn-results {
+	background-color: var(--primary-lighter-color);
+	width: 100vw;
+	height: 100vh;
+	padding: 10vmin;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+}
+
+.learn-results-text-wrapper {
+	text-align: center;
+	margin-bottom: 40px;
+}
+
+.learn-results-text-wrapper h1 {
+	font-size: 42px;
+}
+
+.learn-results-text-wrapper p {
+	font-size: 16px;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+
+.learn-results-button-wrapper {
+	margin-bottom: 75px;
+}
+
+.learn-results .capi-img {
+	width: 200px;
+	height: auto;
+	position: absolute;
+	bottom: -20px;
+	right: -40px;
+}
